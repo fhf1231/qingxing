@@ -1,20 +1,3 @@
-# 奇心 QuantumultX 懒人配置 3.0 正式版
-# “;” “#”为注释符号，去掉前面的符号，该行才会生效
-# 第一次使用本配置，建议先备份自己之前的配置，以防后悔
-# 奇心懒人配置3.0下载 https://nav.qixinpro.com/rules/QuantumultX/qixin.conf
-# 本配置不定时更新，当前更新时间：2023.03.29
-# 电报频道：http://t.me/qixinscience
-# 奇心导航：https://nav.qixinpro.com/
-
-#配置详解及Bug问题反馈：https://nav.qixinpro.com/608.html
-
-
-
-
-# 建议添加以下数据库
-# https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb
-# 使用方法：打开QuantumultX - 风车 - 其他设置 - GeoLite2 - 来源 ，然后把上面链接输进去，默认7天更新就可以了。
-
 
 [general]
 excluded_routes=192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, 17.0.0.0/8
@@ -27,9 +10,10 @@ dns_exclusion_list = *.cmpassport.com, *.jegotrip.com.cn, *.icitymobile.mobi, id
 
 [dns]
 no-ipv6
-server=119.29.29.29
 server=223.5.5.5
+server=119.29.29.29
 server=1.2.4.8
+server=8.8.8.8
 server=/*.taobao.com/223.5.5.5
 server=/*.tmall.com/223.5.5.5
 server=/*.alipay.com/223.5.5.5
@@ -48,11 +32,6 @@ server=/*.127.net/119.29.29.29
 server=/*.netease.com/119.29.29.29
 server=/*.mi.com/119.29.29.29
 server=/*.xiaomi.com/119.29.29.29
-address=/mtalk.google.com/108.177.125.188
-
-[http_backend] 
-https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js, tag=BoxJs, path=^/, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/box.png, enabled=false
-
 
 [policy]
 # 其中港台番剧策略组对应的分流规则默认处于关闭状态，如需使用请在 分流-引用 中开启。
@@ -65,27 +44,10 @@ static=大陆服务, direct, 自选节点, img-url=https://nav.qixinpro.com/rule
 static=广告屏蔽, reject, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Adblock.png
 static=港台番剧, 大陆服务, 自选节点, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/StreamingSE.png
 
-#如果需要分地区节点使用，去掉下面相关地区前面的 # 即可
-#url-latency-benchmark=香港, server-tag-regex=(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|美)).)*$, check-interval=600, tolerance=0, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/HK.png
-#url-latency-benchmark=台湾, server-tag-regex=(?=.*(台|TW|(?i)Taiwan))^((?!(港|日|韩|新|美)).)*$, check-interval=600, tolerance=0, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/TW.png
-#url-latency-benchmark=日本, server-tag-regex=(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$, check-interval=600, tolerance=0, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/JP.png
-#url-latency-benchmark=美国, server-tag-regex=(?=.*(美|US|(?i)States|American))^((?!(港|台|日|韩|新)).)*$, check-interval=600, tolerance=0, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/US.png
-
-
-
-
 [server_local]
 vmess=baimabridge.top:443, method=chacha20-ietf-poly1305, password=9e6b15d7-971a-42b8-b57a-6de487fed623, obfs=wss, obfs-host=baimabridge.top, obfs-uri=/Acy28pxV558, tag=baima
-#请使用 Safari 浏览器访问网站。首先下载 证书 (https://nav.qixinpro.com/rules/QuantumultX/CA/wyy_ca.crt)，进入「设置」>「通用」>「描述文件」，安装「UnblockNeteaseMusic Root CA」，并在「设置」>「通用」>「关于本机」>「证书信任设置」开启对「UnblockNeteaseMusic Root CA」的信任。
-#证书下载地址：https://nav.qixinpro.com/rules/QuantumultX/CA/wyy_ca.crt
-
-
-# 本地服务器部分
-# 自行添加即可
-
 
 [server_remote]
-# 节点远程订阅，自行添加
 
 [filter_remote]
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/AppleTV/AppleTV.list, tag=AppleTV, update-interval=172800, opt-parser=false, enabled=true
@@ -97,13 +59,6 @@ https://nav.qixinpro.com/rules/QuantumultX/gz/advertising.list, tag=广告屏蔽
 https://nav.qixinpro.com/rules/QuantumultX/gz/hk-tw.list, tag=港台番剧, update-interval=86400, opt-parser=false, enabled=true
 
 [filter_local]
-
-# 本地分流规则(相同规则下，本地规则将覆盖远程规则，优先生效)
-
-
-# 避免迅雷版权问题
-
-# 其他
 host-suffix, local, direct
 host-keyword, merlinblog, proxy
 ip-cidr, 10.0.0.0/8, direct
@@ -117,26 +72,9 @@ final, direct
 
 [rewrite_remote]
 
-# rewrite 复写远程订阅
-
-
-
 [rewrite_local]
 #本地复写规则
 
-
-
-
-
-#Task远程订阅  https://raw.githubusercontent.com/zwf234/rules/master/qixin.json
-#添加方法：打开构造请求，最上方第一个按钮，右上角+号添加即可
 [task_local]
 
-event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/geo_location.js, tag=GeoIP 查询, img-url=location.fill.viewfinder.system, enabled=true
-event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/streaming-ui-check.js, tag=流媒体-解锁查询, img-url=checkmark.seal.system, enabled=true
-event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/nf_ytb_ui-check.js, tag=YouTube/Netflix 解锁查询, img-url=checkmark.seal.system, enabled=true
-
-
-
 [mitm]
-# 以下为证书&主机名部分
