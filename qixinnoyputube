@@ -119,8 +119,6 @@ final, direct
 
 # rewrite 复写远程订阅
 
-https://nav.qixinpro.com/rules/QuantumultX/gz/qxrules.conf, tag=奇心规则合集, update-interval=172800, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.quanx.conf, tag=BoxJs, update-interval=86400, opt-parser=true, enabled=true
 
 
 [rewrite_local]
