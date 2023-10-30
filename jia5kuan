@@ -21,6 +21,7 @@ static=Disney, 自选节点, direct, img-url= https://github.com/Koolson/Qure/bl
 static=Whatsapp, 自选节点, direct, img-url= https://github.com/Koolson/Qure/blob/master/IconSet/Color/WiFi.png
 static=Netflix, 自选节点, direct, img-url= https://github.com/Koolson/Qure/blob/master/IconSet/Color/Netflix.png
 static=Twitter, 自选节点, direct, img-url= https://github.com/Koolson/Qure/blob/master/IconSet/Dark/Twitter.png
+static=GoogleEarth, 自选节点, direct, img-url= img-url= https://github.com/blackmatrix7/ios_rule_script/blob/master/icon/color/Google.png
 static=DingTalk, direct, 自选节点, img-url=https://github.com/blackmatrix7/ios_rule_script/blob/master/icon/color/dingtalk.png
 static=海外服务, 自选节点, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Global.png
 static=地理位置, 大陆服务, 自选节点, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/localtion.png
@@ -37,6 +38,7 @@ vmess=baimabridge.top:443, method=chacha20-ietf-poly1305, password=9e6b15d7-971a
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/Google/Google.list, tag=Google, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/YouTube.list, tag=YouTube, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/Netflix.list, tag=Netflix, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/GoogleEarth/GoogleEarth.list, tag=GoogleEarth, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/Telegram/Telegram.list, tag=Telegram, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/Twitter/Twitter.list, tag=Twitter, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/Whatsapp/Whatsapp.list, tag=Whatsapp, update-interval=172800, opt-parser=false, enabled=true
