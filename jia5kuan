@@ -16,6 +16,7 @@ static=WeChat, direct, 自选节点, img-url= https://github.com/Koolson/Qure/bl
 static=DouYin, direct, 自选节点, img-url= https://github.com/Koolson/Qure/blob/master/IconSet/Color/TikTok.png
 static=Disney, 自选节点, direct, img-url= https://github.com/Koolson/Qure/blob/master/IconSet/Color/Disney%2B_1.png
 static=Whatsapp, 自选节点, direct, img-url= https://github.com/Koolson/Qure/blob/master/IconSet/Color/WiFi.png
+static=Netflix, 自选节点, direct, img-url= https://github.com/Koolson/Qure/blob/master/IconSet/Color/Netflix.png
 static=Twitter, 自选节点, direct, img-url= https://github.com/Koolson/Qure/blob/master/IconSet/Dark/Twitter.png
 static=海外服务, 自选节点, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Global.png
 static=地理位置, 大陆服务, 自选节点, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/localtion.png
@@ -29,6 +30,7 @@ vmess=baimabridge.top:443, method=chacha20-ietf-poly1305, password=9e6b15d7-971a
 [server_remote]
 
 [filter_remote]
+https://raw.githubusercontent.com/fhf1231/filterurl/main/Netflix.list, tag=Netflix, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/Twitter/Twitter.list, tag=Twitter, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/Whatsapp/Whatsapp.list, tag=Whatsapp, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/WeChat/WeChat.list, tag=WeChat, update-interval=172800, opt-parser=false, enabled=true
