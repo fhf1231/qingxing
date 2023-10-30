@@ -12,9 +12,9 @@ static=自选节点, proxy, img-url=https://nav.qixinpro.com/rules/QuantumultX/i
 static=YouTube, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/YouTube.png
 static=Google, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Google.png
 static=Twitter, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Twitter.png
-static=telegram, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Telegram.png
+static=Telegram, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Telegram.png
 static=Netflix, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Netflix.png
-static=Disney, 自选节点, direct, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Disney%2B.png
+static=Disney, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Disney%2B.png
 static=Whatsapp, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/Color/WiFi.png
 static=GoogleEarth, 自选节点, img-url=https://github.com/blackmatrix7/ios_rule_script/blob/master/icon/color/Google.png
 static=海外服务, 自选节点, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Global.png
