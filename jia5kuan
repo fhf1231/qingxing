@@ -10,7 +10,7 @@ server=8.8.8.8
 [policy]
 static=自选节点, proxy, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Static.png
 static=Alibaba, direct, 自选节点, img-url= https://github.com/Koolson/Qure/blob/master/IconSet/Color/Alibaba.png
-static=AppleTV, direct, 自选节点, img-url= https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Apple.png
+static=AppleTV, direct, 自选节点, img-url= https://github.com/Koolson/Qure/blob/master/IconSet/Color/Apple_TV.png
 static=Amazon, direct, 自选节点, img-url= https://github.com/Koolson/Qure/blob/master/IconSet/Color/Amazon.png
 static=WeChat, direct, 自选节点, img-url= https://github.com/Koolson/Qure/blob/master/IconSet/Color/WeChat.png
 static=Disney, 自选节点, direct, img-url= https://github.com/Koolson/Qure/blob/master/IconSet/Color/Disney%2B_1.png
@@ -28,7 +28,7 @@ vmess=baimabridge.top:443, method=chacha20-ietf-poly1305, password=9e6b15d7-971a
 
 [filter_remote]
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/Whatsapp/Whatsapp.list, tag=Whatsapp, update-interval=172800, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/WeChat/WeChat.listt, tag=WeChat, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/WeChat/WeChat.list, tag=WeChat, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/Alibaba/Alibaba.list, tag=Alibaba, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/Amazon/Amazon.list, tag=Amazon, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/AppleTV/AppleTV.list, tag=AppleTV, update-interval=172800, opt-parser=false, enabled=true
