@@ -24,7 +24,6 @@ static=Alibaba, direct, img-url=https://github.com/Koolson/Qure/blob/master/Icon
 static=Amazon, direct, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/Color/Amazon.png
 static=WeChat, direct, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/WeChat.png
 static=DouYin, direct, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/TikTok.png
-static=DingTalk, direct, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Heart.png
 static=AppleTV, direct, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Apple_TV_Plus.png
 static=地理位置, 大陆服务, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/localtion.png
 static=大陆服务, direct, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/China.png
@@ -48,7 +47,6 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/Quan
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/AppleTV/AppleTV.list, tag=AppleTV, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/Disney/Disney.list, tag=Disney,update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/DouYin/DouYin.list, tag=DouYin,update-interval=172800, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/DingTalk/DingTalk.list, tag=DingTalk,update-interval=172800, opt-parser=false, enabled=true
 https://nav.qixinpro.com/rules/QuantumultX/gz/overseas.list, tag=海外服务, update-interval=172800, opt-parser=false, enabled=true
 https://nav.qixinpro.com/rules/QuantumultX/gz/mainland.list, tag=大陆服务, update-interval=172800, opt-parser=false, enabled=true
 https://nav.qixinpro.com/rules/QuantumultX/gz/location.list, tag=地理位置, update-interval=172800, opt-parser=false, enabled=true
