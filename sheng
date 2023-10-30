@@ -19,7 +19,6 @@ static=Telegram, 自选节点, img-url=https://github.com/Koolson/Qure/blob/mast
 static=Netflix, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Netflix.png
 static=Disney, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Disney%2B.png
 static=Whatsapp, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/Color/WiFi.png
-static=GoogleEarth, 自选节点, img-url=https://github.com/blackmatrix7/ios_rule_script/blob/master/icon/color/Google.png
 static=海外服务, 自选节点, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Global.png
 static=Alibaba, direct, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Alibaba.png
 static=Amazon, direct, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/Color/Amazon.png
@@ -43,7 +42,6 @@ https://raw.githubusercontent.com/fhf1231/filterurl/main/Netflix.list, tag=Netfl
 https://raw.githubusercontent.com/fhf1231/filterurl/main/Telegram.list, tag=Telegram, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/Twitter/Twitter.list, tag=Twitter, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/Whatsapp/Whatsapp.list, tag=Whatsapp, update-interval=172800, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/GoogleEarth/GoogleEarth.list, tag=GoogleEarth, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/WeChat/WeChat.list, tag=WeChat, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/Alibaba/Alibaba.list, tag=Alibaba, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/Amazon/Amazon.list, tag=Amazon, update-interval=172800, opt-parser=false, enabled=true
