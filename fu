@@ -22,11 +22,10 @@ static=Amazon, direct, 自选节点, img-url=https://github.com/Koolson/Qure/blo
 static=WeChat, direct, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/WeChat.png
 static=DouYin, direct, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/TikTok.png
 static=DingTalk, direct, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Heart.png
-static=AppleTV, direct, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Apple_TV_Plus.png
+static=AppleTV, direct, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Apple_TV_Plus.png
 static=地理位置, 大陆服务, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/localtion.png
 static=大陆服务, direct, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/China.png
 static=广告屏蔽, reject, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Adblock.png
-static=港台番剧, 大陆服务, 自选节点, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/StreamingSE.png
 
 [server_local]
 vmess=baimabridge.top:443, method=chacha20-ietf-poly1305, password=9e6b15d7-971a-42b8-b57a-6de487fed623, obfs=wss, obfs-host=baimabridge.top, obfs-uri=/Acy28pxV558, tag=baima
@@ -53,7 +52,6 @@ https://nav.qixinpro.com/rules/QuantumultX/gz/overseas.list, tag=海外服务, u
 https://nav.qixinpro.com/rules/QuantumultX/gz/mainland.list, tag=大陆服务, update-interval=172800, opt-parser=false, enabled=true
 https://nav.qixinpro.com/rules/QuantumultX/gz/location.list, tag=地理位置, update-interval=172800, opt-parser=false, enabled=true
 https://nav.qixinpro.com/rules/QuantumultX/gz/advertising.list, tag=广告屏蔽, update-interval=86400, opt-parser=false, enabled=true
-https://nav.qixinpro.com/rules/QuantumultX/gz/hk-tw.list, tag=港台番剧, update-interval=86400, opt-parser=false, enabled=true
 
 [filter_local]
 host-suffix, local, direct
