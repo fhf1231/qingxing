@@ -19,7 +19,7 @@ static=Disney, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master
 static=Whatsapp, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/Color/WiFi.png
 static=海外服务, 自选节点, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Global.png
 static=Alibaba, direct, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Alibaba.png
-static=Amazon, direct, 自选节点 img-url=https://github.com/Koolson/Qure/blob/master/IconSet/Color/Amazon.png
+static=Amazon, direct, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/Color/Amazon.png
 static=WeChat, direct, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/WeChat.png
 static=DouYin, direct, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/TikTok.png
 static=AppleTV, direct, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Apple_TV_Plus.png
