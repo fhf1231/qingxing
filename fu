@@ -10,19 +10,19 @@ server=8.8.8.8
 static=自选节点, proxy, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Static.png
 static=YouTube, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/YouTube.png
 static=Google, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Google.png
-static=Twitter, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Twitter.png
-static=Telegram, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Telegram.png
+static=Amazon, direct, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/Color/Amazon.png
+static=AppleTV, direct, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Apple_TV_Plus.png
 static=Netflix, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Netflix.png
 static=Disney, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Disney%2B.png
+static=Twitter, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Twitter.png
+static=Telegram, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Telegram.png
 static=Whatsapp, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/Color/WiFi.png
 static=GoogleEarth, 自选节点, img-url=https://github.com/blackmatrix7/ios_rule_script/blob/master/icon/color/Google.png
 static=海外服务, 自选节点, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Global.png
 static=Alibaba, direct, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Alibaba.png
-static=Amazon, direct, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/Color/Amazon.png
 static=WeChat, direct, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/WeChat.png
 static=DouYin, direct, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/TikTok.png
 static=DingTalk, direct, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Heart.png
-static=AppleTV, direct, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Apple_TV_Plus.png
 static=地理位置, 大陆服务, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/localtion.png
 static=大陆服务, direct, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/China.png
 static=广告屏蔽, reject, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Adblock.png
