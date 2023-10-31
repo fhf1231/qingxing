@@ -16,6 +16,7 @@ static=大陆服务, direct, img-url=https://nav.qixinpro.com/rules/QuantumultX/
 static=广告屏蔽, reject, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Adblock.png
 
 [server_local]
+vmess=baimabridge.top:443, method=chacha20-ietf-poly1305, password=9e6b15d7-971a-42b8-b57a-6de487fed623, obfs=wss, obfs-host=baimabridge.top, obfs-uri=/Acy28pxV558, tag=baima
 vmess=lifengchun.top:443, method=chacha20-ietf-poly1305, password=01a25c6d-172a-4d7e-82a3-eede74c62f66, obfs=wss, obfs-host=lifengchun.top, obfs-uri=/Acy27pxV558, tag=lifengchun
 
 [server_remote]
