@@ -6,8 +6,6 @@ geo_location_checker=http://ip-api.com/json/?lang=zh-CN, https://github.com/KOP-
 [dns]
 no-ipv6
 server=223.5.5.5
-server=119.29.29.29
-server=1.2.4.8
 server=8.8.8.8
 
 [policy]
@@ -21,10 +19,10 @@ static=Disney, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master
 static=Whatsapp, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/Color/WiFi.png
 static=海外服务, 自选节点, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Global.png
 static=Alibaba, direct, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Alibaba.png
-static=Amazon, direct, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/Color/Amazon.png
+static=Amazon, direct, 自选节点 img-url=https://github.com/Koolson/Qure/blob/master/IconSet/Color/Amazon.png
 static=WeChat, direct, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/WeChat.png
 static=DouYin, direct, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/TikTok.png
-static=AppleTV, direct, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Apple_TV_Plus.png
+static=AppleTV, direct, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Apple_TV_Plus.png
 static=地理位置, 大陆服务, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/localtion.png
 static=大陆服务, direct, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/China.png
 static=广告屏蔽, reject, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Adblock.png
@@ -47,7 +45,7 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/Quan
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/AppleTV/AppleTV.list, tag=AppleTV, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/Disney/Disney.list, tag=Disney,update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/DouYin/DouYin.list, tag=DouYin,update-interval=172800, opt-parser=false, enabled=true
-https://nav.qixinpro.com/rules/QuantumultX/gz/overseas.list, tag=海外服务, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=海外服务, update-interval=172800, opt-parser=false, enabled=true
 https://nav.qixinpro.com/rules/QuantumultX/gz/mainland.list, tag=大陆服务, update-interval=172800, opt-parser=false, enabled=true
 https://nav.qixinpro.com/rules/QuantumultX/gz/location.list, tag=地理位置, update-interval=172800, opt-parser=false, enabled=true
 https://nav.qixinpro.com/rules/QuantumultX/gz/advertising.list, tag=广告屏蔽, update-interval=86400, opt-parser=false, enabled=true
