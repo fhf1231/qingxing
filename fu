@@ -67,6 +67,10 @@ https://nav.qixinpro.com/rules/QuantumultX/gz/location.list, tag=地理位置, u
 https://nav.qixinpro.com/rules/QuantumultX/gz/advertising.list, tag=广告屏蔽, update-interval=86400, opt-parser=false, enabled=true
 
 [filter_local]
+user-agent, shein*, proxy
+host-keyword, shein, proxy
+host-suffix, shein.com, proxy
+host,shein.com, proxy
 user-agent, temu*, proxy
 host-keyword, temu, proxy
 host-suffix, temu.com, proxy
