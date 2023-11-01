@@ -29,7 +29,6 @@ static=Netflix, 自选节点, img-url=https://github.com/Koolson/Qure/blob/maste
 static=Disney, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Disney%2B.png
 static=Twitter, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Twitter.png
 static=Telegram, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Telegram.png
-static=TikTok, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/TikTok.png
 static=Whatsapp, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/Color/WiFi.png
 static=GoogleEarth, 自选节点, img-url=https://github.com/blackmatrix7/ios_rule_script/blob/master/icon/color/Google.png
 static=海外服务, 自选节点, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Global.png
@@ -42,6 +41,7 @@ static=大陆服务, direct, img-url=https://nav.qixinpro.com/rules/QuantumultX/
 static=广告屏蔽, reject, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Adblock.png
 
 [server_local]
+vmess=jinwu123.top:443, method=chacha20-ietf-poly1305, password=0922dc5b-6cbd-4613-9071-6c253d68a4ed, obfs=wss, obfs-host=jinwu123.top, obfs-uri=/AAy27pxV557, tls-verification=true, udp-relay=false, tag=jinwu123
 vmess=baimabridge.top:443, method=chacha20-ietf-poly1305, password=9e6b15d7-971a-42b8-b57a-6de487fed623, obfs=wss, obfs-host=baimabridge.top, obfs-uri=/Acy28pxV558, tls-verification=true, udp-relay=false, tag=baima
 vmess=lifengchun.top:443, method=chacha20-ietf-poly1305, password=01a25c6d-172a-4d7e-82a3-eede74c62f66, obfs=wss, obfs-host=lifengchun.top, obfs-uri=/Acy27pxV558, tls-verification=true, udp-relay=false, tag=lifengchun
 
@@ -52,7 +52,6 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/Quan
 https://raw.githubusercontent.com/fhf1231/filterurl/main/YouTube.list, tag=YouTube, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/Netflix.list, tag=Netflix, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/Telegram.list, tag=Telegram, update-interval=172800, opt-parser=false, enabled=true
-https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/TikTok/TikTok.list, tag=TikTok, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/Twitter/Twitter.list, tag=Twitter, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/Whatsapp/Whatsapp.list, tag=Whatsapp, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/GoogleEarth/GoogleEarth.list, tag=GoogleEarth, update-interval=172800, opt-parser=false, enabled=true
