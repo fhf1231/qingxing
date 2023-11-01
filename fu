@@ -35,7 +35,7 @@ HOST,uts-api.itunes.apple.com,direct
 HOST-SUFFIX,tv.apple.com,direct
 USER-AGENT,AppleTV*,direct
 USER-AGENT,com.apple.tv*,direct
-host-agent, temu*, proxy
+user-agent, temu*, proxy
 host-keyword, temu, proxy
 host-suffix, temu.com, proxy
 HOST,temu.com, proxy
