@@ -29,6 +29,7 @@ static=Netflix, 自选节点, img-url=https://github.com/Koolson/Qure/blob/maste
 static=Disney, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Disney%2B.png
 static=Twitter, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Twitter.png
 static=Telegram, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Telegram.png
+static=TikTok, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/TikTok.png
 static=Whatsapp, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/Color/WiFi.png
 static=GoogleEarth, 自选节点, img-url=https://github.com/blackmatrix7/ios_rule_script/blob/master/icon/color/Google.png
 static=海外服务, 自选节点, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Global.png
@@ -51,6 +52,7 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/Quan
 https://raw.githubusercontent.com/fhf1231/filterurl/main/YouTube.list, tag=YouTube, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/Netflix.list, tag=Netflix, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/Telegram.list, tag=Telegram, update-interval=172800, opt-parser=false, enabled=true
+https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/TikTok/TikTok.list, tag=TikTok, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/Twitter/Twitter.list, tag=Twitter, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/Whatsapp/Whatsapp.list, tag=Whatsapp, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/GoogleEarth/GoogleEarth.list, tag=GoogleEarth, update-interval=172800, opt-parser=false, enabled=true
