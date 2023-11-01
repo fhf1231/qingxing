@@ -39,7 +39,7 @@ user-agent, temu*, proxy
 host-keyword, temu, proxy
 host-suffix, temu.com, proxy
 HOST,temu.com, proxy
-host-agent, amazonaws*, direct
+user-agent, amazonaws*, direct
 host-keyword, amazonaws, direct
 host-suffix, amazonaws.com, direct
 host-suffix, local, direct
