@@ -7,7 +7,7 @@ server=223.5.5.5
 server=8.8.8.8
 
 [policy]
-static=proxy, direct, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Static.png
+static=自选节点, proxy, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Static.png
 static=YouTube, proxy, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/YouTube.png
 static=Netflix, proxy, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Netflix.png
 static=Disney, proxy, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Disney%2B.png
