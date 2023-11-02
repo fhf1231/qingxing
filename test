@@ -9,7 +9,7 @@ server=8.8.8.8
 [policy]
 static=自选节点, proxy, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Static.png
 static=YouTube, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/YouTube.png
-static=Netflix, 自选节点,img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Netflix.png
+static=Netflix, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Netflix.png
 static=Disney, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Disney%2B.png
 static=AppleTV, direct, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Apple_TV_Plus.png
 static=Alibaba, direct, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Alibaba.png
