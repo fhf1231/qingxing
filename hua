@@ -14,9 +14,6 @@ static=大陆服务, direct, img-url=https://nav.qixinpro.com/rules/QuantumultX/
 
 
 [server_local]
-vmess=jinwu123.top:443, method=chacha20-ietf-poly1305, password=c357e4b0-1c51-43c3-a015-249d4d566336, obfs=wss, obfs-host=jinwu123.top, obfs-uri=/jinWu28e99, tls-verification=true, udp-relay=false, tag=jinwu
-vmess=baimabridge.top:443, method=chacha20-ietf-poly1305, password=9e6b15d7-971a-42b8-b57a-6de487fed623, obfs=wss, obfs-host=baimabridge.top, obfs-uri=/Acy28pxV558, tls-verification=true, udp-relay=false, tag=baima
-vmess=lishengcrystal.com:443, method=chacha20-ietf-poly1305, password=67bcc3df-8f20-4aa9-bbde-b2de4ee0c91b, obfs=wss, obfs-host=lishengcrystal.com, tls-verification=true, udp-relay=false, tag=lisheng
 vmess=lifengchun.top:443, method=chacha20-ietf-poly1305, password=c890e95b-8b9b-4e7e-945b-8737503c1b54, obfs=wss, obfs-host=lifengchun.top, obfs-uri=/Ace95pV98, tls-verification=true, udp-relay=false, tag=lifengchun
 
 [server_remote]
