@@ -20,9 +20,9 @@ vmess=b.baimabridge.top:443, method=chacha20-ietf-poly1305, password=32fe0781-fa
 [server_remote]
 
 [filter_remote]
-https://raw.githubusercontent.com/fhf1231/filterurl/main/PROXY, tag=海外服务, enabled=true
-https://raw.githubusercontent.com/fhf1231/filterurl/main/DIRECT, tag=大陆服务, enabled=true
-https://raw.githubusercontent.com/fhf1231/filterurl/main/REJECT, tag=屏蔽服务, enabled=true
+https://raw.githubusercontent.com/fhf1231/filterurl/main/PROXY, tag=海外服务, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/fhf1231/filterurl/main/DIRECT, tag=大陆服务, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/fhf1231/filterurl/main/REJECT, tag=屏蔽服务, opt-parser=false, enabled=true
 
 [filter_local]
 host-suffix, local, direct
