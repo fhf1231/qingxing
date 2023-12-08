@@ -4,7 +4,6 @@ excluded_routes=192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, 17.0.0
 [dns]
 no-system
 no-ipv6
-over-tls = true
 server=223.5.5.5
 server=119.29.29.29
 
