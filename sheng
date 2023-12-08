@@ -1,9 +1,9 @@
 [general]
 # > 用于节点延迟测试
 server_check_url=http://cp.cloudflare.com/generate_204
-;server_check_url= http://www.qualcomm.cn/generate_204
-;server_check_url=http://captive.apple.com/generate_204
-;server_check_url =http://www.google.com/generate_204
+#server_check_url= http://www.qualcomm.cn/generate_204
+#server_check_url=http://captive.apple.com/generate_204
+#server_check_url =http://www.google.com/generate_204
 # > 服务器测试超时时间 (毫秒)
 server_check_timeout = 2000
 # > 用于设置图标显示
@@ -48,7 +48,6 @@ static=自选节点, proxy, img-url=https://nav.qixinpro.com/rules/QuantumultX/i
 static=AppleTV, direct, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Apple.png
 static=海外服务, 自选节点, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Global.png
 static=大陆服务, direct, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/China.png
-
 
 [server_local]
 vmess=f.lifengchun.top:443, method=chacha20-ietf-poly1305, password=c890e95b-8b9b-4e7e-945b-8737503c1b54, obfs=wss, obfs-host=f.lifengchun.top, obfs-uri=/Ace95pV98, tls-verification=true, udp-relay=false, tag=Llifeng
