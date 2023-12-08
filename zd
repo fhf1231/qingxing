@@ -8,7 +8,7 @@ server=119.29.29.29
 
 [policy]
 static=自选节点, proxy, reject, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Static.png
-static=PROXY, 自选节点, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Global.png
+static=POXY, 自选节点, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Global.png
 static=DIRECT, direct, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/China.png
 static=REJECT, reject, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Apple.png
 
