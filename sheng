@@ -1,10 +1,47 @@
 [general]
+# > 用于节点延迟测试
+server_check_url=http://cp.cloudflare.com/generate_204
+;server_check_url= http://www.qualcomm.cn/generate_204
+;server_check_url=http://captive.apple.com/generate_204
+;server_check_url =http://www.google.com/generate_204
+# > 服务器测试超时时间 (毫秒)
+server_check_timeout = 2000
+# > 用于设置图标显示
+profile_img_url=https://github.githubassets.com/images/modules/site/integrators/google.png
+# > 用于Check节点IP地址(以下geo_location_checker任选一个即可)
+geo_location_checker=http://ip-api.com/json/?lang=zh-CN, https://ghproxy.com/https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/IP_API.js
+#geo_location_checker=http://ip-api.com/json/?lang=zh-CN, https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/GeoLocationChecker/QuantumultX/IP-API.js
+#geo_location_checker=disabled
 excluded_routes=192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, 17.0.0.0/8
+udp_whitelist=1-442, 444-65535
+dns_exclusion_list=*.cmpassport.com, *.jegotrip.com.cn, *.icitymobile.mobi, id6.me, *.pingan.com.cn, *.cmbchina *.localnetwork.uop, *.qq.com, qq.com
 
 [dns]
+no-system
 no-ipv6
 server=223.5.5.5
 server=119.29.29.29
+server=223.6.6.6
+# 指定域名解析dns
+server=/*.taobao.com/223.5.5.5
+server=/*.tmall.com/223.5.5.5
+server=/*.alipay.com/223.5.5.5
+server=/*.alicdn.com/223.5.5.5
+server=/*.aliyun.com/223.5.5.5
+server=/*.jd.com/119.28.28.28
+server=/*.qq.com/119.28.28.28
+server=/*.tencent.com/119.28.28.28
+server=/*.weixin.com/119.28.28.28
+server=/*.bilibili.com/119.29.29.29
+server=/hdslb.com/119.29.29.29
+server=/*.163.com/119.29.29.29
+server=/*.126.com/119.29.29.29
+server=/*.126.net/119.29.29.29
+server=/*.127.net/119.29.29.29
+server=/*.netease.com/119.29.29.29
+server=/*.mi.com/119.29.29.29
+server=/*.xiaomi.com/119.29.29.29
+address=/mtalk.google.com/108.177.125.188
 
 [policy]
 static=自选节点, proxy, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Static.png
@@ -26,17 +63,20 @@ https://nav.qixinpro.com/rules/QuantumultX/gz/mainland.list, tag=大陆服务, u
 
 [filter_local]
 host-suffix, local, direct
-host-keyword, merlinblog, proxy
 ip-cidr, 10.0.0.0/8, direct
 ip-cidr, 17.0.0.0/8, direct
 ip-cidr, 100.64.0.0/10, direct
 ip-cidr, 127.0.0.0/8, direct
 ip-cidr, 172.16.0.0/12, direct
 ip-cidr, 192.168.0.0/16, direct
+ip6-cidr, fe80::/10, direct
 geoip, cn, direct
 final, direct
 
 [rewrite_remote]
+https://limbopro.com/Adblock4limbo.conf, tag=毒奶特供(去网页广告计划), enabled=true
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/YouTubeAds.conf, tag=DivineEngine (Youtube AdsBlock), enabled=true
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/Advertising.conf, tag=DivineEngine (Advertising), enabled=true
 
 [rewrite_local]
 
