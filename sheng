@@ -54,11 +54,12 @@ vmess=f.lifengchun.top:443, method=chacha20-ietf-poly1305, password=c890e95b-8b9
 vmess=b.baimabridge.top:443, method=chacha20-ietf-poly1305, password=32fe0781-fa03-4e0b-ac02-64b05f3ea275, obfs=wss, obfs-host=b.baimabridge.top, obfs-uri=/BApxb558, tls-verification=true, udp-relay=false, tag=Bbaima
 
 [server_remote]
-
-[filter_remote]
+FILTER_LAN, tag=LAN, force-policy=direct, enabled=true
+FILTER_REGION, tag=CN, force-policy=direct, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/AppleTV/AppleTV.list, opt-parser=false, enabled=true
 https://nav.qixinpro.com/rules/QuantumultX/gz/overseas.list, tag=海外服务, update-interval=172800, opt-parser=false, enabled=true
 https://nav.qixinpro.com/rules/QuantumultX/gz/mainland.list, tag=大陆服务, update-interval=172800, opt-parser=false, enabled=true
+
 
 [filter_local]
 host-suffix, local, direct
