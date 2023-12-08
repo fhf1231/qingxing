@@ -7,10 +7,10 @@ server=223.5.5.5
 server=119.29.29.29
 
 [policy]
-static=自选节点, proxy, reject, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Static.png
-static=POXY, 自选节点, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Global.png
-static=DRECT, direct, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/China.png
-static=RJECT, reject, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Apple.png
+static=自选节点, proxy, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Static.png
+static=海外服务, 自选节点, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Global.png
+static=大陆服务, direct, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/China.png
+static=屏蔽服务, reject, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Apple.png
 
 [server_local]
 vmess=jinwu123.top:443, method=chacha20-ietf-poly1305, password=c357e4b0-1c51-43c3-a015-249d4d566336, obfs=wss, obfs-host=jinwu123.top, obfs-uri=/jinWu28e99, tls-verification=true, udp-relay=false, tag=jinwu
@@ -20,9 +20,9 @@ vmess=b.baimabridge.top:443, method=chacha20-ietf-poly1305, password=32fe0781-fa
 [server_remote]
 
 [filter_remote]
-https://raw.githubusercontent.com/fhf1231/filterurl/main/PROXY, tag=PROXY, enabled=true
-https://raw.githubusercontent.com/fhf1231/filterurl/main/DIRECT, tag=DIRECT, enabled=true
-https://raw.githubusercontent.com/fhf1231/filterurl/main/DIRECT, tag=DIRECT, enabled=true
+https://raw.githubusercontent.com/fhf1231/filterurl/main/PROXY, tag=海外服务, enabled=true
+https://raw.githubusercontent.com/fhf1231/filterurl/main/DIRECT, tag=大陆服务, enabled=true
+https://raw.githubusercontent.com/fhf1231/filterurl/main/REJECT, tag=屏蔽服务, enabled=true
 
 [filter_local]
 host-suffix, local, direct
