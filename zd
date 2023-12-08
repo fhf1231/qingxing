@@ -1,0 +1,45 @@
+[general]
+excluded_routes=192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, 17.0.0.0/8
+
+[dns]
+no-ipv6
+server=223.5.5.5
+server=119.29.29.29
+
+[policy]
+static=🚦 自选节点, proxy, reject,
+static=🌍 PROXY, 自选节点,
+static=🐼 DIRECT, direct,
+static=🚫 REJECT, reject,
+
+[server_local]
+vmess=jinwu123.top:443, method=chacha20-ietf-poly1305, password=c357e4b0-1c51-43c3-a015-249d4d566336, obfs=wss, obfs-host=jinwu123.top, obfs-uri=/jinWu28e99, tls-verification=true, udp-relay=false, tag=jinwu
+vmess=f.lifengchun.top:443, method=chacha20-ietf-poly1305, password=c890e95b-8b9b-4e7e-945b-8737503c1b54, obfs=wss, obfs-host=f.lifengchun.top, obfs-uri=/Ace95pV98, tls-verification=true, udp-relay=false, tag=lifeng
+vmess=b.baimabridge.top:443, method=chacha20-ietf-poly1305, password=32fe0781-fa03-4e0b-ac02-64b05f3ea275, obfs=wss, obfs-host=b.baimabridge.top, obfs-uri=/BApxb558, tls-verification=true, udp-relay=false, tag=baiam
+
+[server_remote]
+
+[filter_remote]
+https://raw.githubusercontent.com/fhf1231/filterurl/main/PROXY, tag=PROXY, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/fhf1231/filterurl/main/DIRECT, tag=DIRECT, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/fhf1231/filterurl/main/DIRECT, tag=DIRECT, opt-parser=false, enabled=true
+
+[filter_local]
+host-suffix, local, direct
+host-keyword, merlinblog, proxy
+ip-cidr, 10.0.0.0/8, direct
+ip-cidr, 17.0.0.0/8, direct
+ip-cidr, 100.64.0.0/10, direct
+ip-cidr, 127.0.0.0/8, direct
+ip-cidr, 172.16.0.0/12, direct
+ip-cidr, 192.168.0.0/16, direct
+geoip, cn, direct
+final, direct
+
+[rewrite_remote]
+
+[rewrite_local]
+
+[task_local]
+
+[mitm]
