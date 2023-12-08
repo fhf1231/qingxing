@@ -7,10 +7,10 @@ server=223.5.5.5
 server=119.29.29.29
 
 [policy]
-static=🚦 自选节点, proxy, reject,
-static=🌍 PROXY, 自选节点,
-static=🐼 DIRECT, direct,
-static=🚫 REJECT, reject,
+static=自选节点, proxy, reject,
+static=PROXY, 自选节点,
+static=DIRECT, direct,
+static=REJECT, reject,
 
 [server_local]
 vmess=jinwu123.top:443, method=chacha20-ietf-poly1305, password=c357e4b0-1c51-43c3-a015-249d4d566336, obfs=wss, obfs-host=jinwu123.top, obfs-uri=/jinWu28e99, tls-verification=true, udp-relay=false, tag=jinwu
@@ -20,9 +20,9 @@ vmess=b.baimabridge.top:443, method=chacha20-ietf-poly1305, password=32fe0781-fa
 [server_remote]
 
 [filter_remote]
-https://raw.githubusercontent.com/fhf1231/filterurl/main/PROXY, tag=PROXY, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/fhf1231/filterurl/main/DIRECT, tag=DIRECT, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/fhf1231/filterurl/main/DIRECT, tag=DIRECT, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/fhf1231/filterurl/main/PROXY, tag=PROXY, enabled=true
+https://raw.githubusercontent.com/fhf1231/filterurl/main/DIRECT, tag=DIRECT, enabled=true
+https://raw.githubusercontent.com/fhf1231/filterurl/main/DIRECT, tag=DIRECT, enabled=true
 
 [filter_local]
 host-suffix, local, direct
