@@ -7,7 +7,7 @@ server=223.5.5.5
 server=119.29.29.29
 
 [policy]
-static=自选节点, proxy, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Static.png
+static=自选节点, proxy, direct, reject, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Static.png
 static=海外服务, 自选节点, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Global.png
 static=大陆服务, direct, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/China.png
 static=屏蔽服务, reject, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Apple.png
