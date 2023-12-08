@@ -2,7 +2,9 @@
 excluded_routes=192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, 17.0.0.0/8
 
 [dns]
+no-system
 no-ipv6
+over-tls = true
 server=223.5.5.5
 server=119.29.29.29
 
@@ -27,6 +29,12 @@ https://raw.githubusercontent.com/fhf1231/filterurl/main/REJECT, tag=屏蔽服�
 [filter_local]
 host-suffix, local, direct
 host-keyword, merlinblog, proxy
+
+user-agent, ?Temu*, proxy
+host, www.temu.com, proxy
+host-keyword, temu, proxy
+host-suffix, temu.com, proxy
+
 ip-cidr, 10.0.0.0/8, direct
 ip-cidr, 17.0.0.0/8, direct
 ip-cidr, 100.64.0.0/10, direct
