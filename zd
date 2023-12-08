@@ -1,8 +1,12 @@
 [general]
 # > 用于节点延迟测试
-server_check_url= http://www.gstatic.com/generate_204
+
+server_check_url=http://cp.cloudflare.com/generate_204
+;server_check_url= http://www.qualcomm.cn/generate_204
+;server_check_url=http://captive.apple.com/generate_204
+;server_check_url =http://www.google.com/generate_204
 # > 服务器测试超时时间 (毫秒)
-server_check_timeout = 3000
+server_check_timeout = 2000
 # > 用于设置图标显示
 profile_img_url=https://github.githubassets.com/images/modules/site/integrators/google.png
 # > 用于Check节点IP地址(以下geo_location_checker任选一个即可)
@@ -19,6 +23,26 @@ no-ipv6
 server=223.5.5.5
 server=119.29.29.29
 server=223.6.6.6
+# 指定域名解析dns
+server=/*.taobao.com/223.5.5.5
+server=/*.tmall.com/223.5.5.5
+server=/*.alipay.com/223.5.5.5
+server=/*.alicdn.com/223.5.5.5
+server=/*.aliyun.com/223.5.5.5
+server=/*.jd.com/119.28.28.28
+server=/*.qq.com/119.28.28.28
+server=/*.tencent.com/119.28.28.28
+server=/*.weixin.com/119.28.28.28
+server=/*.bilibili.com/119.29.29.29
+server=/hdslb.com/119.29.29.29
+server=/*.163.com/119.29.29.29
+server=/*.126.com/119.29.29.29
+server=/*.126.net/119.29.29.29
+server=/*.127.net/119.29.29.29
+server=/*.netease.com/119.29.29.29
+server=/*.mi.com/119.29.29.29
+server=/*.xiaomi.com/119.29.29.29
+address=/mtalk.google.com/108.177.125.188
 
 [policy]
 static=自选节点, proxy, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Static.png
