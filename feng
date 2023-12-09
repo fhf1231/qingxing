@@ -8,7 +8,7 @@ server_check_url=http://cp.cloudflare.com/generate_204
 server_check_timeout = 2000
 excluded_routes=192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, 17.0.0.0/8
 udp_drop_list=1-443, 444-65535
-dns_exclusion_list=*.cmpassport.com, *.jegotrip.com.cn, *.icitymobile.mobi, id6.me, *.pingan.com.cn, *.cmbchina *.localnetwork.uop, *.qq.com, qq.com
+dns_exclusion_list=*.cmpassport.com, *.jegotrip.com.cn, *.icitymobile.mobi, id6.me, *.pingan.com.cn, *.cmbchina *.localnetwork.uop
 
 [dns]
 no-system
