@@ -945,7 +945,7 @@ final, direct
 
 [rewrite_remote]
 https://limbopro.com/Adblock4limbo.conf, tag=毒奶特供(去网页广告计划), enabled=true
-https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/YouTubeAds.conf, tag=DivineEngine (Youtube AdsBlock), enabled=true
+https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/YoutubeAds.conf, tag=DivineEngine (Youtube AdsBlock), enabled=true
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/Advertising.conf, tag=DivineEngine (Advertising), enabled=true
 
 [rewrite_local]
