@@ -74,7 +74,7 @@ geoip, cn, direct
 final, direct
 
 [rewrite_remote]
-https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/YouTubeAds.conf, tag=DivineEngine (Youtube AdsBlock), enabled=true
+https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/YoutubeAds.conf, tag=DivineEngine (Youtube AdsBlock), enabled=true
 
 [rewrite_local]
 
