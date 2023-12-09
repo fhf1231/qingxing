@@ -13,7 +13,8 @@ profile_img_url=https://github.githubassets.com/images/modules/site/integrators/
 geo_location_checker=http://ip-api.com/json/?lang=zh-CN, https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/GeoLocationChecker/QuantumultX/IP-API.js
 #geo_location_checker=disabled
 excluded_routes=192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, 17.0.0.0/8
-udp_whitelist=1-443, 444-65535
+udp_whitelist=1-442, 444-65535
+udp_drop_list=443
 dns_exclusion_list=*.cmpassport.com, *.jegotrip.com.cn, *.icitymobile.mobi, id6.me, *.pingan.com.cn, *.cmbchina *.localnetwork.uop, *.qq.com, qq.com
 
 [dns]
