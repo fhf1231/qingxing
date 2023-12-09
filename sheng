@@ -35,6 +35,7 @@ server=/*.127.net/119.29.29.29
 server=/*.netease.com/119.29.29.29
 server=/*.mi.com/119.29.29.29
 server=/*.xiaomi.com/119.29.29.29
+address=/mtalk.google.com/108.177.125.188
 
 [policy]
 static=自选节点, proxy, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Static.png
