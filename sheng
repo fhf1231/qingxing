@@ -72,7 +72,6 @@ final, direct
 [rewrite_remote]
 
 [rewrite_local]
-# ======= 视频广告请求 ======= #
 (^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier,(.+) url 302 $1$2$3
 ^https?:\/\/[\w-]+\.googlevideo\.com\/(?!(dclk_video_ads|videoplayback\?)).+&oad url reject-200
 ^https?:\/\/(www|s)\.youtube\.com\/api\/stats\/ads url reject-200
