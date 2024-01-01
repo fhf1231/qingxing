@@ -35,8 +35,8 @@ vmess=b.baimabridge.top:443, method=chacha20-ietf-poly1305, password=32fe0781-fa
 FILTER_LAN, tag=LAN, force-policy=direct, enabled=true
 FILTER_REGION, tag=CN, force-policy=direct, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/AppleTV.list, tag=AppleTV, force-policy=AppleTV, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=Overseas, force-policy=overseas, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/fhf1231/filterurl/main/mainland.list, tag=Mainland, force-policy=mainland, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=Overseas, force-policy=Overseas, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/fhf1231/filterurl/main/mainland.list, tag=Mainland, force-policy=Mainland, opt-parser=false, enabled=true
 
 
 [filter_local]
