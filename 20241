@@ -26,7 +26,7 @@ static=Overseas, Optional, img-url=https://nav.qixinpro.com/rules/QuantumultX/im
 static=Mainland, direct, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/China.png
 
 [server_local]
-vmess=jinwu123.top:443, method=chacha20-ietf-poly1305, password=334b633e-d617-48f9-bff6-7b70423f5650, obfs=wss, obfs-host=jinwu123.top, obfs-uri=/jinWu78e19, tls-verification=true, udp-relay=false, tls13=true, fast-open=false, tag=jinwu
+vmess=jinwu123.top:443, method=chacha20-ietf-poly1305, password=334b633e-d617-48f9-bff6-7b70423f5650, obfs=wss, obfs-host=jinwu123.top, obfs-uri=/jinWu78e19, tls-verification=true, udp-relay=false, tag=jinwu
 vmess=f.lifengchun.top:443, method=chacha20-ietf-poly1305, password=c890e95b-8b9b-4e7e-945b-8737503c1b54, obfs=wss, obfs-host=f.lifengchun.top, obfs-uri=/Ace95pV98, tls-verification=true, udp-relay=false, tag=Llifeng
 vmess=l.lyshen.com:443, method=chacha20-ietf-poly1305, password=32fe0781-fa03-4e0b-ac02-64b05f3ea275, obfs=wss, obfs-host=l.lyshen.com:443, obfs-uri=/lyshen78e19, tls-verification=true, udp-relay=false, tag=lyshen
 
