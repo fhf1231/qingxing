@@ -36,7 +36,7 @@ vmess=l.lyshen.com:443, method=chacha20-ietf-poly1305, password=32fe0781-fa03-4e
 FILTER_LAN, tag=LAN, force-policy=direct, enabled=true
 FILTER_REGION, tag=CN, force-policy=direct, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/AppleTV.list, tag=AppleTV, force-policy=AppleTV, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=海外服务, force-policy=海外服务s, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=海外服务, force-policy=海外服务, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/mainland.list, tag=大陆服务, force-policy=大陆服务, opt-parser=false, enabled=true
 
 
