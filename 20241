@@ -20,10 +20,10 @@ server=119.29.29.29
 server=119.28.28.28
 
 [policy]
-static=Optional, proxy, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Static.png
+static=自选节点, proxy, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Static.png
 static=AppleTV, direct, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Apple.png
-static=Overseas, Optional, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Global.png
-static=Mainland, direct, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/China.png
+static=海外服务, 自选节点, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Global.png
+static=大陆服务, direct, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/China.png
 
 [server_local]
 vmess=jinwu123.top:443, method=chacha20-ietf-poly1305, password=334b633e-d617-48f9-bff6-7b70423f5650, obfs=wss, obfs-host=jinwu123.top, obfs-uri=/jinWu78e19, tls-verification=true, udp-relay=false, tag=jinwu
@@ -36,8 +36,8 @@ vmess=l.lyshen.com:443, method=chacha20-ietf-poly1305, password=32fe0781-fa03-4e
 FILTER_LAN, tag=LAN, force-policy=direct, enabled=true
 FILTER_REGION, tag=CN, force-policy=direct, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/AppleTV.list, tag=AppleTV, force-policy=AppleTV, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=Overseas, force-policy=Overseas, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/fhf1231/filterurl/main/mainland.list, tag=Mainland, force-policy=Mainland, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=海外服务, force-policy=海外服务s, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/fhf1231/filterurl/main/mainland.list, tag=大陆服务, force-policy=大陆服务, opt-parser=false, enabled=true
 
 
 [filter_local]
