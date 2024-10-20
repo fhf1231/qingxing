@@ -25,8 +25,8 @@ static=海外服务, 自选节点, img-url=https://nav.qixinpro.com/rules/Quantu
 static=大陆服务, direct, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/China.png
 
 [server_local]
-vmess=h.lifengchun.top:443, method=chacha20-ietf-poly1305, password=e85c3b5e-de0a-44f8-a834-aee034d048d7, obfs=wss, obfs-host=h.lifengchun.top, obfs-uri=/hosWu78e19, tls-verification=true, udp-relay=false, tag=Lhlifeng
-vmess=jinwu123.top:443, method=chacha20-ietf-poly1305, password=0986131e-ba14-4ef5-8794-c2e3b1ade4c9, obfs=wss, obfs-host=jinwu123.top, obfs-uri=/jinWu12ea9, tls-verification=true, udp-relay=false, tag=jinwu
+vmess=h.lifengchun.top:443, method=chacha20-ietf-poly1305, password=e85c3b5e-de0a-44f8-a834-aee034d048d7, obfs=wss, obfs-host=h.lifengchun.top, obfs-uri=/hosWu78e19, tls-verification=true, udp-relay=false, tag=hos
+vmess=r.lifengchun.top:443, method=chacha20-ietf-poly1305, password=0986131e-ba14-4ef5-8794-c2e3b1ade4c9, obfs=wss, obfs-host=r.lifengchun.top, obfs-uri=/jinWu12ea9, tls-verification=true, udp-relay=false, tag=rack
 vmess=f.lifengchun.top:443, method=chacha20-ietf-poly1305, password=c890e95b-8b9b-4e7e-945b-8737503c1b54, obfs=wss, obfs-host=f.lifengchun.top, obfs-uri=/Ace95pV98, tls-verification=true, udp-relay=false, tag=Llifeng
 
 [server_remote]
