@@ -22,7 +22,7 @@ server=119.28.28.28
 [policy]
 static=自选节点, proxy, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Static.png
 static=AppleTV, direct, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Apple.png
-static=Advertising, reject, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Apple.png
+static=Advertising, reject, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/Color/Advertising.png
 static=海外服务, 自选节点, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Global.png
 static=大陆服务, direct, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/China.png
 
