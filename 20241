@@ -24,7 +24,7 @@ static=自选节点, proxy, img-url=https://nav.qixinpro.com/rules/QuantumultX/i
 static=AppleTV, direct, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Apple.png
 static=海外服务, 自选节点, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Global.png
 static=大陆服务, direct, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/China.png
-static=REJECT, reject, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Apple.png
+static=ad, reject, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Apple.png
 
 [server_local]
 vmess=r.lifengchun.top:443, method=chacha20-ietf-poly1305, password=0986131e-ba14-4ef5-8794-c2e3b1ade4c9, obfs=wss, obfs-host=r.lifengchun.top, obfs-uri=/jinWu12ea9, tls-verification=true, udp-relay=false, tag=rrack
@@ -41,7 +41,7 @@ FILTER_REGION, tag=CN, force-policy=direct, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/AppleTV.list, tag=AppleTV, force-policy=AppleTV, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=海外服务, force-policy=海外服务, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/mainland.list, tag=大陆服务, force-policy=大陆服务, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/fhf1231/filterurl/refs/heads/main/Reject, tag=REJECT, force-policy=REJECT, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/fhf1231/filterurl/refs/heads/main/Reject, tag=ad, force-policy=ad, opt-parser=false, enabled=true
 
 [filter_local]
 host-suffix, local, direct
