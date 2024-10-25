@@ -20,11 +20,11 @@ server=119.29.29.29
 server=119.28.28.28
 
 [policy]
-static=自选节点, proxy, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Static.png
+static=自选节点, proxy, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Static.png
 static=AppleTV, direct, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Apple.png
-static=Advertising, reject, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/Color/Advertising.png
-static=海外服务, 自选节点, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/Global.png
-static=大陆服务, direct, img-url=https://nav.qixinpro.com/rules/QuantumultX/img/China.png
+static=Advertising, reject, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/mini/Advertising.png
+static=海外服务, 自选节点, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/Color/Global.png
+static=大陆服务, direct, img-url=https://github.com/Koolson/Qure/blob/master/IconSet/Dark/China.png
 
 [server_local]
 vmess=r.lifengchun.top:443, method=chacha20-ietf-poly1305, password=0986131e-ba14-4ef5-8794-c2e3b1ade4c9, obfs=wss, obfs-host=r.lifengchun.top, obfs-uri=/jinWu12ea9, tls-verification=true, udp-relay=false, tag=rrack
