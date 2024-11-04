@@ -22,7 +22,7 @@ server=119.28.28.28
 [policy]
 static=自选节点, proxy, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Static.png
 static=AppleTV, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Apple.png
-static=ad, reject, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Advertising.png
+static=guangao, reject, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Advertising.png
 static=海外服务, 自选节点, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Global.png
 static=大陆服务, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/China.png
 
@@ -39,7 +39,7 @@ vmess=f.lifengchun.top:443, method=chacha20-ietf-poly1305, password=dad3b5a1-b09
 FILTER_LAN, tag=LAN, force-policy=direct, enabled=true
 FILTER_REGION, tag=CN, force-policy=direct, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/AppleTV.list, tag=AppleTV, force-policy=AppleTV, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/fhf1231/filterurl/refs/heads/main/advertise.list, tag=ad, force-policy=ad, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/fhf1231/filterurl/refs/heads/main/advertise.list, tag=guangao, force-policy=guangao, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=海外服务, force-policy=海外服务, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/mainland.list, tag=大陆服务, force-policy=大陆服务, opt-parser=false, enabled=true
 
