@@ -1,3 +1,4 @@
+
 [general]
 # > 用于节点延迟测试
 server_check_url=http://cp.cloudflare.com/generate_204
