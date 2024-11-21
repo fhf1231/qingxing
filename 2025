@@ -28,7 +28,7 @@ static=大陆服务, direct, img-url=https://raw.githubusercontent.com/fhf1231/f
 
 [server_local]
 vmess=r.lifengchun.top:443, method=chacha20-ietf-poly1305, password=0986131e-ba14-4ef5-8794-c2e3b1ade4c9, obfs=wss, obfs-host=r.lifengchun.top, obfs-uri=/jinWu12ea9, tls-verification=true, udp-relay=false, tag=rrack
-vmess=h.lifengchun.top:443, method=chacha20-ietf-poly1305, password=e85c3b5e-de0a-44f8-a834-aee034d048d7, obfs=wss, obfs-host=h.lifengchun.top, obfs-uri=/hosWu78e19, tls-verification=true, udp-relay=false, tag=hus
+vmess=y.lifengchun.top:443, method=chacha20-ietf-poly1305, password=789324c6-4d3f-4ff0-833c-3193b81108ef, obfs=wss, obfs-host=y.lifengchun.top, obfs-uri=/ytlDu78e19, tls-verification=true, udp-relay=false, tag=ytld
 vmess=l.lyshen.com:443, method=chacha20-ietf-poly1305, password=32fe0781-fa03-4e0b-ac02-64b05f3ea275, obfs=wss, obfs-host=l.lyshen.com, obfs-uri=/lyshen78e19, tls-verification=true, udp-relay=false, tag=lyshen
 vmess=f.lifengchun.top:443, method=chacha20-ietf-poly1305, password=dad3b5a1-b096-40c6-b50e-7f7f6f43f189, obfs=wss, obfs-host=f.lifengchun.top, obfs-uri=/Fli95pV98, tls-verification=true, udp-relay=false, tag=fliwinds
 
