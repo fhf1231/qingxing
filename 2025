@@ -66,8 +66,8 @@ HOST-SUFFIX, ads.youtube.com, 广告
 HOST-SUFFIX, video-stats.youtube.com, 广告
 HOST-SUFFIX, admob.com, 广告
 HOST-SUFFIX, googleadservices.com, 广告
-HOST-SUFFIX, ytimg.com, 广告, match=ad
-HOST-SUFFIX, youtube-nocookie.com, 广告, match=ad
+HOST-KEYWORD, ad, 广告
+HOST-SUFFIX, youtube-nocookie.com, 广告
 HOST-SUFFIX, adnxs.com, 广告
 HOST-SUFFIX, adservice.google.com, 广告
 HOST-SUFFIX, flurry.com, 广告
@@ -91,6 +91,7 @@ final, direct
 ^https?:\/\/[\w-]+\.doubleclick\.net\/.* url reject
 ^https?:\/\/[\w-]+\.admob\.com\/.* url reject
 ^https?:\/\/[\w-]+\.googleadservices\.com\/.* url reject
+^https?:\/\/[\w-]+\.ytimg\.com\/.*[?&]ad.* url reject
 
 [task_local]
 
