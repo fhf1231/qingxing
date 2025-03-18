@@ -48,39 +48,34 @@ ip-cidr, 127.0.0.0/8, direct
 ip-cidr, 172.16.0.0/12, direct
 ip-cidr, 192.168.0.0/16, direct
 geoip, cn, direct
-HOST-SUFFIX, app-analytics-services.com, reject
-HOST-SUFFIX, doubleclick.net, reject
-HOST-SUFFIX, ad.doubleclick.net, reject
-HOST-SUFFIX, googleads.g.doubleclick.net, reject
-HOST-SUFFIX, pagead.l.doubleclick.net, reject
-HOST-SUFFIX, pubads.g.doubleclick.net, reject
-HOST-SUFFIX, pagead2.googlesyndication.com, reject
-HOST-SUFFIX, tpc.googlesyndication.com, reject
-HOST-SUFFIX, googleads4.g.doubleclick.net,reject
-HOST-SUFFIX, static.doubleclick.net, reject
-HOST-SUFFIX, securepubads.g.doubleclick.net, reject
-HOST-SUFFIX, adservice.google.com, reject
-HOST-SUFFIX, ads.google.com, reject
-HOST-SUFFIX, adserver.google.com, reject
-HOST-SUFFIX, adclick.g.doubleclick.net, reject
-HOST-SUFFIX, cm.g.doubleclick.net, reject
-HOST-SUFFIX, ade.googlesyndication.com, reject
-HOST-SUFFIX, googlesyndication.com, reject
-HOST-SUFFIX, adservices.google.com, reject
-HOST-SUFFIX, adwords.google.com, reject
-HOST-SUFFIX, googleadservices.com, reject
-HOST-SUFFIX, www.googleadservices.com, reject
-HOST-SUFFIX, partner.googleadservices.com, reject
-HOST-SUFFIX, ads.youtube.com, reject
-HOST-SUFFIX, video-stats.youtube.com, reject
-HOST-SUFFIX, youtube.googleapis.com, reject
-HOST-SUFFIX, yt3.ggpht.com, reject
-HOST-SUFFIX, youtube-nocookie.com, reject
-
-host-suffix, youtube.com, proxy
-host-suffix, googlevideo.com, proxy
-host-suffix, youtubei.googleapis.com, proxy
-host-suffix, ytimg.com, proxy
+host-suffix, ads.youtube.com, reject
+host-suffix, googleads.g.doubleclick.net, reject
+host-suffix, pubads.g.doubleclick.net, reject
+host-suffix, securepubads.g.doubleclick.net, reject
+host-suffix, adservice.google.com, reject
+ads.youtube.com, reject
+googleads.g.doubleclick.net, reject
+pubads.g.doubleclick.net, reject
+securepubads.g.doubleclick.net, reject
+adservice.google.com, reject
+ads.google.com, reject
+adserver.google.com, reject
+adclick.g.doubleclick.net, reject
+cm.g.doubleclick.net, reject
+pagead2.googlesyndication.com, reject
+googlesyndication.com, reject
+partner.googleadservices.com, reject
+googleadservices.com, reject
+www.googleadservices.com, reject
+doubleclick.net, reject
+ad.doubleclick.net, reject
+pagead.l.doubleclick.net, reject
+static.doubleclick.net, reject
+video-ad.googlesyndication.com, reject
+host-wildcard, *.youtubei.com, reject
+host-wildcard, *.ytimg.com/ad*, reject
+host-keyword, googlevideo.com/get_midroll_info, reject
+host-keyword, googlevideo.com/ad_break, reject
 
 final, direct
 
