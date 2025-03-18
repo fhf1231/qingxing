@@ -20,18 +20,20 @@ server=119.29.29.29
 server=119.28.28.28
 
 [policy]
-static=自选节点, proxy, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Static.png
+static=自选节点, fliwindsvm, proxy, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Static.png
 static=AppleTV, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Apple.png
 static=广告, reject, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Advertising.png
 static=海外服务, 自选节点, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Global.png
 static=大陆服务, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/China.png
 
 [server_local]
+vmess=f.lifengchun.top:443, method=chacha20-ietf-poly1305, password=dad3b5a1-b096-40c6-b50e-7f7f6f43f189, obfs=wss, obfs-uri=/Fli95pV98, fast-open=false, udp-relay=false, tag=fliwindsvm
+vless=s.lifengchun.top:443, method=none, password=789324c6-4d3f-4ff0-833c-3193b81108ef, obfs=wss, obfs-uri=/vllDu78evl, fast-open=false, udp-relay=false, tag=slsjvl
 vmess=r.lifengchun.top:443, method=chacha20-ietf-poly1305, password=0986131e-ba14-4ef5-8794-c2e3b1ade4c9, obfs=wss, obfs-uri=/jinWu12ea9, fast-open=false, udp-relay=false, tag=dlsvm
 vmess=l.lyshen.com:443, method=chacha20-ietf-poly1305, password=32fe0781-fa03-4e0b-ac02-64b05f3ea275, obfs=wss, obfs-uri=/lyshen78e19, tls-verification=true, udp-relay=false, tag=lyshenvm
 vmess=s.lifengchun.top:443, method=chacha20-ietf-poly1305, password=789324c6-4d3f-4ff0-833c-3193b81108ef, obfs=wss, obfs-uri=/ytlDu78e19, fast-open=false, udp-relay=false, tag=lsjvm
-vless=s.lifengchun.top:443, method=none, password=789324c6-4d3f-4ff0-833c-3193b81108ef, obfs=wss, obfs-uri=/vllDu78evl, fast-open=false, udp-relay=false, tag=slsjvl
-vmess=f.lifengchun.top:443, method=chacha20-ietf-poly1305, password=dad3b5a1-b096-40c6-b50e-7f7f6f43f189, obfs=wss, obfs-uri=/Fli95pV98, fast-open=false, udp-relay=false, tag=fliwindsvm
+
+
 
 [server_remote]
 
