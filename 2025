@@ -5,11 +5,11 @@ server_check_url=http://cp.cloudflare.com/generate_204
 #server_check_url=http://captive.apple.com/generate_204
 #server_check_url =http://www.google.com/generate_204
 # > 服务器测试超时时间 (毫秒)
-server_check_timeout = 2000
+server_check_timeout = 3000
 dns_exclusion_list = *.lan, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, network-test.debian.org, detectportal.firefox.com, *.srv.nintendo.net, *.stun.playstation.net, *.xboxlive.com, *.logon.battle.net, pool.ntp.org, *.apple.com, *.miwifi.com
 dns_reject_domain_behavior = loopback
 excluded_routes = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, 17.0.0.0/8, 239.255.255.250/32
-udp_drop_list=1-443, 444-65535
+udp_drop_list=1-52, 54-442, 444-60000
 
 [dns]
 no-system
@@ -20,7 +20,7 @@ server=119.29.29.29
 server=119.28.28.28
 
 [policy]
-static=自选节点, fliwindsvm, proxy, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Static.png
+static=自选节点, proxy, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Static.png
 static=AppleTV, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Apple.png
 static=广告, reject, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Advertising.png
 static=海外服务, 自选节点, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Global.png
@@ -64,19 +64,36 @@ HOST-SUFFIX, video-ad.googlesyndication.com, 广告
 HOST-SUFFIX, pagead2.googlesyndication.com, 广告
 HOST-SUFFIX, ads.youtube.com, 广告
 HOST-SUFFIX, video-stats.youtube.com, 广告
-final, direct 
+HOST-SUFFIX, admob.com, 广告
+HOST-SUFFIX, *.admob.com, 广告
+HOST-SUFFIX, googleadservices.com, 广告
+HOST-SUFFIX, ytimg.com, 广告, match=ad
+HOST-SUFFIX, youtube-nocookie.com, 广告, match=ad
+HOST-SUFFIX, adnxs.com, 广告
+HOST-SUFFIX, adservice.google.com, 广告
+HOST-SUFFIX, flurry.com, 广告
+HOST-SUFFIX, mopub.com, 广告
+final, direct
 
 [rewrite_remote]
 
+
 [rewrite_local]
-^https?:\/\/[\w-]+\.googlevideo\.com\/(?!videoplayback).+&oad url reject
+^https?:\/\/[\w-]+\.googlevideo\.com\/(?!videoplayback|video|initplayback).+&oad url reject
+^https?:\/\/[\w-]+\.googlevideo\.com\/.*adformat.* url reject
+^https?:\/\/[\w-]+\.googlevideo\.com\/.*ad=1.* url reject
 ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v\d\/player\/ad_break url reject
 ^https?:\/\/(www|s)\.youtube\.com\/api\/stats\/ads url reject
+^https?:\/\/(www|s)\.youtube\.com\/api\/stats\/playback url reject
+^https?:\/\/(www|s)\.youtube\.com\/api\/ads url reject
 ^https?:\/\/(www|s)\.youtube\.com\/(pagead|ptracking) url reject
 ^https?:\/\/(www|s)\.youtube\.com\/get_midroll_info url reject
 ^https?:\/\/s\.youtube\.com\/api\/stats\/qoe\?adcontext url reject
+^https?:\/\/[\w-]+\.doubleclick\.net\/.* url reject
+^https?:\/\/[\w-]+\.admob\.com\/.* url reject
+^https?:\/\/[\w-]+\.googleadservices\.com\/.* url reject
 
 [task_local]
 
 [mitm]
-hostname = *.googlevideo.com, www.youtube.com, s.youtube.com, youtubei.googleapis.com
+hostname = *.googlevideo.com, www.youtube.com, s.youtube.com, youtubei.googleapis.com, *.doubleclick.net, *.admob.com, *.googleadservices.com, *.ytimg.com
