@@ -9,7 +9,7 @@ server_check_timeout = 3000
 dns_exclusion_list = *.lan, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, network-test.debian.org, detectportal.firefox.com, *.srv.nintendo.net, *.stun.playstation.net, *.xboxlive.com, *.logon.battle.net, pool.ntp.org, *.apple.com, *.miwifi.com
 dns_reject_domain_behavior = loopback
 excluded_routes = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, 17.0.0.0/8, 239.255.255.250/32
-udp_drop_list=1-52, 54-442, 444-60000
+# udp_drop_list=1-52, 54-442, 444-60000
 
 [dns]
 no-system
@@ -19,12 +19,14 @@ server=223.5.5.5
 server=119.29.29.29
 server=119.28.28.28
 
-[policy]
-static=自选节点, fliwindsvm, dlsvm, slsjvl, lsjvm, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Static.png
-static=AppleTV, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Apple.png
-static=广告, reject, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Advertising.png
-static=海外服务, 自选节点, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Global.png
-static=大陆服务, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/China.png
+
+[proxy_group]
+# 代理策略组
+proxy = select, fliwindsvm, slsjvl, dlsvm, lyshenvm, lsjvm, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Static.png
+AppleTV = direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Apple.png
+广告 = reject, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Advertising.png
+海外服务 = select, proxy, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Global.png
+大陆服务 = direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/China.png
 
 [server_local]
 vmess=f.lifengchun.top:443, method=chacha20-ietf-poly1305, password=dad3b5a1-b096-40c6-b50e-7f7f6f43f189, obfs=wss, obfs-uri=/Fli95pV98, fast-open=false, udp-relay=false, tag=fliwindsvm
