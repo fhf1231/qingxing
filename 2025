@@ -19,14 +19,13 @@ server=223.5.5.5
 server=119.29.29.29
 server=119.28.28.28
 
-
 [policy]
-# 代理策略组
-proxy = select, fliwindsvm, slsjvl, dlsvm, lyshenvm, lsjvm, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Static.png
-AppleTV = direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Apple.png
-广告 = reject, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Advertising.png
-海外服务 = select, proxy, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Global.png
-大陆服务 = direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/China.png
+static=自选节点, fliwindsvm, dlsvm, slsjvl, lsjvm, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Static.png
+static=AppleTV, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Apple.png
+static=广告, reject, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Advertising.png
+static=海外服务, 自选节点, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Global.png
+static=大陆服务, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/China.png
+
 
 [server_local]
 vmess=f.lifengchun.top:443, method=chacha20-ietf-poly1305, password=dad3b5a1-b096-40c6-b50e-7f7f6f43f189, obfs=wss, obfs-uri=/Fli95pV98, fast-open=false, udp-relay=false, tag=fliwindsvm
