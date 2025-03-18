@@ -68,7 +68,7 @@ host-suffix, pagead.l.doubleclick.net, reject
 host-suffix, static.doubleclick.net, reject
 host-suffix, video-ad.googlesyndication.com, reject
 host-wildcard, *.youtubei.com, reject
-host-wildcard, *.ytimg.com/ad*, reject
+host-wildcard, *.ytimg.com/*ad*, reject
 host-keyword, googlevideo.com/get_midroll_info, reject
 host-keyword, googlevideo.com/ad_break, rejectt
 
