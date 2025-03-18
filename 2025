@@ -20,7 +20,6 @@ server=119.29.29.29
 server=119.28.28.28
 
 [policy]
-static=广告, reject, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Advertising.png
 static=海外服务, proxy, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Global.png
 static=大陆服务, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/China.png
 static=AppleTV, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Apple.png
@@ -77,6 +76,12 @@ HOST-SUFFIX, video-stats.youtube.com, reject
 HOST-SUFFIX, youtube.googleapis.com, reject
 HOST-SUFFIX, yt3.ggpht.com, reject
 HOST-SUFFIX, youtube-nocookie.com, reject
+
+host-suffix, youtube.com, proxy
+host-suffix, googlevideo.com, proxy
+host-suffix, youtubei.googleapis.com, proxy
+host-suffix, ytimg.com, proxy
+
 final, direct
 
 [rewrite_remote]
