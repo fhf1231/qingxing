@@ -38,10 +38,8 @@ vmess=s.lifengchun.top:443, method=chacha20-ietf-poly1305, password=789324c6-4d3
 [server_remote]
 
 [filter_remote]
-FILTER_LAN, tag=LAN, force-policy=direct, enabled=true
-FILTER_REGION, tag=CN, force-policy=direct, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/AppleTV.list, tag=AppleTV, force-policy=AppleTV, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/fhf1231/filterurl/refs/heads/main/advertise.list, tag=广告, force-policy=广告, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/fhf1231/filterurl/main/advertise.list, tag=广告, force-policy=广告, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=海外服务, force-policy=海外服务, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/mainland.list, tag=大陆服务, force-policy=大陆服务, opt-parser=false, enabled=true
 
@@ -66,7 +64,7 @@ HOST-SUFFIX, video-ad.googlesyndication.com, 广告
 HOST-SUFFIX, pagead2.googlesyndication.com, 广告
 HOST-SUFFIX, ads.youtube.com, 广告
 HOST-SUFFIX, video-stats.youtube.com, 广告
-final, 自选节点
+final, direct 
 
 [rewrite_remote]
 
