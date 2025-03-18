@@ -53,29 +53,24 @@ host-suffix, googleads.g.doubleclick.net, reject
 host-suffix, pubads.g.doubleclick.net, reject
 host-suffix, securepubads.g.doubleclick.net, reject
 host-suffix, adservice.google.com, reject
-ads.youtube.com, reject
-googleads.g.doubleclick.net, reject
-pubads.g.doubleclick.net, reject
-securepubads.g.doubleclick.net, reject
-adservice.google.com, reject
-ads.google.com, reject
-adserver.google.com, reject
-adclick.g.doubleclick.net, reject
-cm.g.doubleclick.net, reject
-pagead2.googlesyndication.com, reject
-googlesyndication.com, reject
-partner.googleadservices.com, reject
-googleadservices.com, reject
-www.googleadservices.com, reject
-doubleclick.net, reject
-ad.doubleclick.net, reject
-pagead.l.doubleclick.net, reject
-static.doubleclick.net, reject
-video-ad.googlesyndication.com, reject
+host-suffix, ads.google.com, reject
+host-suffix, adserver.google.com, reject
+host-suffix, adclick.g.doubleclick.net, reject
+host-suffix, cm.g.doubleclick.net, reject
+host-suffix, pagead2.googlesyndication.com, reject
+host-suffix, googlesyndication.com, reject
+host-suffix, partner.googleadservices.com, reject
+host-suffix, googleadservices.com, reject
+host-suffix, www.googleadservices.com, reject
+host-suffix, doubleclick.net, reject
+host-suffix, ad.doubleclick.net, reject
+host-suffix, pagead.l.doubleclick.net, reject
+host-suffix, static.doubleclick.net, reject
+host-suffix, video-ad.googlesyndication.com, reject
 host-wildcard, *.youtubei.com, reject
 host-wildcard, *.ytimg.com/ad*, reject
 host-keyword, googlevideo.com/get_midroll_info, reject
-host-keyword, googlevideo.com/ad_break, reject
+host-keyword, googlevideo.com/ad_break, rejectt
 
 final, direct
 
