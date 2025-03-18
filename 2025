@@ -6,9 +6,9 @@ server_check_url=http://cp.cloudflare.com/generate_204
 #server_check_url =http://www.google.com/generate_204
 # > 服务器测试超时时间 (毫秒)
 server_check_timeout = 2000
-dns_exclusion_list = *.lan, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, network-test.debian.org, detectportal.firefox.com, resolver1.opendns.com, *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com, stun.*, *.qq.com, localhost.*.qq.com, *.logon.battlenet.com.cn, *.logon.battle.net, *.blzstatic.cn, *.cmpassport.com, id6.me, open.e.189.cn, mdn.open.wo.cn, auth.wosms.cn, *.jegotrip.com.cn, *.icitymobile.mobi, *.pingan.com.cn, *.cmbchina.com, *?miwifi.com, pool.ntp.org, *.pool.ntp.org, ntp.*.com, time.*.com, ntp?.*.com, time?.*.com, time.*.gov, time.*.edu.cn, *.ntp.org.cn, time.*.apple.com, PDC._msDCS.*.*, DC._msDCS.*.*, GC._msDCS.*.*
+dns_exclusion_list = *.lan, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, network-test.debian.org, detectportal.firefox.com, *.srv.nintendo.net, *.stun.playstation.net, *.xboxlive.com, *.logon.battle.net, pool.ntp.org, *.apple.com, *.miwifi.com
 dns_reject_domain_behavior = loopback
-excluded_routes=192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, 17.0.0.0/8, 239.255.255.250/32
+excluded_routes = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, 17.0.0.0/8, 239.255.255.250/32
 udp_drop_list=1-443, 444-65535
 
 [dns]
@@ -52,19 +52,31 @@ ip-cidr, 127.0.0.0/8, direct
 ip-cidr, 172.16.0.0/12, direct
 ip-cidr, 192.168.0.0/16, direct
 geoip, cn, direct
-final, direct 
+HOST-SUFFIX, doubleclick.net, 广告
+HOST-SUFFIX, ad.doubleclick.net, 广告
+HOST-SUFFIX, googleads.g.doubleclick.net, 广告
+HOST-SUFFIX, pagead.l.doubleclick.net, 广告
+HOST-SUFFIX, pubads.g.doubleclick.net, 广告
+HOST-SUFFIX, securepubads.g.doubleclick.net, 广告
+HOST-SUFFIX, static.doubleclick.net, 广告
+HOST-SUFFIX, googlesyndication.com, 广告
+HOST-SUFFIX, video-ad.googlesyndication.com, 广告
+HOST-SUFFIX, pagead2.googlesyndication.com, 广告
+HOST-SUFFIX, ads.youtube.com, 广告
+HOST-SUFFIX, video-stats.youtube.com, 广告
+final, 自选节点
 
 [rewrite_remote]
 
 [rewrite_local]
-(^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier,(.+) url 302 $1$2$3
-^https?:\/\/[\w-]+\.googlevideo\.com\/(?!(dclk_video_ads|videoplayback\?)).+&oad url reject
+^https?:\/\/[\w-]+\.googlevideo\.com\/(?!videoplayback).+&oad url reject
 ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v\d\/player\/ad_break url reject
-^https?:\/\/(www|s)\.youtube\.com\/api\/stats\/ads url reject-200
-^https?:\/\/(www|s)\.youtube\.com\/(pagead|ptracking) url reject-200
-^https?:\/\/s\.youtube\.com\/api\/stats\/qoe\?adcontext url reject-200
+^https?:\/\/(www|s)\.youtube\.com\/api\/stats\/ads url reject
+^https?:\/\/(www|s)\.youtube\.com\/(pagead|ptracking) url reject
+^https?:\/\/(www|s)\.youtube\.com\/get_midroll_info url reject
+^https?:\/\/s\.youtube\.com\/api\/stats\/qoe\?adcontext url reject
 
 [task_local]
 
 [mitm]
-hostname = -redirector*.googlevideo.com,*.googlevideo.com,www.youtube.com,s.youtube.com,youtubei.googleapis.com
+hostname = *.googlevideo.com, www.youtube.com, s.youtube.com, youtubei.googleapis.com
