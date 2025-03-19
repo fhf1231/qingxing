@@ -117,7 +117,7 @@ final, direct
 
 
 [rewrite_local]
-# 🎯 屏蔽 YouTube APP 端广告（去除前贴片广告、插播广告）
+#  屏蔽 YouTube APP 端广告（去除前贴片广告、插播广告）
 ^https?:\/\/(www\.)?youtube\.com\/api\/stats\/ads url reject
 ^https?:\/\/(www\.)?youtube\.com\/get_midroll_ url reject
 ^https?:\/\/(www\.)?youtube\.com\/get_video_info\?.*adformat url reject
@@ -128,16 +128,15 @@ final, direct
 ^https?:\/\/(www\.)?youtube\.com\/api\/stats\/playback\? url reject
 ^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/player\? url reject-dict
 
-# 🎯 屏蔽 Google 旗下广告服务
-^https?:\/\/(www\.)?doubleclick\.net\/ page reject
-^https?:\/\/(www\.)?googlesyndication\.com\/ page reject
-^https?:\/\/(www\.)?adservice\.google\..* page reject
-^https?:\/\/(www\.)?adwords\.google\..* page reject
-^https?:\/\/(www\.)?partner\.googleadservices\.com\/ page reject
-^https?:\/\/(www\.)?securepubads\.g\.doubleclick\.net\/ page reject
-^https?:\/\/(www\.)?ads\.youtube\.com\/ page reject
-^https?:\/\/(www\.)?yt3\.ggpht\.com\/ page reject
-
+#  屏蔽 Google 旗下广告服务
+^https?:\/\/(www\.)?doubleclick\.net\/ url reject
+^https?:\/\/(www\.)?googlesyndication\.com\/ url reject
+^https?:\/\/(www\.)?adservice\.google\..* url reject
+^https?:\/\/(www\.)?adwords\.google\..* url reject
+^https?:\/\/(www\.)?partner\.googleadservices\.com\/ url reject
+^https?:\/\/(www\.)?securepubads\.g\.doubleclick\.net\/ url reject
+^https?:\/\/(www\.)?ads\.youtube\.com\/ url reject
+^https?:\/\/(www\.)?yt3\.ggpht\.com\/ url reject
 
 [task_local]
 
