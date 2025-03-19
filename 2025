@@ -124,7 +124,8 @@ final, direct
 ^https?:\/\/(www\.)?youtube\.com\/watch\?v=.*&adformat url reject
 ^https?:\/\/(www\.)?youtube\.com\/api\/stats\/qoe\? url reject
 ^https?:\/\/(www\.)?youtube\.com\/api\/stats\/playback\? url reject
-^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/player\? url reject-dict
+^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/player\? url rejec
+^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/ad url reject
 
 #  屏蔽 Google 旗下广告服务
 ^https?:\/\/(www\.)?googleadservices\.com\/ url reject
