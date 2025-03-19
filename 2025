@@ -86,6 +86,7 @@ HOST-SUFFIX,video-stats.youtube.com,广告
 HOST-SUFFIX,ade.googlesyndication.com,广告
 HOST-SUFFIX,adservices.google.com,广告
 HOST-SUFFIX,app-analytics-services.com,广告
+HOST-SUFFIX,gstatic.com,广告
 HOST-WILDCARD,*.youtubei.com,广告
 
 # 屏蔽 YouTube APP 端广告（包括美国及其他地区）
