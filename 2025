@@ -127,6 +127,7 @@ final, direct
 ^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/player\? url reject-dict
 
 #  屏蔽 Google 旗下广告服务
+^https?:\/\/(www\.)?googleadservices\.com\/ url reject
 ^https?:\/\/(www\.)?doubleclick\.net\/ url reject
 ^https?:\/\/(www\.)?googlesyndication\.com\/ url reject
 ^https?:\/\/(www\.)?adservice\.google\..* url reject
