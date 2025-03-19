@@ -95,9 +95,6 @@ HOST-SUFFIX,youtube-ui.google.com,广告
 HOST-SUFFIX,youtube-ads.google.com,广告
 HOST-SUFFIX,youtubei.googleapis.com,广告
 HOST-SUFFIX,youtube.googleapis.com,广告
-HOST-SUFFIX,youtube.com/api/stats/qoe,广告
-HOST-SUFFIX,youtube.com/api/stats/playback,广告
-HOST-SUFFIX,youtube.com/api/stats/ads,广告
 HOST-SUFFIX,s.youtube.com,广告
 HOST-SUFFIX,m.youtube.com,广告
 
