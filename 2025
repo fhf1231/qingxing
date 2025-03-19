@@ -149,6 +149,8 @@ final, direct
 ^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/player\? url reject-dict
 ^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/ad url reject
 
+^https?:\/\/(?:www|m)?\.(youtube|google)\.com\/[^?&]*[?&](ad_|adsense_|adformat_|ad_notify|ad_break),REJECT
+
 #  屏蔽 Google 旗下广告服务
 ^https?:\/\/(www\.)?googleadservices\.com\/ url reject
 ^https?:\/\/(www\.)?doubleclick\.net\/ url reject
