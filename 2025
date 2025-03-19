@@ -89,6 +89,17 @@ HOST-SUFFIX,app-analytics-services.com,广告
 HOST-SUFFIX,gstatic.com,广告
 HOST-WILDCARD,*.youtubei.com,广告
 
+HOST-SUFFIX,manifest.googlevideo.com,广告
+HOST-SUFFIX,redirector.googlevideo.com,广告
+HOST-SUFFIX,r*.sn-*.googlevideo.com,广告
+HOST-SUFFIX,o*.sn-*.googlevideo.com,广告
+HOST-SUFFIX,youtubei.googleapis.com,广告
+HOST-SUFFIX,youtube.googleapis.com,广告
+HOST-SUFFIX,youtube-ads.google.com,广告
+HOST-SUFFIX,ytimg.l.google.com,广告
+HOST-SUFFIX,video-stats.l.google.com,广告
+HOST-SUFFIX,client-channel.google.com,广告
+
 # 屏蔽 YouTube APP 端广告（包括美国及其他地区）
 HOST-SUFFIX,android.clients.google.com,广告
 HOST-SUFFIX,play.googleapis.com,广告
@@ -111,6 +122,13 @@ HOST-SUFFIX,adssettings.google.com,广告
 HOST-SUFFIX,adwords.google.com,广告
 HOST-SUFFIX,adservice.google.com,广告
 HOST-SUFFIX,adservice.google.*,广告
+
+HOST-SUFFIX,admob.com,广告
+HOST-SUFFIX,ads.admob.com,广告
+HOST-SUFFIX,ad.doubleclick.net,广告
+HOST-SUFFIX,partnerad.l.doubleclick.net,广告
+HOST-SUFFIX,pagead2.googleadservices.com,广告
+HOST-SUFFIX,pagead-googlehosted.l.google.com,广告
 
 
 final, direct
