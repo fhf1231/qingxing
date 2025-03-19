@@ -20,7 +20,6 @@ server=119.29.29.29
 server=119.28.28.28
 
 [policy]
-static=YouTube, reject, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Advertising.png
 static=广告, reject, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Advertising.png
 static=海外服务, proxy, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Global.png
 static=大陆服务, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/China.png
@@ -37,7 +36,6 @@ vmess=s.lifengchun.top:443, method=chacha20-ietf-poly1305, password=789324c6-4d3
 [server_remote]
 
 [filter_remote]
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/YouTube/YouTube.list, tag=YouTube, force-policy=YouTube, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/advertise.list, tag=广告, force-policy=广告, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=海外服务, force-policy=海外服务, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/mainland.list, tag=大陆服务, force-policy=大陆服务, opt-parser=false, enabled=true
