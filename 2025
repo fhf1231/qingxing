@@ -60,7 +60,7 @@ HOST-SUFFIX, googleads.g.doubleclick.net, 广告
 HOST-SUFFIX, securepubads.g.doubleclick.net, 广告
 HOST-SUFFIX, adservice.google.com, 广告
 HOST-SUFFIX, youtubei.googleapis.com, 广告
-HOST-SUFFIX, googlevideo.com, reject # 谨慎使用，可能影响视频加载
+HOST-SUFFIX, googlevideo.com, reject, 广告
 HOST-WILDCARD, *.doubleclick.net, 广告
 HOST-WILDCARD, *.googleadservices.com, 广告
 
