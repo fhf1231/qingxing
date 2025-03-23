@@ -55,6 +55,7 @@ ip-cidr, 192.168.0.0/16, direct
 geoip, cn, direct
 
 # 屏蔽 YouTube APP 端广告（包括前贴片广告和插播广告）
+HOST-SUFFIX, app-analytics-services.com, 广告
 HOST-SUFFIX, ads.youtube.com, 广告
 HOST-SUFFIX, s.youtube.com, 广告
 HOST-SUFFIX, m.youtube.com, 广告
