@@ -60,7 +60,6 @@ HOST-SUFFIX, s.youtube.com, 广告
 HOST-SUFFIX, m.youtube.com, 广告
 HOST-SUFFIX, youtubei.googleapis.com, 广告
 HOST-SUFFIX, youtube.googleapis.com, 广告
-HOST-SUFFIX, googlevideo.com, 广告 # 谨慎使用，可能影响视频流，需测试
 HOST-SUFFIX, yt3.ggpht.com, 广告
 HOST-SUFFIX, video-stats.youtube.com, 广告
 
