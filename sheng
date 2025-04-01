@@ -148,7 +148,7 @@ final, direct
 ^https?:\/\/.*(doubleclick\.net|googlesyndication\.com|googleadservices\.com|adservice\.google\..*) url reject
 ^https?:\/\/(www\.)?youtube\.com\/api\/stats\/(qoe|playback)\? url reject
 ^https?:\/\/(www\.)?yt3\.ggpht\.com\/ url reject
-^https?:\/\/(www\.)?admob\.googleapis\.com\/ url reje
+^https?:\/\/(www\.)?admob\.googleapis\.com\/ url reject
 
 [task_local]
 
