@@ -27,12 +27,11 @@ static=大陆服务, direct, img-url=https://raw.githubusercontent.com/fhf1231/f
 static=AppleTV, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Apple.png
 
 [server_local]
-vmess=f.lifengchun.top:443, method=chacha20-ietf-poly1305, password=dad3b5a1-b096-40c6-b50e-7f7f6f43f189, obfs=wss, obfs-uri=/Fli95pV98, fast-open=false, udp-relay=false, tag=fliwindsvm
-vless=s.lifengchun.top:443, method=none, password=789324c6-4d3f-4ff0-833c-3193b81108ef, obfs=wss, obfs-uri=/vllDu78evl, fast-open=false, udp-relay=false, tag=slsjvl
-vmess=l.lyshen.com:443, method=chacha20-ietf-poly1305, password=32fe0781-fa03-4e0b-ac02-64b05f3ea275, obfs=wss, obfs-uri=/lyshen78e19, tls-verification=true, udp-relay=false, tag=lyshenvm
-vmess=r.lifengchun.top:443, method=chacha20-ietf-poly1305, password=0986131e-ba14-4ef5-8794-c2e3b1ade4c9, obfs=wss, obfs-uri=/jinWu12ea9, fast-open=false, udp-relay=false, tag=dlsvm
-vmess=s.lifengchun.top:443, method=chacha20-ietf-poly1305, password=789324c6-4d3f-4ff0-833c-3193b81108ef, obfs=wss, obfs-uri=/ytlDu78e19, fast-open=false, udp-relay=false, tag=lsjvm
-vless=s.lifengchun.top:443, method=none, password=2703753a-65a0-4117-9fed-676f4c36f61e, obfs=over-tls, obfs-host=s.lifengchun.top, xhttp=true, xhttp-path=/Xhu78xhttp, xhttp-mode=stream-up, fast-open=false, udp-relay=false, tag=XHTTP
+vmess=f.lifengchun.top:443, method=chacha20-ietf-poly1305, password=dad3b5a1-b096-40c6-b50e-7f7f6f43f189, obfs=wss, obfs-uri=/Fli95pV98, tls-verification=false, fast-open=false, udp-relay=false, tag=fliwindsvm
+vless=s.lifengchun.top:443, method=none, password=789324c6-4d3f-4ff0-833c-3193b81108ef, obfs=wss, obfs-uri=/vllDu78evl, tls-verification=true, fast-open=false, udp-relay=false, tag=slsjvl
+vmess=l.lyshen.com:443, method=chacha20-ietf-poly1305, password=32fe0781-fa03-4e0b-ac02-64b05f3ea275, obfs=wss, obfs-uri=/lyshen78e19, tls-verification=true, fast-open=false, udp-relay=false, tag=lyshenvm
+vmess=r.lifengchun.top:443, method=chacha20-ietf-poly1305, password=0986131e-ba14-4ef5-8794-c2e3b1ade4c9, obfs=wss, obfs-uri=/jinWu12ea9,, tls-verification=true, fast-open=false, udp-relay=false, tag=dlsvm
+vmess=s.lifengchun.top:443, method=chacha20-ietf-poly1305, password=789324c6-4d3f-4ff0-833c-3193b81108ef, obfs=wss, obfs-uri=/ytlDu78e19,, tls-verification=true, fast-open=false, udp-relay=false, tag=lsjvm
 
 
 [server_remote]
