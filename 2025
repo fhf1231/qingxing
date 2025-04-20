@@ -54,26 +54,14 @@ ip-cidr, 172.16.0.0/12, direct
 ip-cidr, 192.168.0.0/16, direct
 geoip, cn, direct
 
-# 屏蔽 YouTube APP 端广告（包括前贴片广告和插播广告）
-HOST-SUFFIX, app-analytics-services.com, 广告
+# 广告拦截规则（YouTube + Google 广告平台）
 HOST-SUFFIX, ads.youtube.com, 广告
 HOST-SUFFIX, s.youtube.com, 广告
 HOST-SUFFIX, m.youtube.com, 广告
 HOST-SUFFIX, youtubei.googleapis.com, 广告
 HOST-SUFFIX, youtube.googleapis.com, 广告
-HOST-SUFFIX, yt3.ggpht.com, 广告
 HOST-SUFFIX, video-stats.youtube.com, 广告
-
-
 HOST-SUFFIX, yt3.ggpht.com, 广告
-HOST-SUFFIX, video-stats.youtube.com, 广告
-HOST-SUFFIX, doubleclick.net, 广告
-HOST-SUFFIX, googlesyndication.com, 广告
-HOST-SUFFIX, googleadservices.com, 广告
-HOST-SUFFIX, adservice.google.com, 广告
-HOST-SUFFIX, admob.googleapis.com, 广告
-
-# 屏蔽 Google 旗下广告服务（优化去重）
 HOST-SUFFIX, doubleclick.net, 广告
 HOST-SUFFIX, ad.doubleclick.net, 广告
 HOST-SUFFIX, googleads.g.doubleclick.net, 广告
@@ -99,7 +87,7 @@ HOST-SUFFIX, google-analytics.com, 广告
 HOST-SUFFIX, analytics.google.com, 广告
 HOST-SUFFIX, admob.googleapis.com, 广告
 
-# 屏蔽 YouTube 移动端特定广告服务（包括美国及其他地区）
+# Android App 广告相关域名
 HOST-SUFFIX, android.clients.google.com, 广告
 HOST-SUFFIX, play.googleapis.com, 广告
 HOST-SUFFIX, play-fe.googleapis.com, 广告
@@ -108,18 +96,16 @@ HOST-SUFFIX, youtube-ui.l.google.com, 广告
 HOST-SUFFIX, youtube-ui.google.com, 广告
 HOST-SUFFIX, youtube-ads.google.com, 广告
 
-
-# 通配符规则（覆盖子域名）
+# 通配符匹配
 HOST-WILDCARD, *.youtubei.com, 广告
 HOST-WILDCARD, *.adservice.google.*, 广告
 
-# 默认路由
+# 默认规则
 final, direct
 
 [rewrite_remote]
 
 [rewrite_local]
-#  屏蔽 YouTube APP 端广告（去除前贴片广告、插播广告）
 ^https?:\/\/(www\.)?youtube\.com\/api\/stats\/ads url reject
 ^https?:\/\/(www\.)?youtube\.com\/get_midroll_ url reject
 ^https?:\/\/(www\.)?youtube\.com\/get_video_info\?.*adformat url reject
@@ -131,28 +117,6 @@ final, direct
 ^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/player\? url reject-dict
 ^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/ad url reject
 ^https?:\/\/(www\.)?youtube\.com\/api\/stats\/watchtime\? url reject
-
-#  屏蔽 Google 旗下广告服务
-^https?:\/\/(www\.)?googleadservices\.com\/ url reject
-^https?:\/\/(www\.)?doubleclick\.net\/ url reject
-^https?:\/\/(www\.)?googlesyndication\.com\/ url reject
-^https?:\/\/(www\.)?adservice\.google\..* url reject
-^https?:\/\/(www\.)?adwords\.google\..* url reject
-^https?:\/\/(www\.)?partner\.googleadservices\.com\/ url reject
-^https?:\/\/(www\.)?securepubads\.g\.doubleclick\.net\/ url reject
-^https?:\/\/(www\.)?ads\.youtube\.com\/ url reject
-^https?:\/\/(www\.)?yt3\.ggpht\.com\/ url reject
-
-# 屏蔽YouTube移动端中插广告
-^https?:\/\/(www\.)?youtube\.com\/get_midroll_ url reject
-^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/next\? url reject-dict
-^https?:\/\/(www\.)?googlevideo\.com\/.*adformat=.* url reject
-
-# 通用广告屏蔽（优化冗余）
-^https?:\/\/.*(doubleclick\.net|googlesyndication\.com|googleadservices\.com|adservice\.google\..*) url reject
-^https?:\/\/(www\.)?youtube\.com\/api\/stats\/(qoe|playback)\? url reject
-^https?:\/\/(www\.)?yt3\.ggpht\.com\/ url reject
-^https?:\/\/(www\.)?admob\.googleapis\.com\/ url reject
 
 [task_local]
 
