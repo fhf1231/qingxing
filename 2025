@@ -28,7 +28,7 @@ static=AppleTV, direct, img-url=https://raw.githubusercontent.com/fhf1231/filter
 
 [server_local]
 vmess=f.lifengchun.top:443, method=chacha20-ietf-poly1305, password=dad3b5a1-b096-40c6-b50e-7f7f6f43f189, obfs=wss, obfs-uri=/Fli95pV98, tls-verification=true, fast-open=false, udp-relay=false, tag=fliwindsvm
-vless=s.lifengchun.top:443, method=none, password=789324c6-4d3f-4ff0-833c-3193b81108ef, obfs=wss, obfs-uri=/vllDu78evl, tls-verification=true, fast-open=false, udp-relay=false, tag=slsjvl
+vless=s.lifengchun.top:443, method=none, password=789324c6-4d3f-4ff0-833c-3193b81108ef, obfs=wss, obfs-uri=/api/video/stream/Age.of.Extinction.mkv, tls-verification=true, fast-open=false, udp-relay=false, tag=slsjvl
 vmess=l.lyshen.com:443, method=chacha20-ietf-poly1305, password=32fe0781-fa03-4e0b-ac02-64b05f3ea275, obfs=wss, obfs-uri=/lyshen78e19, tls-verification=true, fast-open=false, udp-relay=false, tag=lyshenvm
 vmess=r.lifengchun.top:443, method=chacha20-ietf-poly1305, password=0986131e-ba14-4ef5-8794-c2e3b1ade4c9, obfs=wss, obfs-uri=/jinWu12ea9, tls-verification=true, fast-open=false, udp-relay=false, tag=dlsvm
 vmess=s.lifengchun.top:443, method=chacha20-ietf-poly1305, password=789324c6-4d3f-4ff0-833c-3193b81108ef, obfs=wss, obfs-uri=/ytlDu78e19, tls-verification=true, fast-open=false, udp-relay=false, tag=lsjvm
