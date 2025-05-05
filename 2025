@@ -53,49 +53,12 @@ geoip, cn, direct
 
 # 广告拦截规则（YouTube + Google 广告平台）
 HOST-SUFFIX, ads.youtube.com, 广告
-HOST-SUFFIX, s.youtube.com, 广告
-HOST-SUFFIX, m.youtube.com, 广告
-HOST-SUFFIX, youtubei.googleapis.com, 广告
-HOST-SUFFIX, youtube.googleapis.com, 广告
-HOST-SUFFIX, video-stats.youtube.com, 广告
-HOST-SUFFIX, yt3.ggpht.com, 广告
 HOST-SUFFIX, doubleclick.net, 广告
 HOST-SUFFIX, ad.doubleclick.net, 广告
 HOST-SUFFIX, googleads.g.doubleclick.net, 广告
-HOST-SUFFIX, googleads4.g.doubleclick.net, 广告
-HOST-SUFFIX, pagead.l.doubleclick.net, 广告
-HOST-SUFFIX, pubads.g.doubleclick.net, 广告
-HOST-SUFFIX, securepubads.g.doubleclick.net, 广告
-HOST-SUFFIX, stats.g.doubleclick.net, 广告
 HOST-SUFFIX, googlesyndication.com, 广告
-HOST-SUFFIX, ade.googlesyndication.com, 广告
-HOST-SUFFIX, pagead2.googlesyndication.com, 广告
-HOST-SUFFIX, tpc.googlesyndication.com, 广告
-HOST-SUFFIX, video-ad.googlesyndication.com, 广告
 HOST-SUFFIX, googleadservices.com, 广告
-HOST-SUFFIX, www.googleadservices.com, 广告
-HOST-SUFFIX, partner.googleadservices.com, 广告
-HOST-SUFFIX, googleleadservices.com, 广告
-HOST-SUFFIX, adservice.google.com, 广告
-HOST-SUFFIX, adservices.google.com, 广告
-HOST-SUFFIX, adwords.google.com, 广告
-HOST-SUFFIX, adssettings.google.com, 广告
 HOST-SUFFIX, google-analytics.com, 广告
-HOST-SUFFIX, analytics.google.com, 广告
-HOST-SUFFIX, admob.googleapis.com, 广告
-
-# Android App 广告相关域名
-HOST-SUFFIX, android.clients.google.com, 广告
-HOST-SUFFIX, play.googleapis.com, 广告
-HOST-SUFFIX, play-fe.googleapis.com, 广告
-HOST-SUFFIX, play-lh.googleusercontent.com, 广告
-HOST-SUFFIX, youtube-ui.l.google.com, 广告
-HOST-SUFFIX, youtube-ui.google.com, 广告
-HOST-SUFFIX, youtube-ads.google.com, 广告
-
-# 通配符匹配
-HOST-WILDCARD, *.youtubei.com, 广告
-HOST-WILDCARD, *.adservice.google.*, 广告
 
 # 默认规则
 final, direct
@@ -103,19 +66,14 @@ final, direct
 [rewrite_remote]
 
 [rewrite_local]
+# 仅拦截明确的广告相关请求
 ^https?:\/\/(www\.)?youtube\.com\/api\/stats\/ads url reject
 ^https?:\/\/(www\.)?youtube\.com\/get_midroll_ url reject
-^https?:\/\/(www\.)?youtube\.com\/get_video_info\?.*adformat url reject
 ^https?:\/\/(www\.)?youtube\.com\/pagead\/ url reject
 ^https?:\/\/(www\.)?youtube\.com\/ptracking url reject
-^https?:\/\/(www\.)?youtube\.com\/watch\?v=.*&adformat url reject
-^https?:\/\/(www\.)?youtube\.com\/api\/stats\/qoe\? url reject
-^https?:\/\/(www\.)?youtube\.com\/api\/stats\/playback\? url reject
-^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/player\? url reject-dict
 ^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/ad url reject
-^https?:\/\/(www\.)?youtube\.com\/api\/stats\/watchtime\? url reject
 
 [task_local]
 
 [mitm]
-hostname = *.youtube.com, *.youtubei.googleapis.com, *.googlevideo.com, *.doubleclick.net, *.googlesyndication.com, *.googleadservices.com, *.ytimg.com, *.admob.googleapis.com
+hostname = *.youtube.com, *.doubleclick.net, *.googlesyndication.com, *.googleadservices.com
