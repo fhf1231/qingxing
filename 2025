@@ -41,8 +41,6 @@ https://raw.githubusercontent.com/fhf1231/filterurl/main/mainland.list, tag=大�
 https://raw.githubusercontent.com/fhf1231/filterurl/main/AppleTV.list, tag=AppleTV, force-policy=AppleTV, opt-parser=false, enabled=true
 
 [filter_local]
-# 本地路由规则（保持不变）
-host-suffix, local, direct
 ip-cidr, 10.0.0.0/8, direct
 ip-cidr, 17.0.0.0/8, direct
 ip-cidr, 100.64.0.0/10, direct
@@ -51,29 +49,12 @@ ip-cidr, 172.16.0.0/12, direct
 ip-cidr, 192.168.0.0/16, direct
 geoip, cn, direct
 
-# 广告拦截规则（YouTube + Google 广告平台）
-HOST-SUFFIX, ads.youtube.com, 广告
-HOST-SUFFIX, doubleclick.net, 广告
-HOST-SUFFIX, ad.doubleclick.net, 广告
-HOST-SUFFIX, googleads.g.doubleclick.net, 广告
-HOST-SUFFIX, googlesyndication.com, 广告
-HOST-SUFFIX, googleadservices.com, 广告
-HOST-SUFFIX, google-analytics.com, 广告
-
-# 默认规则
 final, direct
 
 [rewrite_remote]
 
 [rewrite_local]
-# 仅拦截明确的广告相关请求
-^https?:\/\/(www\.)?youtube\.com\/api\/stats\/ads url reject
-^https?:\/\/(www\.)?youtube\.com\/get_midroll_ url reject
-^https?:\/\/(www\.)?youtube\.com\/pagead\/ url reject
-^https?:\/\/(www\.)?youtube\.com\/ptracking url reject
-^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/ad url reject
 
 [task_local]
 
 [mitm]
-hostname = *.youtube.com, *.doubleclick.net, *.googlesyndication.com, *.googleadservices.com
