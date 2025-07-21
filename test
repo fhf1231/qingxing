@@ -44,6 +44,7 @@ https://raw.githubusercontent.com/fhf1231/filterurl/main/mainland.list, tag=大�
 https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=海外服务, force-policy=海外服务, opt-parser=false, enabled=true
 
 [filter_local]
+# 本地和内网直连
 host-suffix, local, direct
 ip-cidr, 10.0.0.0/8, direct
 ip-cidr, 17.0.0.0/8, direct
@@ -60,6 +61,8 @@ host-suffix, video-stats.youtube.com, 广告
 host-suffix, youtube-nocookie.com, 广告
 host-wildcard, *.ad.youtube.com, 广告
 host-wildcard, *.ads.youtube.com, 广告
+host-wildcard, *.g.doubleclick.net, 广告
+host-suffix, ytimg.com, 广告, enabled=false # 谨慎启用，可能影响缩略图
 
 # Google 广告相关域名
 host-wildcard, *.doubleclick.net, 广告
@@ -77,8 +80,6 @@ host-wildcard, *.itunes.apple.com, AppleTV
 # 默认路由
 final, direct
 
-[rewrite_remote]
-
 [rewrite_local]
 # YouTube 广告 API 屏蔽（适用于 Apple TV、iOS 应用、PC 浏览器）
 ^https?:\/\/(www\.)?youtube\.com\/api\/stats\/ads url reject
@@ -87,18 +88,23 @@ final, direct
 ^https?:\/\/(www\.)?youtube\.com\/ptracking url reject
 ^https?:\/\/(www\.)?youtube\.com\/api\/stats\/(qoe|playback|watchtime)\? url reject
 ^https?:\/\/(www\.)?youtube-nocookie\.com\/.*(adformat|pagead|ptracking) url reject
+^https?:\/\/(www\.)?youtube\.com\/.*(adobe-ad|adsense) url reject
 
 # YouTube 播放器和推荐 JSON 广告清理（适用于 Apple TV、iOS 应用、PC 浏览器）
-^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/player\? url jsonjq-response-body ".adPlacements |= [] | .instreamAds |= [] | .playerAds |= [] | .companionAds |= [] | .adBreaks |= [] | .bannerAds |= []"
-^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/next\? url jsonjq-response-body ".ads |= [] | .engagementPanelContents |= [] | .adSlots |= []"
-^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/browse\? url jsonjq-response-body ".ads |= [] | .contents |= map(select(.ad == null))"
-^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/search\? url jsonjq-response-body ".ads |= [] | .contents |= map(select(.ad == null))"
-^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/reel\/.* url jsonjq-response-body ".ads |= []"
+^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/player\? url jsonjq-response-body ".adPlacements |= [] | .instreamAds |= [] | .playerAds |= [] | .companionAds |= [] | .adBreaks |= [] | .bannerAds |= [] | .adBreakHeartbeat |= [] | .promotedContent |= []"
+^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/next\? url jsonjq-response-body ".ads |= [] | .engagementPanelContents |= [] | .adSlots |= [] | .promotedContent |= []"
+^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/browse\? url jsonjq-response-body ".ads |= [] | .contents |= map(select(.ad == null)) | .promotedContent |= []"
+^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/search\? url jsonjq-response-body ".ads |= [] | .contents |= map(select(.ad == null)) | .promotedContent |= []"
+^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/reel\/.* url jsonjq-response-body ".ads |= [] | .promotedContent |= []"
 
 # Google 广告服务屏蔽（适用于 PC 浏览器和移动端）
 ^https?:\/\/.*(doubleclick\.net|googlesyndication\.com|googleadservices\.com|adservice\.google\..*|admob\.googleapis\.com|app-measurement\.com) url reject
 
+[rewrite_remote]
+
 [task_local]
+# 调试广告屏蔽日志
+0 0,8,16 * * * script-adblock-log.js, tag=AdBlockLog, enabled=true
 
 [mitm]
 hostname = *.youtube.com, *.youtubei.googleapis.com, *.googlevideo.com, *.youtube-nocookie.com, *.doubleclick.net, *.googlesyndication.com, *.googleadservices.com, *.admob.googleapis.com, *.app-measurement.com
