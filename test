@@ -57,7 +57,9 @@ geoip, cn, direct
 host-suffix, ads.youtube.com, 广告
 host-suffix, s.youtube.com, 广告
 host-suffix, video-stats.youtube.com, 广告
+host-suffix, youtube-nocookie.com, 广告
 host-wildcard, *.ad.youtube.com, 广告
+host-wildcard, *.ads.youtube.com, 广告
 
 # Google 广告相关域名
 host-wildcard, *.doubleclick.net, 广告
@@ -65,6 +67,7 @@ host-wildcard, *.googlesyndication.com, 广告
 host-wildcard, *.googleadservices.com, 广告
 host-wildcard, *.adservice.google.*, 广告
 host-suffix, admob.googleapis.com, 广告
+host-suffix, app-measurement.com, 广告
 
 # Apple TV 相关域名
 host-suffix, tv.apple.com, AppleTV
@@ -83,18 +86,21 @@ final, direct
 ^https?:\/\/(www\.)?youtube\.com\/pagead\/ url reject
 ^https?:\/\/(www\.)?youtube\.com\/ptracking url reject
 ^https?:\/\/(www\.)?youtube\.com\/api\/stats\/(qoe|playback|watchtime)\? url reject
+^https?:\/\/(www\.)?youtube-nocookie\.com\/.*(adformat|pagead|ptracking) url reject
 
 # YouTube 播放器和推荐 JSON 广告清理（适用于 Apple TV、iOS 应用、PC 浏览器）
-^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/player\? url jsonjq-response-body '.adPlacements |= [] | .instreamAds |= [] | .playerAds |= [] | .companionAds |= []'
-^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/next\? url jsonjq-response-body '.ads |= [] | .engagementPanelContents |= []'
-^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/browse\? url jsonjq-response-body '.ads |= []'
+^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/player\? url jsonjq-response-body '.adPlacements |= [] | .instreamAds |= [] | .playerAds |= [] | .companionAds |= [] | .adBreaks |= [] | .bannerAds |= []'
+^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/next\? url jsonjq-response-body '.ads |= [] | .engagementPanelContents |= [] | .adSlots |= []'
+^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/browse\? url jsonjq-response-body '.ads |= [] | .contents..ad |= []'
+^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/search\? url jsonjq-response-body '.ads |= [] | .contents..ad |= []'
+^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/reel\/.* url jsonjq-response-body '.ads |= []'
 
 # Google 广告服务屏蔽（适用于 PC 浏览器和移动端）
-^https?:\/\/.*(doubleclick\.net|googlesyndication\.com|googleadservices\.com|adservice\.google\..*|admob\.googleapis\.com) url reject
+^https?:\/\/.*(doubleclick\.net|googlesyndication\.com|googleadservices\.com|adservice\.google\..*|admob\.googleapis\.com|app-measurement\.com) url reject
 
 [task_local]
 
 [mitm]
-hostname = *.youtube.com, *.youtubei.googleapis.com, *.googlevideo.com, *.doubleclick.net, *.googlesyndication.com, *.googleadservices.com, *.admob.googleapis.com
+hostname = *.youtube.com, *.youtubei.googleapis.com, *.googlevideo.com, *.youtube-nocookie.com, *.doubleclick.net, *.googlesyndication.com, *.googleadservices.com, *.admob.googleapis.com, *.app-measurement.com
 passphrase = AF9E5F21
 p12 = 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
