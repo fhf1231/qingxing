@@ -102,8 +102,6 @@ final, direct
 [rewrite_remote]
 
 [task_local]
-# 调试广告屏蔽日志
-0 0,8,16 * * * script-adblock-log.js, tag=AdBlockLog, enabled=true
 
 [mitm]
 hostname = *.youtube.com, *.youtubei.googleapis.com, *.googlevideo.com, *.youtube-nocookie.com, *.doubleclick.net, *.googlesyndication.com, *.googleadservices.com, *.admob.googleapis.com, *.app-measurement.com
