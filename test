@@ -18,6 +18,8 @@ server=223.6.6.6
 server=223.5.5.5
 server=119.29.29.29
 server=119.28.28.28
+address=/s.lifengchun.top/74.48.129.174
+address=/f.lifengchun.top/104.168.138.118
 address=/r.lifengchun.top/198.23.249.11
 
 [policy]
@@ -28,8 +30,9 @@ static=大陆服务, direct, img-url=https://raw.githubusercontent.com/fhf1231/f
 static=海外服务, proxy, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Global.png
 
 [server_local]
-vmess=h.lifengchun.top:443, method=chacha20-ietf-poly1305, password=e85c3b5e-de0a-44f8-a834-aee034d048d7, obfs=wss, obfs-host=h.lifengchun.top, obfs-uri=/hosWu78e19, tls-verification=true, udp-relay=false, tag=hos
-vmess=r.lifengchun.top:443, method=chacha20-ietf-poly1305, password=0986131e-ba14-4ef5-8794-c2e3b1ade4c9, obfs=wss, obfs-uri=/jinWu12ea9, tls-verification=true, fast-open=false, udp-relay=false, tag=rack
+vmess=f.lifengchun.top:443, method=chacha20-ietf-poly1305, password=dad3b5a1-b096-40c6-b50e-7f7f6f43f189, obfs=wss, obfs-uri=/api/streaming/season3/sp07.mkv, tls-verification=true, fast-open=false, udp-relay=false, tag=svm
+vless=s.lifengchun.top:443, method=none, password=789324c6-4d3f-4ff0-833c-3193b81108ef, obfs=wss, obfs-uri=/api/video/stream/Age.of.Extinction.mkv, tls-verification=true, fast-open=false, udp-relay=false, tag=lvl
+vmess=r.lifengchun.top:443, method=chacha20-ietf-poly1305, password=0986131e-ba14-4ef5-8794-c2e3b1ade4c9, obfs=wss, obfs-uri=/jinWu12ea9, tls-verification=true, fast-open=false, udp-relay=false, tag=dlsvm
 
 [server_remote]
 
