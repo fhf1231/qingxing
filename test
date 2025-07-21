@@ -89,11 +89,11 @@ final, direct
 ^https?:\/\/(www\.)?youtube-nocookie\.com\/.*(adformat|pagead|ptracking) url reject
 
 # YouTube 播放器和推荐 JSON 广告清理（适用于 Apple TV、iOS 应用、PC 浏览器）
-^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/player\? url jsonjq-response-body '.adPlacements |= [] | .instreamAds |= [] | .playerAds |= [] | .companionAds |= [] | .adBreaks |= [] | .bannerAds |= []'
-^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/next\? url jsonjq-response-body '.ads |= [] | .engagementPanelContents |= [] | .adSlots |= []'
-^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/browse\? url jsonjq-response-body '.ads |= [] | .contents..ad |= []'
-^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/search\? url jsonjq-response-body '.ads |= [] | .contents..ad |= []'
-^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/reel\/.* url jsonjq-response-body '.ads |= []'
+^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/player\? url jsonjq-response-body ".adPlacements |= [] | .instreamAds |= [] | .playerAds |= [] | .companionAds |= [] | .adBreaks |= [] | .bannerAds |= []"
+^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/next\? url jsonjq-response-body ".ads |= [] | .engagementPanelContents |= [] | .adSlots |= []"
+^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/browse\? url jsonjq-response-body ".ads |= [] | .contents |= map(select(.ad == null))"
+^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/search\? url jsonjq-response-body ".ads |= [] | .contents |= map(select(.ad == null))"
+^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/reel\/.* url jsonjq-response-body ".ads |= []"
 
 # Google 广告服务屏蔽（适用于 PC 浏览器和移动端）
 ^https?:\/\/.*(doubleclick\.net|googlesyndication\.com|googleadservices\.com|adservice\.google\..*|admob\.googleapis\.com|app-measurement\.com) url reject
