@@ -62,7 +62,6 @@ host-suffix, youtube-nocookie.com, 广告
 host-wildcard, *.ad.youtube.com, 广告
 host-wildcard, *.ads.youtube.com, 广告
 host-wildcard, *.g.doubleclick.net, 广告
-host-suffix, ytimg.com, 广告, enabled=false # 谨慎启用，可能影响缩略图
 
 # Google 广告相关域名
 host-wildcard, *.doubleclick.net, 广告
