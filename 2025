@@ -10,6 +10,7 @@ dns_exclusion_list = *.lan, *.local, cable.auth.com, *.msftconnecttest.com, *.ms
 dns_reject_domain_behavior = loopback
 excluded_routes = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, 17.0.0.0/8, 224.0.0.0/4
 udp_drop_list=1-65535
+tls_quic = false
 
 [dns]
 no-system
