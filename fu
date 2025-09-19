@@ -34,21 +34,15 @@ address=/adservice.google.com/0.0.0.0
 address=/pagead2.googlesyndication.com/0.0.0.0
 address=/partnerad.l.doubleclick.net/0.0.0.0
 
-
-
-
-
-
 [policy]
-static=广告, reject, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Advertising.png
 static=Privacy, reject, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Advertising.png
-static=AppleTV, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Apple.png
+static=广告, reject, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Advertising.png
 static=大陆服务, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/China.png
+static=AppleTV, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Apple.png
 static=海外服务, proxy, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Global.png
 
 [server_local]
-vmess=f.lifengchun.top:443, method=chacha20-ietf-poly1305, password=dad3b5a1-b096-40c6-b50e-7f7f6f43f189, obfs=wss, obfs-uri=/api/streaming/season3/sp07.mkv, tls-verification=true, fast-open=false, udp-relay=false, tag=svm
-vless=s.lifengchun.top:443, method=none, password=789324c6-4d3f-4ff0-833c-3193b81108ef, obfs=wss, obfs-uri=/api/video/stream/Age.of.Extinction.mkv, tls-verification=true, fast-open=false, udp-relay=false, tag=lvl
+vless=s.lifengchun.top:443, method=none, password=789324c6-4d3f-4ff0-833c-3193b81108ef, obfs=wss, obfs-uri=/stream/, tls-verification=true, fast-open=false, udp-relay=false, tag=lvl
 vmess=r.lifengchun.top:443, method=chacha20-ietf-poly1305, password=0986131e-ba14-4ef5-8794-c2e3b1ade4c9, obfs=wss, obfs-uri=/jinWu12ea9, tls-verification=true, fast-open=false, udp-relay=false, tag=dlsvm
 
 [server_remote]
@@ -56,8 +50,8 @@ vmess=r.lifengchun.top:443, method=chacha20-ietf-poly1305, password=0986131e-ba1
 [filter_remote]
 https://raw.githubusercontent.com/fhf1231/filterurl/main/Privacy, tag=Privacy, force-policy=Privacy, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/advertise.list, tag=广告, force-policy=广告, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/fhf1231/filterurl/main/AppleTV.list, tag=AppleTV, force-policy=AppleTV, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/mainland.list, tag=大陆服务, force-policy=大陆服务, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/fhf1231/filterurl/main/AppleTV.list, tag=AppleTV, force-policy=AppleTV, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=海外服务, force-policy=海外服务, opt-parser=false, enabled=true
 
 [filter_local]
