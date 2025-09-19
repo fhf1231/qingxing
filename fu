@@ -23,17 +23,6 @@ server=119.28.28.28
 address=/s.lifengchun.top/74.48.129.174
 address=/r.lifengchun.top/198.23.249.11
 
-# DNS 黑洞（优先在 DNS 层阻断广告域）
-address=/ads.youtube.com/0.0.0.0
-address=/s.youtube.com/0.0.0.0
-address=/video-stats.youtube.com/0.0.0.0
-address=/doubleclick.net/0.0.0.0
-address=/googlesyndication.com/0.0.0.0
-address=/googleadservices.com/0.0.0.0
-address=/adservice.google.com/0.0.0.0
-address=/pagead2.googlesyndication.com/0.0.0.0
-address=/partnerad.l.doubleclick.net/0.0.0.0
-
 [policy]
 static=Privacy, reject, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Advertising.png
 static=广告, reject, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Advertising.png
