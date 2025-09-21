@@ -63,7 +63,7 @@ final, direct
 # GoogleVideo 请求头清洗，屏蔽广告流
 ^https?:\/\/(r\d+---sn-.+)\.googlevideo\.com\/videoplayback url script-request-header https://raw.githubusercontent.com/LuanRT/YouTube.js/main/src/parser/YouTube_Headers.js
 # 精确拒绝带有广告参数的视频流
-^https?:\/\/(r\d+---sn-.+)\.googlevideo\.com\/videoplayback url script-path-reject \?oad|ctier
+^https?:\/\/(r\d+---sn-.+)\.googlevideo\.com\/videoplayback url reject \?oad|ctier
 
 [rewrite_remote]
 
