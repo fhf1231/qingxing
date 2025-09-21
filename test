@@ -58,8 +58,14 @@ geoip, cn, direct
 final, direct
 
 [rewrite_local]
+# YouTube API 清洗广告字段
 ^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/(player|next|browse|search|reel) url script-response-body https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Script/YouTube.js
 
+# GoogleVideo 清洗请求头（广告拦截）
+^https?:\/\/(r\d+---sn-.+)\.googlevideo\.com\/videoplayback url script-request-header https://raw.githubusercontent.com/LuanRT/YouTube.js/main/Scrips/AdBlock/YouTube_Headers.js
+
+# 精确拒绝广告相关参数
+^https?:\/\/(r\d+---sn-.+)\.googlevideo\.com\/videoplayback url script-path-reject \?oad|ctier
 
 [rewrite_remote]
 
