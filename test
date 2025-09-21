@@ -1,3 +1,4 @@
+
 [general]
 # > 用于节点延迟测试
 server_check_url=http://cp.cloudflare.com/generate_204
@@ -18,20 +19,20 @@ server=223.6.6.6
 server=223.5.5.5
 server=119.29.29.29
 server=119.28.28.28
+
+
 address=/s.lifengchun.top/74.48.129.174
-address=/f.lifengchun.top/104.168.138.118
 address=/r.lifengchun.top/198.23.249.11
 
 [policy]
-static=广告, reject, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Advertising.png
 static=Privacy, reject, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Advertising.png
-static=AppleTV, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Apple.png
+static=广告, reject, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Advertising.png
 static=大陆服务, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/China.png
+static=AppleTV, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Apple.png
 static=海外服务, proxy, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Global.png
 
 [server_local]
-vmess=f.lifengchun.top:443, method=chacha20-ietf-poly1305, password=dad3b5a1-b096-40c6-b50e-7f7f6f43f189, obfs=wss, obfs-uri=/api/streaming/season3/sp07.mkv, tls-verification=true, fast-open=false, udp-relay=false, tag=svm
-vless=s.lifengchun.top:443, method=none, password=789324c6-4d3f-4ff0-833c-3193b81108ef, obfs=wss, obfs-uri=/api/video/stream/Age.of.Extinction.mkv, tls-verification=true, fast-open=false, udp-relay=false, tag=lvl
+vless=s.lifengchun.top:443, method=none, password=789324c6-4d3f-4ff0-833c-3193b81108ef, obfs=wss, obfs-uri=/stream/, tls-verification=true, fast-open=false, udp-relay=false, tag=lvl
 vmess=r.lifengchun.top:443, method=chacha20-ietf-poly1305, password=0986131e-ba14-4ef5-8794-c2e3b1ade4c9, obfs=wss, obfs-uri=/jinWu12ea9, tls-verification=true, fast-open=false, udp-relay=false, tag=dlsvm
 
 [server_remote]
@@ -39,8 +40,8 @@ vmess=r.lifengchun.top:443, method=chacha20-ietf-poly1305, password=0986131e-ba1
 [filter_remote]
 https://raw.githubusercontent.com/fhf1231/filterurl/main/Privacy, tag=Privacy, force-policy=Privacy, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/advertise.list, tag=广告, force-policy=广告, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/fhf1231/filterurl/main/AppleTV.list, tag=AppleTV, force-policy=AppleTV, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/mainland.list, tag=大陆服务, force-policy=大陆服务, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/fhf1231/filterurl/main/AppleTV.list, tag=AppleTV, force-policy=AppleTV, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=海外服务, force-policy=海外服务, opt-parser=false, enabled=true
 
 [filter_local]
@@ -54,50 +55,11 @@ ip-cidr, 192.168.0.0/16, direct
 ip-cidr, 224.0.0.0/4, direct
 geoip, cn, direct
 
-# YouTube 广告相关域名
-host-suffix, ads.youtube.com, 广告
-host-suffix, s.youtube.com, 广告
-host-suffix, video-stats.youtube.com, 广告
-host-suffix, youtube-nocookie.com, 广告
-host-wildcard, *.ad.youtube.com, 广告
-host-wildcard, *.ads.youtube.com, 广告
-host-wildcard, *.g.doubleclick.net, 广告
-
-# Google 广告相关域名
-host-wildcard, *.doubleclick.net, 广告
-host-wildcard, *.googlesyndication.com, 广告
-host-wildcard, *.googleadservices.com, 广告
-host-wildcard, *.adservice.google.*, 广告
-host-suffix, admob.googleapis.com, 广告
-host-suffix, app-measurement.com, 广告
-
-# Apple TV 相关域名
-host-suffix, tv.apple.com, AppleTV
-host-suffix, tv.apple.com.edgesuite.net, AppleTV
-host-wildcard, *.itunes.apple.com, AppleTV
-
-# 默认路由
 final, direct
 
 [rewrite_local]
-# YouTube 广告 API 屏蔽（适用于 Apple TV、iOS 应用、PC 浏览器）
-^https?:\/\/(www\.)?youtube\.com\/api\/stats\/ads url reject
-^https?:\/\/(www\.)?youtube\.com\/get_midroll_ url reject
-^https?:\/\/(www\.)?youtube\.com\/pagead\/ url reject
-^https?:\/\/(www\.)?youtube\.com\/ptracking url reject
-^https?:\/\/(www\.)?youtube\.com\/api\/stats\/(qoe|playback|watchtime)\? url reject
-^https?:\/\/(www\.)?youtube-nocookie\.com\/.*(adformat|pagead|ptracking) url reject
-^https?:\/\/(www\.)?youtube\.com\/.*(adobe-ad|adsense) url reject
+^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/(player|next|browse|search|reel) url script-response-body https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Script/YouTube.js
 
-# YouTube 播放器和推荐 JSON 广告清理（适用于 Apple TV、iOS 应用、PC 浏览器）
-^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/player\? url jsonjq-response-body ".adPlacements |= [] | .instreamAds |= [] | .playerAds |= [] | .companionAds |= [] | .adBreaks |= [] | .bannerAds |= [] | .adBreakHeartbeat |= [] | .promotedContent |= []"
-^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/next\? url jsonjq-response-body ".ads |= [] | .engagementPanelContents |= [] | .adSlots |= [] | .promotedContent |= []"
-^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/browse\? url jsonjq-response-body ".ads |= [] | .contents |= map(select(.ad == null)) | .promotedContent |= []"
-^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/search\? url jsonjq-response-body ".ads |= [] | .contents |= map(select(.ad == null)) | .promotedContent |= []"
-^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/reel\/.* url jsonjq-response-body ".ads |= [] | .promotedContent |= []"
-
-# Google 广告服务屏蔽（适用于 PC 浏览器和移动端）
-^https?:\/\/.*(doubleclick\.net|googlesyndication\.com|googleadservices\.com|adservice\.google\..*|admob\.googleapis\.com|app-measurement\.com) url reject
 
 [rewrite_remote]
 
