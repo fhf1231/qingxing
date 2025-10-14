@@ -55,7 +55,12 @@ ip-cidr, 224.0.0.0/4, direct
 geoip, cn, direct
 
 final, direct
-# 屏蔽常见广告域名
+
+host-suffix, youtube.com, proxy
+host-suffix, youtu.be, proxy
+host-suffix, googlevideo.com, proxy
+host-suffix, ytimg.com, proxy
+
 host-suffix, ads.youtube.com, reject
 host-suffix, doubleclick.net, reject
 host-suffix, googlesyndication.com, reject
@@ -69,19 +74,13 @@ host-suffix, stats.g.doubleclick.net, reject
 host-suffix, video-stats.l.google.com, reject
 host-suffix, pagead.l.doubleclick.net, reject
 
-host-regex, .*doubleclick.* , reject
-host-regex, .*googlesyndication.* , reject
-host-regex, .*pagead.* , reject
-host-regex, .*pubads.* , reject
-host-regex, .*adservice.* , reject
-host-regex, .*partnerad.* , reject
-host-regex, .*video-stats.* , reject
-
-# —— 正常YouTube视频、图像流量 ——
-host-suffix, youtube.com, proxy
-host-suffix, youtu.be, proxy
-host-suffix, googlevideo.com, proxy
-host-suffix, ytimg.com, proxy
+host-keyword, doubleclick, reject
+host-keyword, googlesyndication, reject
+host-keyword, pubads, reject
+host-keyword, adservice, reject
+host-keyword, pagead, reject
+host-keyword, partnerad, reject
+host-keyword, video-stats, reject
 
 [rewrite_remote]
 
