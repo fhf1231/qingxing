@@ -55,9 +55,6 @@ ip-cidr, 224.0.0.0/4, direct
 geoip, cn, direct
 
 final, direct
-
-
-
 # 屏蔽常见广告域名
 host-suffix, ads.youtube.com, reject
 host-suffix, doubleclick.net, reject
@@ -71,6 +68,9 @@ host-suffix, s0.2mdn.net, reject
 host-suffix, stats.g.doubleclick.net, reject
 host-suffix, video-stats.l.google.com, reject
 host-suffix, pagead.l.doubleclick.net, reject
+
+url-regex ^https?:\/\/.*(doubleclick|googlesyndication|pagead|pubads|adservice|partnerad|video-stats)\..* reject
+url-regex ^https?:\/\/.*\/.+ad(s)?[^\/]*\/.* reject
 
 # —— 正常YouTube视频、图像流量 ——
 host-suffix, youtube.com, proxy
