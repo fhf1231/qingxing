@@ -69,8 +69,13 @@ host-suffix, stats.g.doubleclick.net, reject
 host-suffix, video-stats.l.google.com, reject
 host-suffix, pagead.l.doubleclick.net, reject
 
-url-regex ^https?:\/\/.*(doubleclick|googlesyndication|pagead|pubads|adservice|partnerad|video-stats)\..* reject
-url-regex ^https?:\/\/.*\/.+ad(s)?[^\/]*\/.* reject
+host-regex, .*doubleclick.* , reject
+host-regex, .*googlesyndication.* , reject
+host-regex, .*pagead.* , reject
+host-regex, .*pubads.* , reject
+host-regex, .*adservice.* , reject
+host-regex, .*partnerad.* , reject
+host-regex, .*video-stats.* , reject
 
 # —— 正常YouTube视频、图像流量 ——
 host-suffix, youtube.com, proxy
