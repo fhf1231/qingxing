@@ -72,11 +72,6 @@ host-suffix, stats.g.doubleclick.net, reject
 host-suffix, video-stats.l.google.com, reject
 host-suffix, pagead.l.doubleclick.net, reject
 
-# —— URL级广告正则拦截（更细粒度） ——
-# Quantumult X 支持 regex filter 直接写在 filter_local
-
-url-regex, ^https?:\/\/.*\/.+ad(s)?[^\/]*\/.*, reject
-
 # —— 正常YouTube视频、图像流量 ——
 host-suffix, youtube.com, proxy
 host-suffix, youtu.be, proxy
