@@ -56,6 +56,33 @@ geoip, cn, direct
 
 final, direct
 
+
+
+# 屏蔽常见广告域名
+host-suffix, ads.youtube.com, reject
+host-suffix, doubleclick.net, reject
+host-suffix, googlesyndication.com, reject
+host-suffix, googleads.g.doubleclick.net, reject
+host-suffix, pagead2.googlesyndication.com, reject
+host-suffix, pubads.g.doubleclick.net, reject
+host-suffix, adservice.google.com, reject
+host-suffix, partnerad.l.doubleclick.net, reject
+host-suffix, s0.2mdn.net, reject
+host-suffix, stats.g.doubleclick.net, reject
+host-suffix, video-stats.l.google.com, reject
+host-suffix, pagead.l.doubleclick.net, reject
+
+# —— URL级广告正则拦截（更细粒度） ——
+# Quantumult X 支持 regex filter 直接写在 filter_local
+url-regex, ^https?:\/\/.*(doubleclick|googlesyndication|pagead|pubads|adservice|partnerad|video-stats)\..*, reject
+url-regex, ^https?:\/\/.*\/.+ad(s)?[^\/]*\/.*, reject
+
+# —— 正常YouTube视频、图像流量 ——
+host-suffix, youtube.com, proxy
+host-suffix, youtu.be, proxy
+host-suffix, googlevideo.com, proxy
+host-suffix, ytimg.com, proxy
+
 [rewrite_remote]
 
 [rewrite_local]
@@ -63,3 +90,5 @@ final, direct
 [task_local]
 
 [mitm]
+skip-server-cert-verify = true
+hostname = *.googlevideo.com, *.youtube.com, *.doubleclick.net, *.googlesyndication.com
