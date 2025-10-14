@@ -89,5 +89,4 @@ host-keyword, video-stats, reject
 [task_local]
 
 [mitm]
-skip-server-cert-verify = true
 hostname = *.googlevideo.com, *.youtube.com, *.doubleclick.net, *.googlesyndication.com
