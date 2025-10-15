@@ -45,6 +45,7 @@ https://raw.githubusercontent.com/fhf1231/filterurl/main/AppleTV.list, tag=Apple
 https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=海外服务, force-policy=海外服务, opt-parser=false, enabled=true
 
 [filter_local]
+# 本地网络直连
 host-suffix, local, direct
 ip-cidr, 10.0.0.0/8, direct
 ip-cidr, 17.0.0.0/8, direct
@@ -54,13 +55,7 @@ ip-cidr, 192.168.0.0/16, direct
 ip-cidr, 224.0.0.0/4, direct
 geoip, cn, direct
 
-final, direct
-
-host-suffix, youtube.com, proxy
-host-suffix, youtu.be, proxy
-host-suffix, googlevideo.com, proxy
-host-suffix, ytimg.com, proxy
-
+# ---- 更具体的广告拒绝规则（必须放在 youtube proxy 之前） ----
 host-suffix, ads.youtube.com, reject
 host-suffix, doubleclick.net, reject
 host-suffix, googlesyndication.com, reject
@@ -74,6 +69,7 @@ host-suffix, stats.g.doubleclick.net, reject
 host-suffix, video-stats.l.google.com, reject
 host-suffix, pagead.l.doubleclick.net, reject
 
+# ---- keyword 拦截（补充） ----
 host-keyword, doubleclick, reject
 host-keyword, googlesyndication, reject
 host-keyword, pubads, reject
@@ -81,6 +77,15 @@ host-keyword, adservice, reject
 host-keyword, pagead, reject
 host-keyword, partnerad, reject
 host-keyword, video-stats, reject
+
+# ---- YouTube 主体走代理（放在拒绝规则之后） ----
+host-suffix, youtube.com, proxy
+host-suffix, youtu.be, proxy
+host-suffix, googlevideo.com, proxy
+host-suffix, ytimg.com, proxy
+
+# 默认策略放最后
+final, direct
 
 [rewrite_remote]
 
