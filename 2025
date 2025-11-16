@@ -22,6 +22,7 @@ address=/r.lifengchun.top/198.23.249.11
 [policy]
 static=大陆服务, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/China.png
 static=AppleTV, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Apple.png
+static=广告, reject, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Advertising.png
 static=海外服务, proxy, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Global.png
 
 [server_local]
@@ -38,42 +39,11 @@ FILTER_LAN, tag=LAN, force-policy=direct, inserted-resource=true, enabled=true
 FILTER_REGION, tag=大陆服务, force-policy=大陆服务, inserted-resource=true, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/mainland.list, tag=大陆服务, force-policy=大陆服务, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/AppleTV.list, tag=AppleTV, force-policy=AppleTV, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/fhf1231/filterurl/main/advertise.list, tag=广告, force-policy=广告, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=海外服务, force-policy=海外服务, opt-parser=false, enabled=true
 
 [filter_local]
-# 本地网络直连
 host-suffix, local, direct
-
-# ---- 更具体的广告拒绝规则（必须放在 youtube proxy 之前） ----
-host-suffix, ads.youtube.com, reject
-host-suffix, doubleclick.net, reject
-host-suffix, googlesyndication.com, reject
-host-suffix, googleads.g.doubleclick.net, reject
-host-suffix, pagead2.googlesyndication.com, reject
-host-suffix, pubads.g.doubleclick.net, reject
-host-suffix, adservice.google.com, reject
-host-suffix, partnerad.l.doubleclick.net, reject
-host-suffix, s0.2mdn.net, reject
-host-suffix, stats.g.doubleclick.net, reject
-host-suffix, video-stats.l.google.com, reject
-host-suffix, pagead.l.doubleclick.net, reject
-
-# ---- keyword 拦截（补充） ----
-host-keyword, doubleclick, reject
-host-keyword, googlesyndication, reject
-host-keyword, pubads, reject
-host-keyword, adservice, reject
-host-keyword, pagead, reject
-host-keyword, partnerad, reject
-host-keyword, video-stats, reject
-
-# ---- YouTube 主体走代理（放在拒绝规则之后） ----
-host-suffix, youtube.com, proxy
-host-suffix, youtu.be, proxy
-host-suffix, googlevideo.com, proxy
-host-suffix, ytimg.com, proxy
-
-# 默认策略放最后
 final, direct
 
 [rewrite_remote]
