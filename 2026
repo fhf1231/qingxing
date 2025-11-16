@@ -43,7 +43,7 @@ https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=æµ·å
 
 [filter_local]
 host-suffix, local, direct
-final, direct
+final, proxy
 
 [rewrite_remote]
 
