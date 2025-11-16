@@ -7,7 +7,7 @@ server_check_url=http://captive.apple.com/generate_204
 # > 服务器测试超时时间 (毫秒)
 server_check_timeout = 3000
 udp_drop_list = 53, QUIC
-excluded_routes = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, 224.0.0.0/4
+excluded_routes = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10,
 dns_exclusion_list = *.lan, *.local, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, network-test.debian.org, detectportal.firefox.com, *.srv.nintendo.net, *.stun.playstation.net, *.xboxlive.com, *.logon.battle.net, pool.ntp.org, captive.apple.com, *.miwifi.com
 dns_reject_domain_behavior = loopback
 
@@ -17,8 +17,6 @@ no-system
 no-ipv6
 server=223.6.6.6
 server=223.5.5.5
-server=119.29.29.29
-server=119.28.28.28
 address=/s.lifengchun.top/74.48.129.174
 address=/r.lifengchun.top/198.23.249.11
 
@@ -29,16 +27,17 @@ static=海外服务, proxy, img-url=https://raw.githubusercontent.com/fhf1231/fi
 
 [server_local]
 vmess=s.lifengchun.top:443, method=chacha20-ietf-poly1305, password=789324c6-4d3f-4ff0-833c-3193b81108ef, obfs=wss, obfs-uri=/ocs/v2.php/notifications/ws, tls-verification=true, fast-open=false, udp-relay=false, tag=lsjvm
-trojan=74.48.129.174:443, password=aZ9#pLqV2!sRk6@w, obfs=wss, obfs-host=s.lifengchun.top, obfs-uri=/remote.php/dav/files/minicloud, udp-relay=false, tag=lsjtr
+trojan=74.48.129.174:443, password=aZ9#pLqV2!sRk6@w, obfs=wss, obfs-host=s.lifengchun.top, obfs-uri=/remote.php/dav/files/minicloud, udp-relay=false, tls-verification=true, tag=lsjtr
 vmess=r.lifengchun.top:443, method=chacha20-ietf-poly1305, password=0986131e-ba14-4ef5-8794-c2e3b1ade4c9, obfs=wss, obfs-uri=/jinWu12ea9, tls-verification=true, fast-open=false, udp-relay=false, tag=dlsvm
-trojan=198.23.249.11:443, password=xV8%nJ3&cW5@eP9b, obfs=wss, obfs-host=r.lifengchun.top, obfs-uri=/remote.php/webdav/files/, udp-relay=false, tag=dlstr
+trojan=198.23.249.11:443, password=xV8%nJ3&cW5@eP9b, obfs=wss, obfs-host=r.lifengchun.top, obfs-uri=/remote.php/webdav/files/, udp-relay=false, tls-verification=true, tag=dlstr
 
 [server_remote]
 
 [filter_remote]
 FILTER_LAN, tag=LAN, force-policy=direct, inserted-resource=true, enabled=true
-https://raw.githubusercontent.com/fhf1231/filterurl/main/AppleTV.list, tag=AppleTV, force-policy=AppleTV, opt-parser=false, enabled=true
 FILTER_REGION, tag=CN, force-policy=大陆服务, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/fhf1231/filterurl/main/mainland.list, tag=大陆服务, force-policy=大陆服务, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/fhf1231/filterurl/main/AppleTV.list, tag=AppleTV, force-policy=AppleTV, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=海外服务, force-policy=海外服务, opt-parser=false, enabled=true
 
 
