@@ -61,8 +61,7 @@ host-suffix, admob.googleapis.com, reject
 
 # ---- 一般广告统计/跟踪 ----
 host-suffix, app-analytics-services.com, reject
-host-suffix, safebrowsing.googleapis.com, reject
-host-suffix, fonts.gstatic.com, reject
+
 
 # ---- keyword 拦截（广告专用，不误杀 API） ----
 host-keyword, doubleclick, reject
@@ -72,14 +71,17 @@ host-keyword, adservice, reject
 host-keyword, pagead, reject
 host-keyword, partnerad, reject
 
+AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT
+AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
+
 final, direct
 
 [rewrite_remote]
-https://raw.githubusercontent.com/Maasea/sgmodule/master/YouTube.Enhance.sgmodule, tag=YouTube去廣告
+
 
 [rewrite_local]
-AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT
-AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
+
+
 [script]
 # === YouTube 手動配置 - 來自 [Script] ===
 youtube.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/(youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch))(\?(.*))?$,requires-body=1,max-size=-1,binary-body-mode=1,script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js,argument="{"lyricLang":"off","captionLang":"off","blockUpload":true,"blockImmersive":true,"blockShorts":false,"debug":false}"
