@@ -71,7 +71,7 @@ host-keyword, adservice, reject
 host-keyword, pagead, reject
 host-keyword, partnerad, reject
 
-final, direct
+final, proxy
 
 [rewrite_remote]
 
