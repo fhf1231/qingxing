@@ -61,6 +61,8 @@ host-suffix, admob.googleapis.com, reject
 
 # ---- 一般广告统计/跟踪 ----
 host-suffix, app-analytics-services.com, reject
+host-suffix, safebrowsing.googleapis.com, reject
+host-suffix, fonts.gstatic.com, reject
 
 # ---- keyword 拦截（广告专用，不误杀 API） ----
 host-keyword, doubleclick, reject
@@ -73,10 +75,10 @@ host-keyword, partnerad, reject
 final, direct
 
 [rewrite_remote]
+https://raw.githubusercontent.com/Maasea/sgmodule/master/YouTube.Enhance.sgmodule, tag=YouTube去廣告
 
 [rewrite_local]
 
 [task_local]
 
 [mitm]
-hostname = *.googlevideo.com, *.youtube.com, *.doubleclick.net, *.googlesyndication.com
