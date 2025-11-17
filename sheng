@@ -25,7 +25,7 @@ static=大陆服务, direct, img-url=https://raw.githubusercontent.com/fhf1231/f
 static=海外服务, proxy, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Global.png
 
 [server_local]
-vmess=h.lifengchun.top:443, method=chacha20-ietf-poly1305, password=e85c3b5e-de0a-44f8-a834-aee034d048d7, obfs=wss, obfs-host=h.lifengchun.top, obfs-uri=/hosWu78e19, tls-verification=true, udp-relay=false, tag=hos
+vmess=c.lifengchun.top:443, method=chacha20-ietf-poly1305, password=6a22db10-c203-4761-9ab8-4c7e9df5fa80, obfs=wss, obfs-uri=/ocs/v2.php/notifications/ws, tls-verification=true, fast-open=false, udp-relay=false, tag=cvm
 vmess=r.lifengchun.top:443, method=chacha20-ietf-poly1305, password=0986131e-ba14-4ef5-8794-c2e3b1ade4c9, obfs=wss, obfs-uri=/jinWu12ea9, tls-verification=true, fast-open=false, udp-relay=false, tag=rack
 
 [server_remote]
