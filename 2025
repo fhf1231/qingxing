@@ -22,7 +22,6 @@ address=/r.lifengchun.top/198.23.249.11
 [policy]
 static=大陆服务, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/China.png
 static=AppleTV, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Apple.png
-static=广告, reject, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Advertising.png
 static=海外服务, proxy, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Global.png
 
 [server_local]
@@ -39,11 +38,51 @@ FILTER_LAN, tag=LAN, force-policy=direct, inserted-resource=true, enabled=true
 FILTER_REGION, tag=大陆服务, force-policy=大陆服务, inserted-resource=true, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/mainland.list, tag=大陆服务, force-policy=大陆服务, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/AppleTV.list, tag=AppleTV, force-policy=AppleTV, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/fhf1231/filterurl/main/advertise.list, tag=广告, force-policy=广告, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=海外服务, force-policy=海外服务, opt-parser=false, enabled=true
 
 [filter_local]
 host-suffix, local, direct
+# ---- 更具体的广告拒绝规则（必须放在 youtube proxy 之前） ----
+host-suffix, ads.youtube.com, reject
+host-suffix, doubleclick.net, reject
+host-suffix, googlesyndication.com, reject
+host-suffix, googleads.g.doubleclick.net, reject
+host-suffix, pagead2.googlesyndication.com, reject
+host-suffix, pubads.g.doubleclick.net, reject
+host-suffix, adservice.google.com, reject
+host-suffix, partnerad.l.doubleclick.net, reject
+host-suffix, s0.2mdn.net, reject
+host-suffix, stats.g.doubleclick.net, reject
+host-suffix, video-stats.l.google.com, reject
+host-suffix, pagead.l.doubleclick.net, reject
+
+#补充
+HOST-SUFFIX, app-analytics-services.com, reject
+HOST-SUFFIX, ads.youtube.com, reject
+HOST-SUFFIX, s.youtube.com, reject
+HOST-SUFFIX, m.youtube.com, reject
+HOST-SUFFIX, youtubei.googleapis.com, reject
+HOST-SUFFIX, youtube.googleapis.com, reject
+HOST-SUFFIX, yt3.ggpht.com, reject
+HOST-SUFFIX, video-stats.youtube.com, reject
+
+
+HOST-SUFFIX, yt3.ggpht.com, reject
+HOST-SUFFIX, video-stats.youtube.com, reject
+HOST-SUFFIX, doubleclick.net, reject
+HOST-SUFFIX, googlesyndication.com, reject
+HOST-SUFFIX, googleadservices.com, reject
+HOST-SUFFIX, adservice.google.com, reject
+HOST-SUFFIX, admob.googleapis.com, reject
+
+# ---- keyword 拦截（补充） ----
+host-keyword, doubleclick, reject
+host-keyword, googlesyndication, reject
+host-keyword, pubads, reject
+host-keyword, adservice, reject
+host-keyword, pagead, reject
+host-keyword, partnerad, reject
+host-keyword, video-stats, reject
 final, direct
 
 [rewrite_remote]
