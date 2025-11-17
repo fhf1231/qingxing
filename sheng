@@ -50,63 +50,63 @@ ip-cidr, 224.0.0.0/4, direct
 geoip, cn, direct
 
 # 屏蔽 YouTube APP 端广告（包括前贴片广告和插播广告）
-HOST-SUFFIX, app-analytics-services.com, 广告
-HOST-SUFFIX, ads.youtube.com, 广告
-HOST-SUFFIX, s.youtube.com, 广告
-HOST-SUFFIX, m.youtube.com, 广告
-HOST-SUFFIX, youtubei.googleapis.com, 广告
-HOST-SUFFIX, youtube.googleapis.com, 广告
-HOST-SUFFIX, yt3.ggpht.com, 广告
-HOST-SUFFIX, video-stats.youtube.com, 广告
+HOST-SUFFIX, app-analytics-services.com, reject
+HOST-SUFFIX, ads.youtube.com, reject
+HOST-SUFFIX, s.youtube.com, reject
+HOST-SUFFIX, m.youtube.com, reject
+HOST-SUFFIX, youtubei.googleapis.com, reject
+HOST-SUFFIX, youtube.googleapis.com, reject
+HOST-SUFFIX, yt3.ggpht.com, reject
+HOST-SUFFIX, video-stats.youtube.com, reject
 
 
-HOST-SUFFIX, yt3.ggpht.com, 广告
-HOST-SUFFIX, video-stats.youtube.com, 广告
-HOST-SUFFIX, doubleclick.net, 广告
-HOST-SUFFIX, googlesyndication.com, 广告
-HOST-SUFFIX, googleadservices.com, 广告
-HOST-SUFFIX, adservice.google.com, 广告
-HOST-SUFFIX, admob.googleapis.com, 广告
+HOST-SUFFIX, yt3.ggpht.com, reject
+HOST-SUFFIX, video-stats.youtube.com, reject
+HOST-SUFFIX, doubleclick.net, reject
+HOST-SUFFIX, googlesyndication.com, reject
+HOST-SUFFIX, googleadservices.com, reject
+HOST-SUFFIX, adservice.google.com, reject
+HOST-SUFFIX, admob.googleapis.com, reject
 
 # 屏蔽 Google 旗下广告服务（优化去重）
-HOST-SUFFIX, doubleclick.net, 广告
-HOST-SUFFIX, ad.doubleclick.net, 广告
-HOST-SUFFIX, googleads.g.doubleclick.net, 广告
-HOST-SUFFIX, googleads4.g.doubleclick.net, 广告
-HOST-SUFFIX, pagead.l.doubleclick.net, 广告
-HOST-SUFFIX, pubads.g.doubleclick.net, 广告
-HOST-SUFFIX, securepubads.g.doubleclick.net, 广告
+HOST-SUFFIX, doubleclick.net, reject
+HOST-SUFFIX, ad.doubleclick.net, reject
+HOST-SUFFIX, googleads.g.doubleclick.net, reject
+HOST-SUFFIX, googleads4.g.doubleclick.net, reject
+HOST-SUFFIX, pagead.l.doubleclick.net, reject
+HOST-SUFFIX, pubads.g.doubleclick.net, reject
+HOST-SUFFIX, securepubads.g.doubleclick.net, reject
 HOST-SUFFIX, stats.g.doubleclick.net, 广告
-HOST-SUFFIX, googlesyndication.com, 广告
-HOST-SUFFIX, ade.googlesyndication.com, 广告
-HOST-SUFFIX, pagead2.googlesyndication.com, 广告
-HOST-SUFFIX, tpc.googlesyndication.com, 广告
-HOST-SUFFIX, video-ad.googlesyndication.com, 广告
-HOST-SUFFIX, googleadservices.com, 广告
-HOST-SUFFIX, www.googleadservices.com, 广告
-HOST-SUFFIX, partner.googleadservices.com, 广告
-HOST-SUFFIX, googleleadservices.com, 广告
-HOST-SUFFIX, adservice.google.com, 广告
-HOST-SUFFIX, adservices.google.com, 广告
-HOST-SUFFIX, adwords.google.com, 广告
-HOST-SUFFIX, adssettings.google.com, 广告
-HOST-SUFFIX, google-analytics.com, 广告
-HOST-SUFFIX, analytics.google.com, 广告
-HOST-SUFFIX, admob.googleapis.com, 广告
+HOST-SUFFIX, googlesyndication.com, reject
+HOST-SUFFIX, ade.googlesyndication.com, reject
+HOST-SUFFIX, pagead2.googlesyndication.com, reject
+HOST-SUFFIX, tpc.googlesyndication.com, reject
+HOST-SUFFIX, video-ad.googlesyndication.com, reject
+HOST-SUFFIX, googleadservices.com, reject
+HOST-SUFFIX, www.googleadservices.com, reject
+HOST-SUFFIX, partner.googleadservices.com, reject
+HOST-SUFFIX, googleleadservices.com, reject
+HOST-SUFFIX, adservice.google.com, reject
+HOST-SUFFIX, adservices.google.com, reject
+HOST-SUFFIX, adwords.google.com, reject
+HOST-SUFFIX, adssettings.google.com, reject
+HOST-SUFFIX, google-analytics.com, reject
+HOST-SUFFIX, analytics.google.com, reject
+HOST-SUFFIX, admob.googleapis.com, reject
 
 # 屏蔽 YouTube 移动端特定广告服务（包括美国及其他地区）
-HOST-SUFFIX, android.clients.google.com, 广告
-HOST-SUFFIX, play.googleapis.com, 广告
-HOST-SUFFIX, play-fe.googleapis.com, 广告
-HOST-SUFFIX, play-lh.googleusercontent.com, 广告
-HOST-SUFFIX, youtube-ui.l.google.com, 广告
-HOST-SUFFIX, youtube-ui.google.com, 广告
-HOST-SUFFIX, youtube-ads.google.com, 广告
+HOST-SUFFIX, android.clients.google.com, reject
+HOST-SUFFIX, play.googleapis.com, reject
+HOST-SUFFIX, play-fe.googleapis.com, reject
+HOST-SUFFIX, play-lh.googleusercontent.com, reject
+HOST-SUFFIX, youtube-ui.l.google.com, reject
+HOST-SUFFIX, youtube-ui.google.com, reject
+HOST-SUFFIX, youtube-ads.google.com, reject
 
 
 # 通配符规则（覆盖子域名）
-HOST-WILDCARD, *.youtubei.com, 广告
-HOST-WILDCARD, *.adservice.google.*, 广告
+HOST-WILDCARD, *.youtubei.com, reject
+HOST-WILDCARD, *.adservice.google.*, reject
 
 # 默认路由
 final, direct
