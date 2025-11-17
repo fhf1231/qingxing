@@ -42,6 +42,7 @@ https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=海�
 
 [filter_local]
 host-suffix, local, direct
+HOST, token.safebrowsing.apple, 大陆服务
 # ---- 更具体的广告拒绝规则（必须放在 youtube proxy 之前） ----
 host-suffix, ads.youtube.com, reject
 host-suffix, doubleclick.net, reject
