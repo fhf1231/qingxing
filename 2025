@@ -76,7 +76,7 @@ final, direct
 [rewrite_remote]
 
 [rewrite_local]
-^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data-type=text data="" status-code=200
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad url reject-200
 
 [task_local]
 
