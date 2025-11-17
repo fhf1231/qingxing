@@ -43,6 +43,8 @@ https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=海�
 
 [filter_local]
 host-suffix, local, direct
+HOST, token.safebrowsing.apple, 大陆服务
+
 final, proxy
 
 [rewrite_remote]
