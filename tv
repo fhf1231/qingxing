@@ -78,7 +78,7 @@ final, proxy
 [rewrite_remote]
 
 [rewrite_local]
-
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.*&oad url reject-200
 ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) url script-response-body https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js?captionLang=zh-Hant&lyricLang=zh-Hant&blockUpload=false&blockImmersive=true&blockShorts=false&debug=false
 
 
