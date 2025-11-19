@@ -44,11 +44,6 @@ https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=海�
 host-suffix, local, direct
 HOST, token.safebrowsing.apple, direct
 
-
-[filter_local]
-host-suffix, local, direct
-HOST, token.safebrowsing.apple, direct
-
 host-suffix, ads.youtube.com, reject
 host-suffix, doubleclick.net, reject
 host-suffix, googlesyndication.com, reject
@@ -71,7 +66,6 @@ host-keyword, adservice, reject
 host-keyword, pagead, reject
 host-keyword, partnerad, reject
 
-
 final, proxy
 
 [rewrite_remote]
@@ -91,7 +85,6 @@ final, proxy
 ^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/user-customization-service\/v1\/customize$ url script-request-header https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-qx-header.js
 ^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$ url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js
 ^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/ url script-request-header https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-json.js
-
 
 # ======= 3. 辅助拦截 (引入了您的高级规则) ======= #
 ^https?:\/\/(www|s)\.youtube\.com\/api\/stats\/ads url reject-200
