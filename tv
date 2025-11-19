@@ -45,32 +45,11 @@ https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=海�
 host-suffix, local, direct
 HOST, token.safebrowsing.apple, direct
 
-# ---- YouTube / Google Ads (安全广告域名) ----
-host-suffix, ads.youtube.com, reject
+
 host-suffix, doubleclick.net, reject
-host-suffix, googlesyndication.com, reject
 host-suffix, googleadservices.com, reject
-host-suffix, googleads.g.doubleclick.net, reject
-host-suffix, pagead2.googlesyndication.com, reject
-host-suffix, pubads.g.doubleclick.net, reject
-host-suffix, adservice.google.com, reject
-host-suffix, partnerad.l.doubleclick.net, reject
-host-suffix, s0.2mdn.net, reject
-host-suffix, stats.g.doubleclick.net, reject
-host-suffix, pagead.l.doubleclick.net, reject
+host-suffix, googlesyndication.com, reject
 host-suffix, admob.googleapis.com, reject
-
-# ---- 一般广告统计/跟踪 ----
-host-suffix, app-analytics-services.com, reject
-
-
-# ---- keyword 拦截（广告专用，不误杀 API） ----
-host-keyword, doubleclick, reject
-host-keyword, googlesyndication, reject
-host-keyword, pubads, reject
-host-keyword, adservice, reject
-host-keyword, pagead, reject
-host-keyword, partnerad, reject
 
 
 final, proxy
