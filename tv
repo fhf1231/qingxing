@@ -1,4 +1,3 @@
-
 [general]
 # > 用于节点延迟测试
 #server_check_url=http://cp.cloudflare.com/generate_204
@@ -44,7 +43,6 @@ https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=海�
 [filter_local]
 host-suffix, local, direct
 HOST, token.safebrowsing.apple, direct
-
 
 host-suffix, ads.youtube.com, reject
 host-suffix, doubleclick.net, reject
