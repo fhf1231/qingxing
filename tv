@@ -7,7 +7,7 @@ server_check_url=http://captive.apple.com/generate_204
 #server_check_url =http://www.google.com/generate_204
 # > 服务器测试超时时间 (毫秒)
 server_check_timeout = 3000
-udp_drop_list = 443, 53, QUIC
+udp_drop_list = QUIC
 dns_exclusion_list = *.lan, *.local, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, network-test.debian.org, detectportal.firefox.com, *.srv.nintendo.net, *.stun.playstation.net, *.xboxlive.com, *.logon.battle.net, pool.ntp.org, captive.apple.com, *.miwifi.com
 dns_reject_domain_behavior = loopback
 excluded_routes = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, 17.0.0.0/8
