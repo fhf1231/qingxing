@@ -1,74 +1,86 @@
-
 [general]
 # > 用于节点延迟测试
-server_check_url=http://cp.cloudflare.com/generate_204
+#server_check_url=http://cp.cloudflare.com/generate_204
 #server_check_url= http://www.qualcomm.cn/generate_204
-#server_check_url=http://captive.apple.com/generate_204
+server_check_url=http://captive.apple.com/generate_204
 #server_check_url =http://www.google.com/generate_204
 # > 服务器测试超时时间 (毫秒)
 server_check_timeout = 3000
-dns_exclusion_list=*.lan, *.local, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, network-test.debian.org, detectportal.firefox.com, *.srv.nintendo.net, *.stun.playstation.net, *.xboxlive.com, *.logon.battle.net, pool.ntp.org, captive.apple.com, *.miwifi.com
+udp_drop_list = QUIC
+dns_exclusion_list = *.lan, *.local, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, network-test.debian.org, detectportal.firefox.com, *.srv.nintendo.net, *.stun.playstation.net, *.xboxlive.com, *.logon.battle.net, pool.ntp.org, captive.apple.com, *.miwifi.com
 dns_reject_domain_behavior = loopback
-excluded_routes = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, 17.0.0.0/8, 224.0.0.0/4
-udp_drop_list=1-65535
+excluded_routes = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, 17.0.0.0/8
 
 [dns]
 no-system
 no-ipv6
 server=223.6.6.6
 server=223.5.5.5
-server=119.29.29.29
-server=119.28.28.28
-
-
 address=/s.lifengchun.top/74.48.129.174
 address=/r.lifengchun.top/198.23.249.11
 
 [policy]
-static=Privacy, reject, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Advertising.png
-static=广告, reject, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Advertising.png
 static=大陆服务, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/China.png
 static=AppleTV, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Apple.png
 static=海外服务, proxy, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Global.png
 
 [server_local]
-vless=s.lifengchun.top:443, method=none, password=789324c6-4d3f-4ff0-833c-3193b81108ef, obfs=wss, obfs-uri=/stream/, tls-verification=true, fast-open=false, udp-relay=false, tag=lvl
+vmess=s.lifengchun.top:443, method=chacha20-ietf-poly1305, password=789324c6-4d3f-4ff0-833c-3193b81108ef, obfs=wss, obfs-uri=/ocs/v2.php/notifications/ws, tls-verification=true, fast-open=false, udp-relay=false, tag=lsjvm
+trojan=74.48.129.174:443, password=aZ9#pLqV2!sRk6@w, obfs=wss, obfs-host=s.lifengchun.top, obfs-uri=/remote.php/dav/files/minicloud, udp-relay=false, tls-verification=true, tag=lsjtr
 vmess=r.lifengchun.top:443, method=chacha20-ietf-poly1305, password=0986131e-ba14-4ef5-8794-c2e3b1ade4c9, obfs=wss, obfs-uri=/jinWu12ea9, tls-verification=true, fast-open=false, udp-relay=false, tag=dlsvm
+trojan=198.23.249.11:443, password=xV8%nJ3&cW5@eP9b, obfs=wss, obfs-host=r.lifengchun.top, obfs-uri=/remote.php/webdav/files/, udp-relay=false, tls-verification=true, tag=dlstr
+
 
 [server_remote]
 
 [filter_remote]
-https://raw.githubusercontent.com/fhf1231/filterurl/main/Privacy, tag=Privacy, force-policy=Privacy, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/fhf1231/filterurl/main/advertise.list, tag=广告, force-policy=广告, opt-parser=false, enabled=true
+FILTER_LAN, tag=LAN, force-policy=direct, inserted-resource=true, enabled=true
+FILTER_REGION, tag=大陆服务, force-policy=大陆服务, inserted-resource=true, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/mainland.list, tag=大陆服务, force-policy=大陆服务, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/AppleTV.list, tag=AppleTV, force-policy=AppleTV, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=海外服务, force-policy=海外服务, opt-parser=false, enabled=true
 
 [filter_local]
-# 本地和内网直连
 host-suffix, local, direct
-ip-cidr, 10.0.0.0/8, direct
-ip-cidr, 17.0.0.0/8, direct
-ip-cidr, 100.64.0.0/10, direct
-ip-cidr, 172.16.0.0/12, direct
-ip-cidr, 192.168.0.0/16, direct
-ip-cidr, 224.0.0.0/4, direct
-geoip, cn, direct
+HOST, token.safebrowsing.apple, 大陆服务
+
+# 1) Google / YouTube 广告域名（激进拦截）
+# =============================
+host-suffix, ads.youtube.com, reject
+host-suffix, googleads.g.doubleclick.net, reject
+host-suffix, doubleclick.net, reject
+host-suffix, googlesyndication.com, reject
+host-suffix, googleadservices.com, reject
+host-suffix, pagead2.googlesyndication.com, reject
+host-suffix, pubads.g.doubleclick.net, reject
+host-suffix, adservice.google.com, reject
+host-suffix, s0.2mdn.net, reject
+host-suffix, gvt1.com, reject
+host-suffix, gvt2.com, reject
+host-suffix, analytics.google.com, reject
+host-suffix, analytics.googleapis.com, reject
+host-suffix, stats.g.doubleclick.net, reject
+host-suffix, securepubads.g.doubleclick.net, reject
+host-suffix, video-stats.l.google.com, reject
+
+# =============================
+# 2) YouTube 追踪与测量接口（高风险但 Apple TV 安全）
+# =============================
+host-keyword, adbreak, reject
+host-keyword, mraid, reject
+host-keyword, pubads, reject
+host-keyword, adstatus, reject
+host-keyword, s0.2mdn, reject
+host-keyword, doubleclick, reject
+host-keyword, adservice, reject
+host-keyword, pagead, reject
 
 final, direct
 
-[rewrite_local]
-# YouTube API 广告字段清洗（使用 LuanRT 脚本）
-^https?:\/\/(www\.)?youtubei\.googleapis\.com\/youtubei\/v1\/(player|next|browse|search|reel) url script-response-body https://raw.githubusercontent.com/LuanRT/YouTube.js/main/src/parser/YouTube.js
-# GoogleVideo 请求头清洗，屏蔽广告流
-^https?:\/\/(r\d+---sn-.+)\.googlevideo\.com\/videoplayback url script-request-header https://raw.githubusercontent.com/LuanRT/YouTube.js/main/src/parser/YouTube_Headers.js
-
-
 [rewrite_remote]
+
+[rewrite_local]
 
 [task_local]
 
 [mitm]
-hostname = *.youtube.com, *.youtubei.googleapis.com, *.googlevideo.com, *.youtube-nocookie.com, *.doubleclick.net, *.googlesyndication.com, *.googleadservices.com, *.admob.googleapis.com, *.app-measurement.com
-passphrase = AF9E5F21
-p12 = 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
