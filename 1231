@@ -40,12 +40,37 @@ https://raw.githubusercontent.com/fhf1231/filterurl/main/mainland.list, tag=大�
 https://raw.githubusercontent.com/fhf1231/filterurl/main/AppleTV.list, tag=AppleTV, force-policy=AppleTV, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=海外服务, force-policy=海外服务, opt-parser=false, enabled=true
 
-
 [filter_local]
 host-suffix, local, direct
-HOST, token.safebrowsing.apple, 大陆服务
+# ==========================================
+# 1. 本地修正 & AI 补漏 (优先级最高)
+# ==========================================
+# xAI / Grok
+HOST-SUFFIX, grok.com, 海外服务
+HOST-SUFFIX, x.ai, 海外服务
+HOST-SUFFIX, api.x.ai, 海外服务
+# OpenAI 补漏
+HOST-SUFFIX, chatgpt.com, 海外服务
+HOST-SUFFIX, oaiusercontent.com, 海外服务
+# 美区服务修正
+HOST-SUFFIX, stocks-data-service.apple.com, 海外服务
+HOST-SUFFIX, ls.apple.com, 海外服务
+HOST, token.safebrowsing.apple, 海外服务
+# Emby 私服
+HOST-SUFFIX, xeton.dev, 海外服务
 
-final, proxy
+# ==========================================
+# 2. 中国大陆服务 (保留这份直连规则，省流量)
+# ==========================================
+# Apple 下载加速
+HOST-SUFFIX, mzstatic.com, direct
+HOST-SUFFIX, cdn-apple.com, direct
+
+# 兜底
+HOST-SUFFIX, cn, direct
+GEOIP, CN, direct
+
+final, direct
 
 [rewrite_remote]
 
