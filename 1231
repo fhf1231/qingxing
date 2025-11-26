@@ -27,8 +27,8 @@ static=Global, proxy, img-url=https://raw.githubusercontent.com/fhf1231/filterur
 [server_remote]
 
 [filter_remote]
-FILTER_REGION, tag=CN, force-policy=direct, inserted-resource=true, enabled=true
-FILTER_LAN, tag=LAN, force-policy=direct, inserted-resource=true, enabled=true
+# FILTER_REGION, tag=CN, force-policy=direct, inserted-resource=true, enabled=true
+# FILTER_LAN, tag=LAN, force-policy=direct, inserted-resource=true, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/mainland.list, tag=China, force-policy=China, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/AppleTV.list, tag=AppleTV, force-policy=AppleTV, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=Global, force-policy=Global, opt-parser=false, enabled=true
@@ -43,21 +43,33 @@ trojan=198.23.249.11:443, password=xV8%nJ3&cW5@eP9b, obfs=wss, obfs-host=r.lifen
 
 [filter_local]
 host-suffix, local, direct
-HOST-SUFFIX, cn, direct
+ip-cidr, 192.168.0.0/16, direct
+ip-cidr, 10.0.0.0/8, direct
+ip-cidr, 172.16.0.0/12, direct
+ip-cidr, 127.0.0.0/8, direct
+ip-cidr, 100.64.0.0/10, direct
+ip-cidr, 224.0.0.0/4, direct
 
-HOST-SUFFIX, app-measurement.com, REJECT
+HOST, mlvbdc.live.tlivesource.com, direct
+HOST, pull-m1.wxlivecdn.com, direct
+
+host-suffix, ads.youtube.com, reject
 host-suffix, doubleclick.net, reject
+HOST-SUFFIX, app-measurement.com, REJECT
 host-suffix, app-analytics-services.com, reject
 
-# 美区服务修正
-HOST-SUFFIX, stocks-data-service.apple.com, Global
-HOST, token.safebrowsing.apple, Global
+# HOST-SUFFIX, stocks-data-service.apple.com, proxy
+# HOST, token.safebrowsing.apple, proxy
 
-# Apple 下载加速
+# HOST-SUFFIX, googleapis.com, proxy
+# HOST-SUFFIX, gstatic.com, proxy
+# HOST-SUFFIX, s.youtube.com, proxy
+
 # HOST-SUFFIX, mzstatic.com, direct
 # HOST-SUFFIX, cdn-apple.com, direct
 
-# GEOIP, CN, direct
+host-suffix, cn, direct
+geoip, cn, direct
 
 final, proxy
 
