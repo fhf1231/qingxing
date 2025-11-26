@@ -48,10 +48,13 @@ host-suffix, yt3.ggpht.com, 海外服务
 host-suffix, ggpht.com, 海外服务
 host-suffix, photos-ugc.l.googleusercontent.com, 海外服务
 
+host-suffix, s.youtube.com, 海外服务
+host-suffix, video-stats.l.google.com, 海外服务
+
+
 host-suffix, ads.youtube.com, reject
 host-suffix, ad-access.youtube.com, reject
 host-suffix, youtube-nocookie.com, reject
-host-suffix, s.youtube.com, reject
 host-suffix, doubleclick.net, reject
 host-suffix, googleads.g.doubleclick.net, reject
 host-suffix, pubads.g.doubleclick.net, reject
