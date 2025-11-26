@@ -59,7 +59,7 @@ host-suffix, app-analytics-services.com, reject
 HOST-SUFFIX, cn, direct
 GEOIP, CN, direct
 
-final, direct
+final, proxy
 
 [rewrite_remote]
 
