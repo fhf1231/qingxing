@@ -75,7 +75,10 @@ final, direct
 [rewrite_remote]
 
 [rewrite_local]
+https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.*&oad url reject-200
+^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(next|player|browse|search|get_watch|guide) url script-response-body https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js?captionLang=off&lyricLang=off&blockUpload=true&blockImmersive=true&blockShorts=false&debug=false
 
 [task_local]
 
 [mitm]
+hostname = youtubei.googleapis.com, *.googlevideo.com
