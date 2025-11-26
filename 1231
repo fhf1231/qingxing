@@ -34,11 +34,11 @@ trojan=198.23.249.11:443, password=xV8%nJ3&cW5@eP9b, obfs=wss, obfs-host=r.lifen
 [server_remote]
 
 [filter_remote]
+FILTER_REGION, tag=CN, force-policy=direct, inserted-resource=true, enabled=true
 FILTER_LAN, tag=LAN, force-policy=direct, inserted-resource=true, enabled=true
-FILTER_REGION, tag=China, force-policy=China, inserted-resource=true, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/mainland.list, tag=China, force-policy=China, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/AppleTV.list, tag=AppleTV, force-policy=AppleTV, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=Global, force-policy=Global, force-remote-dns=1, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=Global, force-policy=Global, opt-parser=false, enabled=true
 
 [filter_local]
 host-suffix, local, direct
@@ -57,7 +57,7 @@ host-suffix, doubleclick.net, reject
 host-suffix, app-analytics-services.com, reject
 # 兜底
 HOST-SUFFIX, cn, direct
-GEOIP, CN, direct
+# GEOIP, CN, direct
 
 final, proxy
 
