@@ -43,6 +43,7 @@ https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=海�
 [filter_local]
 host-suffix, local, direct
 
+HOST-SUFFIX, gstatic.com, 海外服务
 host-suffix, fonts.gstatic.com, 海外服务
 host-suffix, yt3.ggpht.com, 海外服务
 host-suffix, ggpht.com, 海外服务
