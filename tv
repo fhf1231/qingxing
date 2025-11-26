@@ -43,30 +43,30 @@ https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=海�
 [filter_local]
 host-suffix, local, direct
 
-HOST-SUFFIX, gstatic.com, 海外服务
+host-suffix, admob.googleapis.com, reject
+host-suffix, ads.youtube.com, reject
+host-suffix, ad-access.youtube.com, reject
+host-suffix, youtube-nocookie.com, reject
+
+host-suffix, s.youtube.com, 海外服务
+host-suffix, video-stats.l.google.com, 海外服务
 host-suffix, fonts.gstatic.com, 海外服务
 host-suffix, yt3.ggpht.com, 海外服务
 host-suffix, ggpht.com, 海外服务
 host-suffix, photos-ugc.l.googleusercontent.com, 海外服务
+host-suffix, googleapis.com, 海外服务
+HOST-SUFFIX, gstatic.com, 海外服务
 
-host-suffix, s.youtube.com, 海外服务
-host-suffix, video-stats.l.google.com, 海外服务
-
-
-host-suffix, ads.youtube.com, reject
-host-suffix, ad-access.youtube.com, reject
-host-suffix, youtube-nocookie.com, reject
 host-suffix, doubleclick.net, reject
 host-suffix, googleads.g.doubleclick.net, reject
 host-suffix, pubads.g.doubleclick.net, reject
-host-suffix, pagead.l.doubleclick.net, reject
 host-suffix, partnerad.l.doubleclick.net, reject
 host-suffix, stats.g.doubleclick.net, reject
-host-suffix, admob.googleapis.com, reject
 host-suffix, googlesyndication.com, reject
 host-suffix, googleadservices.com, reject
-host-suffix, pagead2.googlesyndication.com, reject
 host-suffix, adservice.google.com, reject
+host-suffix, pagead.l.doubleclick.net, reject
+host-suffix, pagead2.googlesyndication.com, reject
 host-suffix, s0.2mdn.net, reject
 host-suffix, 2mdn.net, reject
 host-suffix, app-analytics-services.com, reject
