@@ -38,7 +38,7 @@ FILTER_LAN, tag=LAN, force-policy=direct, inserted-resource=true, enabled=true
 FILTER_REGION, tag=大陆服务, force-policy=大陆服务, inserted-resource=true, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/mainland.list, tag=China, force-policy=China, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/AppleTV.list, tag=AppleTV, force-policy=AppleTV, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=Global, force-policy=Global, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=Global, force-policy=Global, force-remote-dns=1, opt-parser=false, enabled=true
 
 [filter_local]
 host-suffix, local, direct
