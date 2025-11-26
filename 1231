@@ -11,7 +11,6 @@ excluded_routes = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10
 dns_exclusion_list = *.lan, *.local, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, network-test.debian.org, detectportal.firefox.com, *.srv.nintendo.net, *.stun.playstation.net, *.xboxlive.com, *.logon.battle.net, pool.ntp.org, captive.apple.com, *.miwifi.com
 dns_reject_domain_behavior = loopback
 
-
 [dns]
 no-system
 no-ipv6
@@ -25,12 +24,6 @@ static=China, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterur
 static=AppleTV, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Apple.png
 static=Global, proxy, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Global.png
 
-[server_local]
-vmess=s.lifengchun.top:443, method=chacha20-ietf-poly1305, password=789324c6-4d3f-4ff0-833c-3193b81108ef, obfs=wss, obfs-uri=/ocs/v2.php/notifications/ws, tls-verification=true, fast-open=false, udp-relay=false, tag=lsjvm
-trojan=74.48.129.174:443, password=aZ9#pLqV2!sRk6@w, obfs=wss, obfs-host=s.lifengchun.top, obfs-uri=/remote.php/dav/files/minicloud, udp-relay=false, tls-verification=true, tag=lsjtr
-vmess=r.lifengchun.top:443, method=chacha20-ietf-poly1305, password=0986131e-ba14-4ef5-8794-c2e3b1ade4c9, obfs=wss, obfs-uri=/jinWu12ea9, tls-verification=true, fast-open=false, udp-relay=false, tag=dlsvm
-trojan=198.23.249.11:443, password=xV8%nJ3&cW5@eP9b, obfs=wss, obfs-host=r.lifengchun.top, obfs-uri=/remote.php/webdav/files/, udp-relay=false, tls-verification=true, tag=dlstr
-
 [server_remote]
 
 [filter_remote]
@@ -39,6 +32,14 @@ FILTER_LAN, tag=LAN, force-policy=direct, inserted-resource=true, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/mainland.list, tag=China, force-policy=China, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/AppleTV.list, tag=AppleTV, force-policy=AppleTV, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=Global, force-policy=Global, opt-parser=false, enabled=true
+
+[rewrite_remote]
+
+[server_local]
+vmess=s.lifengchun.top:443, method=chacha20-ietf-poly1305, password=789324c6-4d3f-4ff0-833c-3193b81108ef, obfs=wss, obfs-uri=/ocs/v2.php/notifications/ws, tls-verification=true, fast-open=false, udp-relay=false, tag=lsjvm
+trojan=74.48.129.174:443, password=aZ9#pLqV2!sRk6@w, obfs=wss, obfs-host=s.lifengchun.top, obfs-uri=/remote.php/dav/files/minicloud, udp-relay=false, tls-verification=true, tag=lsjtr
+vmess=r.lifengchun.top:443, method=chacha20-ietf-poly1305, password=0986131e-ba14-4ef5-8794-c2e3b1ade4c9, obfs=wss, obfs-uri=/jinWu12ea9, tls-verification=true, fast-open=false, udp-relay=false, tag=dlsvm
+trojan=198.23.249.11:443, password=xV8%nJ3&cW5@eP9b, obfs=wss, obfs-host=r.lifengchun.top, obfs-uri=/remote.php/webdav/files/, udp-relay=false, tls-verification=true, tag=dlstr
 
 [filter_local]
 host-suffix, local, direct
@@ -51,7 +52,6 @@ HOST, token.safebrowsing.apple, Global
 # HOST-SUFFIX, mzstatic.com, direct
 # HOST-SUFFIX, cdn-apple.com, direct
 
-
 HOST-SUFFIX, app-measurement.com, REJECT
 host-suffix, doubleclick.net, reject
 host-suffix, app-analytics-services.com, reject
@@ -61,13 +61,13 @@ HOST-SUFFIX, cn, direct
 
 final, proxy
 
-[rewrite_remote]
-
 [rewrite_local]
 https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.*&oad url reject-200
 ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(next|player|browse|search|get_watch|guide) url script-response-body https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js?captionLang=off&lyricLang=off&blockUpload=true&blockImmersive=true&blockShorts=false&debug=false
 
 [task_local]
+
+[http_backend]
 
 [mitm]
 hostname = youtubei.googleapis.com, *.googlevideo.com
