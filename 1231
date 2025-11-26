@@ -46,6 +46,7 @@ host-suffix, local, direct
 # 1. 本地修正 & AI 补漏 (优先级最高)
 # ==========================================
 # xAI / Grok
+HOST-SUFFIX, x.com, 海外服务
 HOST-SUFFIX, grok.com, 海外服务
 HOST-SUFFIX, x.ai, 海外服务
 HOST-SUFFIX, api.x.ai, 海外服务
@@ -66,6 +67,9 @@ HOST-SUFFIX, xeton.dev, 海外服务
 HOST-SUFFIX, mzstatic.com, direct
 HOST-SUFFIX, cdn-apple.com, direct
 
+
+host-suffix, doubleclick.net, reject
+host-suffix, app-analytics-services.com, reject
 # 兜底
 HOST-SUFFIX, cn, direct
 GEOIP, CN, direct
