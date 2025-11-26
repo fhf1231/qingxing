@@ -38,7 +38,68 @@ FILTER_LAN, tag=LAN, force-policy=direct, inserted-resource=true, enabled=true
 FILTER_REGION, tag=大陆服务, force-policy=大陆服务, inserted-resource=true, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/mainland.list, tag=大陆服务, force-policy=大陆服务, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/AppleTV.list, tag=AppleTV, force-policy=AppleTV, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=海外服务, force-policy=海外服务, opt-parser=false, enabled=true
+# https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=海外服务, force-policy=海外服务, opt-parser=false, enabled=true
+
+# =========================================================
+# 🛡️ 2025 自动化规则订阅 (CDN 加速 + 防污染强化版)
+# =========================================================
+
+# ------------------- 1. 必须置顶的系统规则 -------------------
+# 局域网与 GeoIP (系统内置，保持原样)
+FILTER_LAN, tag=LAN, force-policy=direct, inserted-resource=true, enabled=true
+FILTER_REGION, tag=大陆服务, force-policy=大陆服务, inserted-resource=true, enabled=true
+
+# ------------------- 2. 人工智能 (AI Priority) -------------------
+# OpenAI / ChatGPT (含语音/Sora)
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/QuantumultX/OpenAI/OpenAI.list, tag=OpenAI, policy=海外服务, force-remote-dns=1, update-interval=86400, opt-parser=true
+
+# Claude (Anthropic)
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/QuantumultX/Claude/Claude.list, tag=Claude, policy=海外服务, force-remote-dns=1, update-interval=86400, opt-parser=true
+
+# Gemini / Google AI
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/QuantumultX/Gemini/Gemini.list, tag=Gemini, policy=海外服务, force-remote-dns=1, update-interval=86400, opt-parser=true
+
+# Copilot
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/QuantumultX/Copilot/Copilot.list, tag=Copilot, policy=海外服务, force-remote-dns=1, update-interval=86400, opt-parser=true
+
+# ------------------- 3. 核心流媒体与社交 -------------------
+# YouTube (已修复历史记录)
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/QuantumultX/YouTube/YouTube.list, tag=YouTube, policy=海外服务, force-remote-dns=1, update-interval=86400, opt-parser=true
+
+# Netflix
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/QuantumultX/Netflix/Netflix.list, tag=Netflix, policy=海外服务, force-remote-dns=1, update-interval=86400, opt-parser=true
+
+# Disney+
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/QuantumultX/Disney/Disney.list, tag=Disney, policy=海外服务, force-remote-dns=1, update-interval=86400, opt-parser=true
+
+# Spotify
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/QuantumultX/Spotify/Spotify.list, tag=Spotify, policy=海外服务, force-remote-dns=1, update-interval=86400, opt-parser=true
+
+# Twitter / X (含 xAI / Grok 基础域名)
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/QuantumultX/Twitter/Twitter.list, tag=Twitter, policy=海外服务, force-remote-dns=1, update-interval=86400, opt-parser=true
+
+# Telegram (强制远程DNS，防转圈)
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/QuantumultX/Telegram/Telegram.list, tag=Telegram, policy=海外服务, force-remote-dns=1, update-interval=86400, opt-parser=true
+
+# GitHub
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/QuantumultX/GitHub/GitHub.list, tag=GitHub, policy=海外服务, force-remote-dns=1, update-interval=86400, opt-parser=true
+
+# ------------------- 4. 基础服务与兜底 -------------------
+# Google 全家桶 (修复图片/推送/账号)
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/QuantumultX/Google/Google.list, tag=Google, policy=海外服务, force-remote-dns=1, update-interval=86400, opt-parser=true
+
+# 苹果服务优化 (仅针对美区/隐私功能走代理，下载依然直连)
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/QuantumultX/Apple/Apple_Proxy.list, tag=AppleProxy, policy=海外服务, force-remote-dns=1, update-interval=86400, opt-parser=true
+
+# 墙内补漏 (Global) - 包含 Pornhub、维基百科等其他被墙网站
+# 替代了你原来的 overseas.list，但剔除了 PayPal 和 AWS 风险
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/QuantumultX/Global/Global.list, tag=Global, policy=海外服务, force-remote-dns=1, update-interval=86400, opt-parser=true
+
+# ------------------- 5. 中国大陆服务 -------------------
+# 使用高质量 CDN 链接，不再使用 fhf1231 的直连链接
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/QuantumultX/China/China.list, tag=China, policy=大陆服务, update-interval=86400, opt-parser=true
+
+
 
 [filter_local]
 host-suffix, local, direct
