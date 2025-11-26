@@ -48,9 +48,11 @@ HOST-SUFFIX, stocks-data-service.apple.com, Global
 HOST, token.safebrowsing.apple, Global
 
 # Apple 下载加速
-HOST-SUFFIX, mzstatic.com, direct
-HOST-SUFFIX, cdn-apple.com, direct
+# HOST-SUFFIX, mzstatic.com, direct
+# HOST-SUFFIX, cdn-apple.com, direct
 
+
+HOST-SUFFIX, app-measurement.com, REJECT
 host-suffix, doubleclick.net, reject
 host-suffix, app-analytics-services.com, reject
 # 兜底
