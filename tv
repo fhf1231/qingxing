@@ -27,8 +27,8 @@ static=海外服务, proxy, img-url=https://raw.githubusercontent.com/fhf1231/fi
 [server_local]
 vmess=s.lifengchun.top:443, method=chacha20-ietf-poly1305, password=789324c6-4d3f-4ff0-833c-3193b81108ef, obfs=wss, obfs-uri=/ocs/v2.php/notifications/ws, tls-verification=true, fast-open=false, udp-relay=false, tag=lsjvm
 trojan=74.48.129.174:443, password=aZ9#pLqV2!sRk6@w, obfs=wss, obfs-host=s.lifengchun.top, obfs-uri=/remote.php/dav/files/minicloud, udp-relay=false, tls-verification=true, tag=lsjtr
-vmess=r.lifengchun.top:443, method=chacha20-ietf-poly1305, password=0986131e-ba14-4ef5-8794-c2e3b1ade4c9, obfs=wss, obfs-uri=/jinWu12ea9, tls-verification=true, fast-open=false, udp-relay=false, tag=dlsvm
-trojan=198.23.249.11:443, password=xV8%nJ3&cW5@eP9b, obfs=wss, obfs-host=r.lifengchun.top, obfs-uri=/remote.php/webdav/files/, udp-relay=false, tls-verification=true, tag=dlstr
+vmess=r.lifengchun.top:443, method=chacha20-ietf-poly1305, password=0986131e-ba14-4ef5-8794-c2e3b1ade4c9, obfs=wss, obfs-uri=/remote.php/dav/files/admin/Videos/4K_Stream_Cache, tls-verification=true, fast-open=false, udp-relay=false, tag=dlsvm
+trojan=198.23.249.11:443, password=xV8%nJ3&cW5@eP9b, obfs=wss, obfs-host=r.lifengchun.top, obfs-uri=/remote.php/dav/files/admin/Photos/CameraUpload, udp-relay=false, tls-verification=true, tag=dlstr
 
 
 [server_remote]
