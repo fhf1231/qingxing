@@ -20,9 +20,9 @@ address=/s.lifengchun.top/74.48.129.174
 address=/c.lifengchun.top/74.48.59.37
 
 [policy]
-static=大陆服务, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/China.png
+static=China, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/China.png
 static=AppleTV, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Apple.png
-static=海外服务, proxy, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Global.png
+static=Global, proxy, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Global.png
 
 [server_local]
 vmess=s.lifengchun.top:443, method=chacha20-ietf-poly1305, password=789324c6-4d3f-4ff0-833c-3193b81108ef, obfs=wss, obfs-uri=/ocs/v2.php/notifications/ws, tls-verification=true, fast-open=false, udp-relay=false, tag=rvm
@@ -35,10 +35,10 @@ trojan=74.48.59.37:443, password=xV8%nJ3&cW5@eP9b, obfs=wss, obfs-host=c.lifengc
 
 [filter_remote]
 FILTER_LAN, tag=LAN, force-policy=direct, inserted-resource=true, enabled=true
-FILTER_REGION, tag=大陆服务, force-policy=大陆服务, inserted-resource=true, enabled=true
-https://raw.githubusercontent.com/fhf1231/filterurl/main/mainland.list, tag=大陆服务, force-policy=大陆服务, opt-parser=false, enabled=true
+FILTER_REGION, tag=China, force-policy=China, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/fhf1231/filterurl/main/mainland.list, tag=China, force-policy=China, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/AppleTV.list, tag=AppleTV, force-policy=AppleTV, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=海外服务, force-policy=海外服务, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=Global, force-policy=Global, opt-parser=false, enabled=true
 
 [filter_local]
 host-suffix, local, direct
@@ -48,14 +48,14 @@ host-suffix, ads.youtube.com, reject
 host-suffix, ad-access.youtube.com, reject
 host-suffix, youtube-nocookie.com, reject
 
-host-suffix, s.youtube.com, 海外服务
-host-suffix, video-stats.l.google.com, 海外服务
-host-suffix, fonts.gstatic.com, 海外服务
-host-suffix, yt3.ggpht.com, 海外服务
-host-suffix, ggpht.com, 海外服务
-host-suffix, photos-ugc.l.googleusercontent.com, 海外服务
-host-suffix, googleapis.com, 海外服务
-HOST-SUFFIX, gstatic.com, 海外服务
+host-suffix, s.youtube.com, Global
+host-suffix, video-stats.l.google.com, Global
+host-suffix, fonts.gstatic.com, Global
+host-suffix, yt3.ggpht.com, Global
+host-suffix, ggpht.com, Global
+host-suffix, photos-ugc.l.googleusercontent.com, Global
+host-suffix, googleapis.com, Global
+HOST-SUFFIX, gstatic.com, Global
 
 host-suffix, doubleclick.net, reject
 host-suffix, googleads.g.doubleclick.net, reject
