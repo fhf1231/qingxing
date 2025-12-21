@@ -25,10 +25,12 @@ static=AppleTV, direct, img-url=https://raw.githubusercontent.com/fhf1231/filter
 static=Global, proxy, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Global.png
 
 [server_local]
+vless=s.lifengchun.top:443, method=none, password=03b8e25e-16ea-4bc0-95fe-b8fd10bfcb73, obfs=wss, obfs-host=s.lifengchun.top, obfs-uri=/apps/files_sharing/public, tls-verification=true, fast-open=false, udp-relay=false, tag=rvlws
 vmess=s.lifengchun.top:443, method=chacha20-ietf-poly1305, password=789324c6-4d3f-4ff0-833c-3193b81108ef, obfs=wss, obfs-uri=/ocs/v2.php/notifications/ws, tls-verification=true, fast-open=false, udp-relay=false, tag=rvm
 trojan=74.48.129.174:443, password=aZ9#pLqV2!sRk6@w, obfs=wss, obfs-host=s.lifengchun.top, obfs-uri=/remote.php/dav/files/minicloud, udp-relay=false, tls-verification=true, tag=rtr
 vmess=c.lifengchun.top:443, method=chacha20-ietf-poly1305, password=0986131e-ba14-4ef5-8794-c2e3b1ade4c9, obfs=wss, obfs-uri=/remote.php/dav/files/admin/Videos/4K_Stream_Cache, tls-verification=true, fast-open=false, udp-relay=false, tag=cvm
 trojan=74.48.59.37:443, password=xV8%nJ3&cW5@eP9b, obfs=wss, obfs-host=c.lifengchun.top, obfs-uri=/remote.php/dav/files/admin/Photos/CameraUpload, udp-relay=false, tls-verification=true, tag=ctr
+vless=c.lifengchun.top:443, method=none, password=35fd9743-2bdd-4428-a310-11a337496c81, obfs=wss, obfs-host=c.lifengchun.top, obfs-uri=/apps/files_sharing/public, tls-verification=true, fast-open=false, udp-relay=false, tag=cvlws
 
 
 [server_remote]
