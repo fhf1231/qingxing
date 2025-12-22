@@ -84,47 +84,15 @@ host-suffix, scorecardresearch.com, reject
 # 理由：VideoAmp 是广告测量与数据分析平台，属于纯粹的追踪器。拦截它能保护隐私并加速视频加载。
 host-suffix, videoamp.com, reject
 
-# === Apple TV 界面与鉴权 (必须走代理) ===
-HOST-SUFFIX, tv.apple.com, proxy
-HOST-SUFFIX, tv.applemusic.com, proxy
-HOST-SUFFIX, apple.news, proxy
-HOST, uts-api.itunes.apple.com, proxy
-HOST, play.itunes.apple.com, proxy
-HOST, play-edge.itunes.apple.com, proxy
-HOST, linear.tv.apple.com, proxy
-HOST, sports.tv.apple.com, proxy
-HOST, movies.apple.com, proxy
-HOST, books.apple.com, proxy
-HOST, amp-api.videos.apple.com, proxy
-HOST, video-api.itunes.apple.com, proxy
-
-
-# === Apple TV 视频流数据 (必须直连) ===
-# 4K HDR 视频数据源，直连速度最快且省流量
-HOST, hls.itunes.apple.com, direct
-HOST, hls-amt.itunes.apple.com, direct
-HOST, hls-svod.itunes.apple.com, direct
-HOST, hls-vod.itunes.apple.com, direct
-HOST-SUFFIX, hls.itunes.apple.com, direct
-
-# === App Store 图片与下载 CDN (必须直连) ===
-# 各种海报、图标、应用下载
-HOST-SUFFIX, mzstatic.com, direct
-HOST-SUFFIX, cdn-apple.com, direct
-HOST-SUFFIX, aaplimg.com, direct
-HOST-SUFFIX, apple-cloudkit.com, direct
-HOST-SUFFIX, icloud-content.com, direct
-
-# === 基础服务与 CDN (必须直连) ===
-# 确保系统时间准确、推送及时收到
-HOST-SUFFIX, akadns.net, direct
-HOST, time.apple.com, direct
-HOST, time.asia.apple.com, direct
-HOST, time.euro.apple.com, direct
-HOST, apple.com.akadns.net, direct
-HOST, configuration-lb.ls-apple.com.akadns.net, direct
-HOST, courier-push-apple.com.akadns.net, direct
-HOST, push-apple.com.akadns.net, direct
+HOST, hls-amt.itunes.apple.com,direct
+HOST, hls.itunes.apple.com,direct
+HOST, np-edge.itunes.apple.com,direct
+HOST, play-edge.itunes.apple.com,direct
+HOST, tv.applemusic.com,direct
+HOST, uts-api.itunes.apple.com,direct
+HOST-SUFFIX, tv.apple.com,direct
+USER-AGENT, AppleTV*,direct
+USER-AGENT, com.apple.tv*,direct
 
 host-suffix, ads.youtube.com, reject
 host-suffix, doubleclick.net, reject
