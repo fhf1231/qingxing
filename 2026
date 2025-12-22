@@ -43,6 +43,7 @@ HOST, token.safebrowsing.apple, China
 HOST, mlvbdc.live.tlivesource.com, direct
 HOST, pull-m1.wxlivecdn.com, direct
 
+# === Apple TV
 HOST, hls-amt.itunes.apple.com,direct
 HOST, hls.itunes.apple.com,direct
 HOST, np-edge.itunes.apple.com,direct
@@ -53,24 +54,8 @@ HOST-SUFFIX, tv.apple.com,direct
 USER-AGENT, AppleTV*,direct
 USER-AGENT, com.apple.tv*,direct
 
-# ---- YouTube / Google Ads (安全广告域名) ----
-host-suffix, ads.youtube.com, reject
-host-suffix, doubleclick.net, reject
-host-suffix, googlesyndication.com, reject
-host-suffix, googleadservices.com, reject
-host-suffix, googleads.g.doubleclick.net, reject
-host-suffix, pagead2.googlesyndication.com, reject
-host-suffix, pubads.g.doubleclick.net, reject
-host-suffix, adservice.google.com, reject
-host-suffix, partnerad.l.doubleclick.net, reject
-host-suffix, s0.2mdn.net, reject
-host-suffix, stats.g.doubleclick.net, reject
-host-suffix, pagead.l.doubleclick.net, reject
-host-suffix, admob.googleapis.com, reject
-
 # ---- 一般广告统计/跟踪 ----
 host-suffix, app-analytics-services.com, reject
-
 
 # ---- keyword 拦截（广告专用，不误杀 API） ----
 host-keyword, doubleclick, reject
