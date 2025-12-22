@@ -50,6 +50,7 @@ host-suffix, local, direct
 HOST-SUFFIX, tv.apple.com, proxy
 HOST-SUFFIX, tv.applemusic.com, proxy
 HOST-SUFFIX, apple.news, proxy
+host, np-edge.itunes.apple.com, proxy
 HOST, uts-api.itunes.apple.com, proxy
 HOST, play.itunes.apple.com, proxy
 HOST, play-edge.itunes.apple.com, proxy
