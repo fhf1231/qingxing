@@ -58,6 +58,8 @@ HOST, linear.tv.apple.com, proxy
 HOST, sports.tv.apple.com, proxy
 HOST, movies.apple.com, proxy
 HOST, books.apple.com, proxy
+host, amp-api.videos.apple.com, proxy
+host, video-api.itunes.apple.com, proxy
 
 
 # === Apple TV 视频流数据 (必须直连) ===
