@@ -43,21 +43,32 @@ https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=Glob
 [filter_local]
 host-suffix, local, direct
 
+HOST, hls-amt.itunes.apple.com,direct
+HOST, hls.itunes.apple.com,direct
+HOST, np-edge.itunes.apple.com,direct
+HOST, play-edge.itunes.apple.com,direct
+HOST, tv.applemusic.com,direct
+HOST, uts-api.itunes.apple.com,direct
+HOST-SUFFIX, tv.apple.com,direct
+USER-AGENT, AppleTV*,direct
+USER-AGENT, com.apple.tv*,direct
+
+
 
 # === Apple TV 界面与鉴权 (必须走代理) ===
-HOST-SUFFIX, tv.apple.com, proxy
-HOST-SUFFIX, tv.applemusic.com, proxy
-HOST-SUFFIX, apple.news, proxy
-host, np-edge.itunes.apple.com, proxy
-HOST, uts-api.itunes.apple.com, proxy
-HOST, play.itunes.apple.com, proxy
-HOST, play-edge.itunes.apple.com, proxy
-HOST, linear.tv.apple.com, proxy
-HOST, sports.tv.apple.com, proxy
-HOST, movies.apple.com, proxy
-HOST, books.apple.com, proxy
-HOST, amp-api.videos.apple.com, proxy
-HOST, video-api.itunes.apple.com, proxy
+#HOST-SUFFIX, tv.apple.com, proxy
+#HOST-SUFFIX, tv.applemusic.com, proxy
+#HOST-SUFFIX, apple.news, proxy
+#host, np-edge.itunes.apple.com, proxy
+#HOST, uts-api.itunes.apple.com, proxy
+#HOST, play.itunes.apple.com, proxy
+#HOST, play-edge.itunes.apple.com, proxy
+#HOST, linear.tv.apple.com, proxy
+#HOST, sports.tv.apple.com, proxy
+#HOST, movies.apple.com, proxy
+#HOST, books.apple.com, proxy
+#HOST, amp-api.videos.apple.com, proxy
+#HOST, video-api.itunes.apple.com, proxy
 
 
 # === Apple TV 视频流数据 (必须直连) ===
