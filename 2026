@@ -27,7 +27,6 @@ static=Global, proxy, img-url=https://raw.githubusercontent.com/fhf1231/filterur
 [server_local]
 vless=c.lifengchun.top:443, method=none, password=35fd9743-2bdd-4428-a310-11a337496c81, obfs=wss, obfs-host=c.lifengchun.top, obfs-uri=/apps/files_sharing/public, tls-verification=true, fast-open=false, udp-relay=false, tag=cvlws
 trojan=74.48.59.37:443, password=xV8%nJ3&cW5@eP9b, obfs=wss, obfs-host=c.lifengchun.top, obfs-uri=/remote.php/dav/files/admin/Photos/CameraUpload, udp-relay=false, tls-verification=true, tag=ctr
-trojan=c.lifengchun.top:443, password=xV8%nJ3&cW5@eP9b, obfs=wss, obfs-host=c.lifengchun.top, obfs-uri=/remote.php/dav/files/admin/Photos/CameraUpload, udp-relay=false, tls-verification=true, tag=ctry
 vmess=c.lifengchun.top:443, method=chacha20-ietf-poly1305, password=0986131e-ba14-4ef5-8794-c2e3b1ade4c9, obfs=wss, obfs-uri=/remote.php/dav/files/admin/Videos/4K_Stream_Cache, tls-verification=true, fast-open=false, udp-relay=false, tag=cvm
 
 [server_remote]
