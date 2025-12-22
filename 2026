@@ -9,7 +9,7 @@ server_check_timeout = 3000
 udp_drop_list = 53, QUIC
 dns_exclusion_list=*.lan, *.local, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, network-test.debian.org, detectportal.firefox.com, *.srv.nintendo.net, *.stun.playstation.net, *.xboxlive.com, *.logon.battle.net, pool.ntp.org, captive.apple.com, *.miwifi.com
 dns_reject_domain_behavior = loopback
-excluded_routes = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, 17.0.0.0/8
+excluded_routes = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10
 
 
 [dns]
@@ -42,6 +42,49 @@ https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=Glob
 [filter_local]
 host-suffix, local, direct
 HOST, token.safebrowsing.apple, China
+
+HOST, mlvbdc.live.tlivesource.com, direct
+HOST, pull-m1.wxlivecdn.com, direct
+
+# === Apple TV 界面与鉴权 (必须走代理) ===
+HOST-SUFFIX, tv.apple.com, proxy
+HOST-SUFFIX, tv.applemusic.com, proxy
+HOST-SUFFIX, apple.news, proxy
+HOST, uts-api.itunes.apple.com, proxy
+HOST, play.itunes.apple.com, proxy
+HOST, play-edge.itunes.apple.com, proxy
+HOST, linear.tv.apple.com, proxy
+HOST, sports.tv.apple.com, proxy
+HOST, movies.apple.com, proxy
+HOST, books.apple.com, proxy
+
+
+# === Apple TV 视频流数据 (必须直连) ===
+# 4K HDR 视频数据源，直连速度最快且省流量
+HOST, hls.itunes.apple.com, direct
+HOST, hls-amt.itunes.apple.com, direct
+HOST, hls-svod.itunes.apple.com, direct
+HOST, hls-vod.itunes.apple.com, direct
+HOST-SUFFIX, hls.itunes.apple.com, direct
+
+# === App Store 图片与下载 CDN (必须直连) ===
+# 各种海报、图标、应用下载
+HOST-SUFFIX, mzstatic.com, direct
+HOST-SUFFIX, cdn-apple.com, direct
+HOST-SUFFIX, aaplimg.com, direct
+HOST-SUFFIX, apple-cloudkit.com, direct
+HOST-SUFFIX, icloud-content.com, direct
+
+# === 基础服务与 CDN (必须直连) ===
+# 确保系统时间准确、推送及时收到
+HOST-SUFFIX, akadns.net, direct
+HOST, time.apple.com, direct
+HOST, time.asia.apple.com, direct
+HOST, time.euro.apple.com, direct
+HOST, apple.com.akadns.net, direct
+HOST, configuration-lb.ls-apple.com.akadns.net, direct
+HOST, courier-push-apple.com.akadns.net, direct
+HOST, push-apple.com.akadns.net, direct
 
 # ---- YouTube / Google Ads (安全广告域名) ----
 host-suffix, ads.youtube.com, reject
