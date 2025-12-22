@@ -20,7 +20,6 @@ server=223.5.5.5
 address=/c.lifengchun.top/74.48.59.37
 
 [policy]
-static=AppleTV, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Apple.png
 static=China, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/China.png
 static=Global, proxy, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Global.png
 
@@ -34,7 +33,6 @@ vmess=c.lifengchun.top:443, method=chacha20-ietf-poly1305, password=0986131e-ba1
 [filter_remote]
 FILTER_LAN, tag=LAN, force-policy=direct, inserted-resource=true, enabled=true
 FILTER_REGION, tag=China, force-policy=China, inserted-resource=true, enabled=true
-https://raw.githubusercontent.com/fhf1231/filterurl/main/AppleTV.list, tag=AppleTV, force-policy=AppleTV, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/mainland.list, tag=China, force-policy=China, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=Global, force-policy=Global, opt-parser=false, enabled=true
 
