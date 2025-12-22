@@ -58,7 +58,8 @@ HOST, linear.tv.apple.com, proxy
 HOST, sports.tv.apple.com, proxy
 HOST, movies.apple.com, proxy
 HOST, books.apple.com, proxy
-
+HOST, amp-api.videos.apple.com, proxy
+HOST, video-api.itunes.apple.com, proxy
 
 # === Apple TV 视频流数据 (必须直连) ===
 # 4K HDR 视频数据源，直连速度最快且省流量
