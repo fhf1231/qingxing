@@ -51,6 +51,18 @@ ip-cidr, 127.0.0.0/8, direct
 ip-cidr, 100.64.0.0/10, direct
 ip-cidr, 224.0.0.0/4, direct
 
+# === Splashtop 远程桌面 (全协议直连) ===
+# 包含 TCP (登录/控制) 和 UDP (画面传输)
+HOST-SUFFIX, splashtop.com, direct
+HOST-SUFFIX, splashtop.net, direct
+HOST-SUFFIX, relay.splashtop.com, direct
+HOST-SUFFIX, api.splashtop.com, direct
+HOST-SUFFIX, sn.splashtop.com, direct
+
+# 如果你在局域网内用 (比如 iPad 连 Mac)，把这几个端口也直连，防止流量绕路
+HOST-SUFFIX, local, direct
+# (你的 ip-cidr 192.168.0.0/16 规则已经涵盖了局域网 TCP 连接)
+
 HOST, mlvbdc.live.tlivesource.com, direct
 HOST, pull-m1.wxlivecdn.com, direct
 
