@@ -38,8 +38,7 @@ https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=Glob
 
 [filter_local]
 host-suffix, local, direct
-HOST, token.safebrowsing.apple, China
-
+HOST, token.safebrowsing.apple, direct
 HOST, mlvbdc.live.tlivesource.com, direct
 HOST, pull-m1.wxlivecdn.com, direct
 
@@ -53,6 +52,154 @@ HOST, uts-api.itunes.apple.com,direct
 HOST-SUFFIX, tv.apple.com,direct
 USER-AGENT, AppleTV*,direct
 USER-AGENT, com.apple.tv*,direct
+
+# 系统时间同步 (必须直连)
+HOST, time.apple.com, direct
+HOST, time.asia.apple.com, direct
+HOST, time.euro.apple.com, direct
+
+# 推送服务 (必须直连)
+HOST-SUFFIX, push.apple.com, direct
+HOST-SUFFIX, courier.push.apple.com, direct
+
+# === 天气服务 (地图数据量大，必须直连) ===
+HOST, weather-map2.apple.com, direct
+HOST-SUFFIX, weather.apple.com, direct
+HOST, weather-analytics-events.apple.com, direct
+
+# 推荐写法 (覆盖更全)：
+HOST-SUFFIX, icloud.com, direct
+HOST-SUFFIX, icloud-content.com, direct
+
+# === 核心身份验证 (建议直连以防账号风控) ===
+HOST, gsa.apple.com, direct
+
+# === Apple 地图数据 (必须直连) ===
+HOST, cdn.apple-mapkit.com, direct
+HOST-SUFFIX, maps.apple.com, direct
+HOST-SUFFIX, apple-mapkit.com, direct
+
+# === Game Center 游戏中心 (必须直连以降低延迟) ===
+HOST-SUFFIX, gc.apple.com, direct
+HOST-SUFFIX, gamecenter.apple.com, direct
+
+# === 系统软件更新 (必须直连) ===
+HOST, gdmf.apple.com, direct
+HOST, mesu.apple.com, direct
+HOST, appldnld.apple.com, direct
+HOST, xp.apple.com, direct
+
+# [Proxy 区] - 商店、健身与购买
+HOST, amp-api.videos.apple.com, proxy
+HOST, amp-api.fitness.apple.com, proxy
+HOST, books-edge.apple.com, proxy
+HOST, appleid.apple.com, proxy
+
+# [Direct 区] - 系统底层与同步
+HOST-SUFFIX, ess.apple.com, direct
+HOST, sse-ws-p189.apple.com, direct
+HOST, account-stage.apple.com, direct
+
+# === Apple TV+ 剧集数据流 (必须直连) ===
+# (此处删除了 hls-svod 的 HOST 规则，因为已被下方的 HOST-SUFFIX 覆盖)
+
+
+# === Apple 内容分发网络 (全部直连) ===
+# 覆盖 *.cdn.apple.com
+HOST-SUFFIX, cdn.apple.com, direct
+
+# 覆盖 *.cdn-apple.com (注意中间是横杠，用于 App 下载和系统更新)
+HOST-SUFFIX, cdn-apple.com, direct
+
+# 覆盖 *.mzstatic.com (App Store 的图片、图标服务器)
+HOST-SUFFIX, mzstatic.com, direct
+
+
+
+# [Proxy 区] - 必须走代理，防止美区账号购买失败
+# (此处删除了 p44-buy 和重复的 buy 规则，因为已被下方的 HOST-SUFFIX 覆盖)
+# 为了保险，建议直接加上 buy 的通配符规则：
+HOST-SUFFIX, buy.itunes.apple.com, proxy
+
+# [Direct 区] - 必须直连，为了加载速度
+HOST, konut-cdn.apple.com, direct
+
+# =========================================
+# 第一步：把必须“伪装身份”的挑出来 (走代理)
+# =========================================
+HOST, play.itunes.apple.com, proxy 
+ #播放授权验证
+HOST, cma2.itunes.apple.com, proxy
+#      ; 资料库同步 (你问的这个)
+HOST-SUFFIX, itunes-apple.com.akadns.net, proxy
+# ; 也是验证类
+
+# =========================================
+# 第二步：剩下的“干体力活”的 (走直连)
+# =========================================
+# Apple TV+ 视频流 (流量巨大，必须直连)
+HOST-SUFFIX, hls-svod.itunes.apple.com, direct
+# iTunes 电影点播 (流量巨大，必须直连)
+HOST-SUFFIX, hls-vod.itunes.apple.com, direct
+# 音乐与音频流 (流量较大，建议直连)
+HOST-SUFFIX, aod.itunes.apple.com, direct
+HOST-SUFFIX, mvod.itunes.apple.com, direct
+
+# === Apple News 与 订阅权限 (必须代理，否则会锁区) ===
+# (此处删除了 nc-pod8，因为已被下方的 smp-device 通配符覆盖)
+# 建议为了保险，直接加上通配符覆盖其他 Pod：
+HOST-SUFFIX, smp-device.apple.com, proxy
+
+# === 核心账号验证 (必须直连，防止风控) ===
+HOST, gsas.apple.com, direct
+
+
+# === Apple Podcasts 播客接口 (建议代理，以获取美区目录) ===
+HOST, amp-api.podcasts.apple.com, proxy
+
+
+# =========================================
+# 第三步：兜底规则 (选填)
+# =========================================
+# [Reject 区] - 垃圾分析
+HOST, books-analytics-events.apple.com, reject
+HOST, stocks-analytics-events.apple.com, reject
+
+# === 安全浏览服务 (建议直连，保证网页加载速度) ===
+HOST, token.safebrowsing.apple, direct
+#
+host-suffix, openai.com, proxy
+host-suffix, devvit.net, proxy  
+
+host-suffix, appsflyer.com, proxy
+host-suffix, branch.io, proxy
+host-suffix, sng.link, proxy
+host-suffix, revenuecat.com, proxy
+
+host-suffix, sentry.io, proxy
+host-suffix, chronosphere.io, proxy
+host-suffix, featureassets.org, proxy
+host-suffix, prodregistryv2.org, proxy
+host-suffix, slivor.com, proxy
+host-suffix, nirvarna.com, proxy
+host-suffix, simperium.com, proxy
+host-suffix, giphy.com, proxy
+host-suffix, thesitebase.net, proxy
+host-suffix, quantumult.app, proxy
+host-suffix, impression.link, proxy
+host-suffix, logbase.org, proxy
+
+# === 开发与性能监控 (必须代理) ===
+# 理由：Datadog 的数据接收端位于美国 AWS。虽然 DNS 解析快，但直连上传数据极慢且不稳定，容易导致 App 后台耗电。
+host-suffix, datadoghq.com, proxy
+
+# === 广告与数据追踪 (建议拒绝) ===
+# 理由：VideoAmp 是广告测量与数据分析平台，属于纯粹的追踪器。拦截它能保护隐私并加速视频加载。
+host-suffix, videoamp.com, reject
+
+host-suffix, kochava.com, reject
+host-suffix, scorecardresearch.com, reject
+
 
 # ---- youtube广告 ----
 host-suffix, admob.googleapis.com, reject
