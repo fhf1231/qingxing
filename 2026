@@ -238,6 +238,8 @@ host-keyword, adservice, reject
 host-keyword, pagead, reject
 host-keyword, partnerad, reject
 
+
+host-suffix, cn, direct
 geoip, private, direct
 geoip, cn, direct
 
