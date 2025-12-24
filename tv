@@ -42,6 +42,13 @@ https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=Glob
 
 [filter_local]
 host-suffix, local, direct
+ip-cidr, 192.168.0.0/16, direct
+ip-cidr, 10.0.0.0/8, direct
+ip-cidr, 172.16.0.0/12, direct
+ip-cidr, 127.0.0.0/8, direct
+ip-cidr, 100.64.0.0/10, direct
+# 组播地址 (AirPlay/智能家居)
+ip-cidr, 224.0.0.0/4, direct
 
 # === Apple TV
 HOST, hls-amt.itunes.apple.com,direct
@@ -59,15 +66,6 @@ host-suffix, admob.googleapis.com, reject
 host-suffix, ads.youtube.com, reject
 host-suffix, ad-access.youtube.com, reject
 host-suffix, youtube-nocookie.com, reject
-
-host-suffix, s.youtube.com, Global
-host-suffix, video-stats.l.google.com, Global
-host-suffix, fonts.gstatic.com, Global
-host-suffix, yt3.ggpht.com, Global
-host-suffix, ggpht.com, Global
-host-suffix, photos-ugc.l.googleusercontent.com, Global
-host-suffix, googleapis.com, Global
-HOST-SUFFIX, gstatic.com, Global
 
 host-suffix, doubleclick.net, reject
 host-suffix, googleads.g.doubleclick.net, reject
@@ -90,6 +88,18 @@ host-keyword, pubads, reject
 host-keyword, adservice, reject
 host-keyword, pagead, reject
 host-keyword, partnerad, reject
+
+host-suffix, s.youtube.com, Global
+host-suffix, video-stats.l.google.com, Global
+host-suffix, fonts.gstatic.com, Global
+host-suffix, yt3.ggpht.com, Global
+host-suffix, ggpht.com, Global
+host-suffix, photos-ugc.l.googleusercontent.com, Global
+host-suffix, googleapis.com, Global
+HOST-SUFFIX, gstatic.com, Global
+
+geoip, cn, direct
+geoip, private, direct
 
 final, direct
 
