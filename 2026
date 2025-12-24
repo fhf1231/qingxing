@@ -157,49 +157,9 @@ HOST, gsas.apple.com, direct
 # === Apple Podcasts 播客接口 (建议代理，以获取美区目录) ===
 HOST, amp-api.podcasts.apple.com, proxy
 
-
-# =========================================
-# 第三步：兜底规则 (选填)
-# =========================================
 # [Reject 区] - 垃圾分析
 HOST, books-analytics-events.apple.com, reject
 HOST, stocks-analytics-events.apple.com, reject
-
-# === 安全浏览服务 (建议直连，保证网页加载速度) ===
-HOST, token.safebrowsing.apple, direct
-#
-host-suffix, openai.com, proxy
-host-suffix, devvit.net, proxy  
-
-host-suffix, appsflyer.com, proxy
-host-suffix, branch.io, proxy
-host-suffix, sng.link, proxy
-host-suffix, revenuecat.com, proxy
-
-host-suffix, sentry.io, proxy
-host-suffix, chronosphere.io, proxy
-host-suffix, featureassets.org, proxy
-host-suffix, prodregistryv2.org, proxy
-host-suffix, slivor.com, proxy
-host-suffix, nirvarna.com, proxy
-host-suffix, simperium.com, proxy
-host-suffix, giphy.com, proxy
-host-suffix, thesitebase.net, proxy
-host-suffix, quantumult.app, proxy
-host-suffix, impression.link, proxy
-host-suffix, logbase.org, proxy
-
-# === 开发与性能监控 (必须代理) ===
-# 理由：Datadog 的数据接收端位于美国 AWS。虽然 DNS 解析快，但直连上传数据极慢且不稳定，容易导致 App 后台耗电。
-host-suffix, datadoghq.com, proxy
-
-# === 广告与数据追踪 (建议拒绝) ===
-# 理由：VideoAmp 是广告测量与数据分析平台，属于纯粹的追踪器。拦截它能保护隐私并加速视频加载。
-host-suffix, videoamp.com, reject
-
-host-suffix, kochava.com, reject
-host-suffix, scorecardresearch.com, reject
-
 
 # ---- youtube广告 ----
 host-suffix, admob.googleapis.com, reject
