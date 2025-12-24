@@ -26,8 +26,8 @@ static=Global, proxy, img-url=https://raw.githubusercontent.com/fhf1231/filterur
 [server_remote]
 
 [filter_remote]
-# FILTER_REGION, tag=CN, force-policy=direct, inserted-resource=true, enabled=true
-# FILTER_LAN, tag=LAN, force-policy=direct, inserted-resource=true, enabled=true
+FILTER_REGION, tag=CN, force-policy=direct, inserted-resource=true, enabled=true
+FILTER_LAN, tag=LAN, force-policy=direct, inserted-resource=true, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/mainland.list, tag=China, force-policy=China, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=Global, force-policy=Global, opt-parser=false, enabled=true
 
@@ -42,89 +42,142 @@ trojan=74.48.59.37:443, password=xV8%nJ3&cW5@eP9b, obfs=wss, obfs-host=c.lifengc
 trojan=c.lifengchun.top:443, password=xV8%nJ3&cW5@eP9b, obfs=wss, obfs-host=c.lifengchun.top, obfs-uri=/remote.php/dav/files/admin/Photos/CameraUpload, udp-relay=false, tls-verification=true, tag=ctry
 vless=c.lifengchun.top:443, method=none, password=35fd9743-2bdd-4428-a310-11a337496c81, obfs=wss, obfs-host=c.lifengchun.top, obfs-uri=/apps/files_sharing/public, tls-verification=true, fast-open=false, udp-relay=false, tag=cvlws
 
+
 [filter_local]
 host-suffix, local, direct
-ip-cidr, 192.168.0.0/16, direct
-ip-cidr, 10.0.0.0/8, direct
-ip-cidr, 172.16.0.0/12, direct
-ip-cidr, 127.0.0.0/8, direct
-ip-cidr, 100.64.0.0/10, direct
-ip-cidr, 224.0.0.0/4, direct
 
-# === Splashtop 远程桌面 (全协议直连) ===
-# 包含 TCP (登录/控制) 和 UDP (画面传输)
+# === Splashtop 远程桌面 ===
 HOST-SUFFIX, splashtop.com, direct
 HOST-SUFFIX, splashtop.net, direct
 HOST-SUFFIX, relay.splashtop.com, direct
 HOST-SUFFIX, api.splashtop.com, direct
 HOST-SUFFIX, sn.splashtop.com, direct
 
-# 如果你在局域网内用 (比如 iPad 连 Mac)，把这几个端口也直连，防止流量绕路
-HOST-SUFFIX, local, direct
-# (你的 ip-cidr 192.168.0.0/16 规则已经涵盖了局域网 TCP 连接)
-
+# === 直播源 ===
 HOST, mlvbdc.live.tlivesource.com, direct
 HOST, pull-m1.wxlivecdn.com, direct
 
+# =========================================
+# [Proxy] 代理区：功能、鉴权、AI
+# =========================================
+# AI & 内容
 host-suffix, openai.com, proxy
-host-suffix, devvit.net, proxy  
-host-suffix, appsflyer.com, proxy
+host-suffix, giphy.com, proxy
+host-suffix, slivor.com, proxy
+host-suffix, thesitebase.net, proxy
+
+# App 核心 (内购/同步)
+host-suffix, revenuecat.com, proxy
 host-suffix, branch.io, proxy
 host-suffix, sng.link, proxy
-host-suffix, revenuecat.com, proxy
+host-suffix, impression.link, proxy
+host-suffix, appsflyer.com, proxy
+host-suffix, simperium.com, proxy
+host-suffix, nirvanahq.com, proxy
+
+# 开发与监控 (省电)
+host-suffix, datadoghq.com, proxy
 host-suffix, sentry.io, proxy
 host-suffix, chronosphere.io, proxy
+host-suffix, logbase.org, proxy
+host-suffix, quantumult.app, proxy
+
+# Reddit 社区
+host-suffix, devvit.net, proxy
 host-suffix, featureassets.org, proxy
 host-suffix, prodregistryv2.org, proxy
-host-suffix, slivor.com, proxy
-host-suffix, nirvarna.com, proxy
-host-suffix, simperium.com, proxy
-host-suffix, giphy.com, proxy
-host-suffix, thesitebase.net, proxy
-host-suffix, quantumult.app, proxy
-host-suffix, impression.link, proxy
-host-suffix, datadoghq.com, proxy
-host-suffix, logbase.org, proxy
-host-suffix, datadoghq.com, proxy
-# === 开发与性能监控 (必须代理) ===
-# 理由：Datadog 的数据接收端位于美国 AWS。虽然 DNS 解析快，但直连上传数据极慢且不稳定，容易导致 App 后台耗电。
-host-suffix, datadoghq.com, proxy
+host-suffix, reddit.com, proxy
+host-suffix, redd.it, proxy
+host-suffix, redditstatic.com, proxy
+host-suffix, media.zestyio.com, proxy
 
+# Apple 鉴权与商店 (必须代理)
+HOST, play.itunes.apple.com, proxy
+HOST-SUFFIX, buy.itunes.apple.com, proxy
+HOST, cma2.itunes.apple.com, proxy
+HOST, appleid.apple.com, proxy
+HOST-SUFFIX, smp-device.apple.com, proxy
+HOST, amp-api.podcasts.apple.com, proxy
+HOST, amp-api.videos.apple.com, proxy
+HOST, amp-api.fitness.apple.com, proxy
+HOST, books-edge.apple.com, proxy
+
+# =========================================
+# [Reject] 拦截区：广告与隐私
+# =========================================
+host-suffix, videoamp.com, reject
 host-suffix, kochava.com, reject
 host-suffix, scorecardresearch.com, reject
-# === 广告与数据追踪 (建议拒绝) ===
-# 理由：VideoAmp 是广告测量与数据分析平台，属于纯粹的追踪器。拦截它能保护隐私并加速视频加载。
-host-suffix, videoamp.com, reject
-
-HOST, hls-amt.itunes.apple.com,direct
-HOST, hls.itunes.apple.com,direct
-HOST, np-edge.itunes.apple.com,direct
-HOST, play-edge.itunes.apple.com,direct
-HOST, tv.applemusic.com,direct
-HOST, uts-api.itunes.apple.com,direct
-HOST-SUFFIX, tv.apple.com,direct
-USER-AGENT, AppleTV*,direct
-USER-AGENT, com.apple.tv*,direct
-
+host, books-analytics-events.apple.com, reject
+host, stocks-analytics-events.apple.com, reject
 host-suffix, ads.youtube.com, reject
 host-suffix, doubleclick.net, reject
 HOST-SUFFIX, app-measurement.com, REJECT
 host-suffix, app-analytics-services.com, reject
 
-# HOST-SUFFIX, stocks-data-service.apple.com, proxy
-# HOST, token.safebrowsing.apple, proxy
+# =========================================
+# [Direct] 直连区：CDN、系统服务
+# =========================================
+# Apple 媒体 CDN
+HOST-SUFFIX, cdn.apple.com, direct
+HOST-SUFFIX, cdn-apple.com, direct
+HOST-SUFFIX, mzstatic.com, direct
 
-# HOST-SUFFIX, googleapis.com, proxy
-# HOST-SUFFIX, gstatic.com, proxy
-# HOST-SUFFIX, s.youtube.com, proxy
+# 系统服务
+HOST, time.apple.com, direct
+HOST, time.asia.apple.com, direct
+HOST, time.euro.apple.com, direct
+HOST-SUFFIX, push.apple.com, direct
+HOST-SUFFIX, courier.push.apple.com, direct
+HOST, weather-map2.apple.com, direct
+HOST-SUFFIX, weather.apple.com, direct
+HOST, weather-analytics-events.apple.com, direct
+HOST, gdmf.apple.com, direct
+HOST, mesu.apple.com, direct
+HOST, appldnld.apple.com, direct
+HOST, xp.apple.com, direct
+HOST, cdn.apple-mapkit.com, direct
+HOST-SUFFIX, maps.apple.com, direct
+HOST-SUFFIX, apple-mapkit.com, direct
 
-# HOST-SUFFIX, mzstatic.com, direct
-# HOST-SUFFIX, cdn-apple.com, direct
+# iCloud / GameCenter
+HOST-SUFFIX, icloud.com, direct
+HOST-SUFFIX, icloud-content.com, direct
+HOST-SUFFIX, gc.apple.com, direct
+HOST-SUFFIX, gamecenter.apple.com, direct
 
+# 底层连接
+HOST, gsa.apple.com, direct
+HOST, gsas.apple.com, direct
+HOST-SUFFIX, ess.apple.com, direct
+HOST, sse-ws-p189.apple.com, direct
+HOST, account-stage.apple.com, direct
+
+# 媒体流播放
+HOST-SUFFIX, hls-svod.itunes.apple.com, direct
+HOST-SUFFIX, hls-vod.itunes.apple.com, direct
+HOST-SUFFIX, aod.itunes.apple.com, direct
+HOST-SUFFIX, mvod.itunes.apple.com, direct
+HOST, hls-amt.itunes.apple.com, direct
+HOST, hls.itunes.apple.com, direct
+HOST, np-edge.itunes.apple.com, direct
+HOST, play-edge.itunes.apple.com, direct
+
+# Apple TV 页面
+HOST-SUFFIX, tv.apple.com, direct
+HOST, tv.applemusic.com, direct
+HOST, uts-api.itunes.apple.com, direct
+USER-AGENT, AppleTV*, direct
+USER-AGENT, com.apple.tv*, direct
+
+# =========================================
+# [Final] 兜底策略
+# =========================================
+# 国内域名直连 (Apple TV 无法下载 GeoIP 时的最佳替代)
 host-suffix, cn, direct
-geoip, cn, direct
-
+# 其他所有流量走代理
 final, proxy
+
 
 [rewrite_local]
 https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.*&oad url reject-200
