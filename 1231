@@ -188,4 +188,5 @@ https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.*&oad url reject-200
 [http_backend]
 
 [mitm]
+# hostname = youtubei.googleapis.com, *.googlevideo.com, *.googlesyndication.com, *.doubleclick.net, s.youtube.com, video-stats.l.google.com
 hostname = youtubei.googleapis.com, *.googlevideo.com
