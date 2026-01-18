@@ -1,0 +1,210 @@
+
+[general]
+# > 用于节点延迟测试
+#server_check_url=http://cp.cloudflare.com/generate_204
+#server_check_url= http://www.qualcomm.cn/generate_204
+server_check_url=http://captive.apple.com/generate_204
+#server_check_url =http://www.google.com/generate_204
+# > 服务器测试超时时间 (毫秒)
+server_check_timeout = 3000
+# udp_drop_list = QUIC
+dns_exclusion_list = *.cmpassport.com, *.jegotrip.com.cn, *.icitymobile.mobi, id6.me, *.lan, *.local, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, network-test.debian.org, detectportal.firefox.com, *.srv.nintendo.net, *.stun.playstation.net, *.xboxlive.com, *.logon.battle.net, pool.ntp.org, captive.apple.com, *.miwifi.com, *.tplogin.cn, *.router.asus.com, *.tendawifi.com, router.ctc, router.asus.com, routerlogin.net, routerlogin.com, *.linksyssmartwifi.com, myrouter.local, www.routerlogin.net, setup.ui.com, unifi.local, amplifi.lan
+excluded_routes = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, 224.0.0.0/4, 169.254.0.0/16
+dns_reject_domain_behavior = loopback
+
+[dns]
+no-system
+no-ipv6
+server=223.6.6.6
+server=223.5.5.5
+address=/s.lifengchun.top/74.48.129.174
+address=/c.lifengchun.top/74.48.59.37
+
+[policy]
+
+static=Gemini, rn, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/OpenAI.png
+static=OpenAI, rn, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/OpenAI.png
+static=x, rn, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/OpenAI.png
+static=China, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/China.png
+static=Global, rn, cc, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/Global.png
+
+
+
+
+; [策略 B] 🐟 Final_Others -> 强制绑定 节点 B (备用/其他流量)
+static=🐟 Final_Others, 节点B_备用, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Final.png
+
+; [策略 C] 中国直连
+static=🇨🇳 China, direct, img-url=https://raw.githubusercontent.com/fhf1231/filterurl/main/China.png
+
+
+[server_remote]
+
+[filter_remote]
+FILTER_REGION, tag=CN, force-policy=direct, inserted-resource=true, enabled=true
+FILTER_LAN, tag=LAN, force-policy=direct, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/fhf1231/filterurl/main/mainland.list, tag=China, force-policy=China, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=Global, force-policy=Global, opt-parser=false, enabled=true
+https:https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/QuantumultX/Gemini/Gemini.list, tag=Gemini, force-policy=Gemini, opt-parser=false, enabled=true
+https:https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/QuantumultX/OpenAI/OpenAI.list, tag=OpenAI, force-policy=OpenAI, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/fhf1231/filterurl/refs/heads/main/x, tag=x, force-policy=x, opt-parser=false, enabled=true
+
+[rewrite_remote]
+
+[server_local]
+vless=s.lifengchun.top:443, method=none, password=03b8e25e-16ea-4bc0-95fe-b8fd10bfcb73, obfs=wss, obfs-host=s.lifengchun.top, obfs-uri=/apps/files_sharing/public, tls-verification=true, fast-open=false, udp-relay=false, tag=rvlws
+vmess=s.lifengchun.top:443, method=chacha20-ietf-poly1305, password=789324c6-4d3f-4ff0-833c-3193b81108ef, obfs=wss, obfs-uri=/ocs/v2.php/notifications/ws, tls-verification=true, fast-open=false, udp-relay=false, tag=rvm
+trojan=74.48.129.174:443, password=aZ9#pLqV2!sRk6@w, obfs=wss, obfs-host=s.lifengchun.top, obfs-uri=/remote.php/dav/files/minicloud, udp-relay=false, tls-verification=true, tag=rtr
+vmess=c.lifengchun.top:443, method=chacha20-ietf-poly1305, password=0986131e-ba14-4ef5-8794-c2e3b1ade4c9, obfs=wss, obfs-uri=/remote.php/dav/files/admin/Videos/4K_Stream_Cache, tls-verification=true, fast-open=false, udp-relay=false, tag=cvm
+trojan=74.48.59.37:443, password=xV8%nJ3&cW5@eP9b, obfs=wss, obfs-host=c.lifengchun.top, obfs-uri=/remote.php/dav/files/admin/Photos/CameraUpload, udp-relay=false, tls-verification=true, tag=ctr
+trojan=c.lifengchun.top:443, password=xV8%nJ3&cW5@eP9b, obfs=wss, obfs-host=c.lifengchun.top, obfs-uri=/remote.php/dav/files/admin/Photos/CameraUpload, udp-relay=false, tls-verification=true, tag=ctry
+vless=c.lifengchun.top:443, method=none, password=35fd9743-2bdd-4428-a310-11a337496c81, obfs=wss, obfs-host=c.lifengchun.top, obfs-uri=/apps/files_sharing/public, tls-verification=true, fast-open=false, udp-relay=false, tag=cvlws
+
+
+[filter_local]
+host-suffix, local, direct
+
+# === Splashtop 远程桌面 ===
+HOST-SUFFIX, splashtop.com, direct
+HOST-SUFFIX, splashtop.net, direct
+HOST-SUFFIX, relay.splashtop.com, direct
+HOST-SUFFIX, api.splashtop.com, direct
+HOST-SUFFIX, sn.splashtop.com, direct
+
+# === 直播源 ===
+HOST, mlvbdc.live.tlivesource.com, direct
+HOST, pull-m1.wxlivecdn.com, direct
+
+# =========================================
+# [Proxy] 代理区：功能、鉴权、AI
+# =========================================
+# AI & 内容
+host-suffix, openai.com, proxy
+host-suffix, giphy.com, proxy
+host-suffix, slivor.com, proxy
+host-suffix, thesitebase.net, proxy
+
+# App 核心 (内购/同步)
+host-suffix, revenuecat.com, proxy
+host-suffix, branch.io, proxy
+host-suffix, sng.link, proxy
+host-suffix, impression.link, proxy
+host-suffix, appsflyer.com, proxy
+host-suffix, simperium.com, proxy
+host-suffix, nirvanahq.com, proxy
+
+# 开发与监控 (省电)
+host-suffix, datadoghq.com, proxy
+host-suffix, sentry.io, proxy
+host-suffix, chronosphere.io, proxy
+host-suffix, logbase.org, proxy
+host-suffix, quantumult.app, proxy
+
+# Reddit 社区
+host-suffix, devvit.net, proxy
+host-suffix, featureassets.org, proxy
+host-suffix, prodregistryv2.org, proxy
+host-suffix, reddit.com, proxy
+host-suffix, redd.it, proxy
+host-suffix, redditstatic.com, proxy
+host-suffix, media.zestyio.com, proxy
+
+# Apple 鉴权与商店 (必须代理)
+HOST, play.itunes.apple.com, proxy
+HOST-SUFFIX, buy.itunes.apple.com, proxy
+HOST, cma2.itunes.apple.com, proxy
+HOST, appleid.apple.com, proxy
+HOST-SUFFIX, smp-device.apple.com, proxy
+HOST, amp-api.podcasts.apple.com, proxy
+HOST, amp-api.videos.apple.com, proxy
+HOST, amp-api.fitness.apple.com, proxy
+HOST, books-edge.apple.com, proxy
+
+# =========================================
+# [Reject] 拦截区：广告与隐私
+# =========================================
+host-suffix, videoamp.com, reject
+host-suffix, kochava.com, reject
+host-suffix, scorecardresearch.com, reject
+host, books-analytics-events.apple.com, reject
+host, stocks-analytics-events.apple.com, reject
+host-suffix, ads.youtube.com, reject
+host-suffix, doubleclick.net, reject
+HOST-SUFFIX, app-measurement.com, REJECT
+host-suffix, app-analytics-services.com, reject
+
+# =========================================
+# [Direct] 直连区：CDN、系统服务
+# =========================================
+# Apple 媒体 CDN
+HOST-SUFFIX, cdn.apple.com, direct
+HOST-SUFFIX, cdn-apple.com, direct
+HOST-SUFFIX, mzstatic.com, direct
+
+# 系统服务
+HOST, time.apple.com, direct
+HOST, time.asia.apple.com, direct
+HOST, time.euro.apple.com, direct
+HOST-SUFFIX, push.apple.com, direct
+HOST-SUFFIX, courier.push.apple.com, direct
+HOST, weather-map2.apple.com, direct
+HOST-SUFFIX, weather.apple.com, direct
+HOST, weather-analytics-events.apple.com, direct
+HOST, gdmf.apple.com, direct
+HOST, mesu.apple.com, direct
+HOST, appldnld.apple.com, direct
+HOST, xp.apple.com, direct
+HOST, cdn.apple-mapkit.com, direct
+HOST-SUFFIX, maps.apple.com, direct
+HOST-SUFFIX, apple-mapkit.com, direct
+
+# iCloud / GameCenter
+HOST-SUFFIX, icloud.com, direct
+HOST-SUFFIX, icloud-content.com, direct
+HOST-SUFFIX, gc.apple.com, direct
+HOST-SUFFIX, gamecenter.apple.com, direct
+
+# 底层连接
+HOST, gsa.apple.com, direct
+HOST, gsas.apple.com, direct
+HOST-SUFFIX, ess.apple.com, direct
+HOST, sse-ws-p189.apple.com, direct
+HOST, account-stage.apple.com, direct
+
+# 媒体流播放
+HOST-SUFFIX, hls-svod.itunes.apple.com, direct
+HOST-SUFFIX, hls-vod.itunes.apple.com, direct
+HOST-SUFFIX, aod.itunes.apple.com, direct
+HOST-SUFFIX, mvod.itunes.apple.com, direct
+HOST, hls-amt.itunes.apple.com, direct
+HOST, hls.itunes.apple.com, direct
+HOST, np-edge.itunes.apple.com, direct
+HOST, play-edge.itunes.apple.com, direct
+
+# Apple TV 页面
+HOST-SUFFIX, tv.apple.com, direct
+HOST, tv.applemusic.com, direct
+HOST, uts-api.itunes.apple.com, direct
+USER-AGENT, AppleTV*, direct
+USER-AGENT, com.apple.tv*, direct
+
+# =========================================
+# [Final] 兜底策略
+# =========================================
+# 国内域名直连 (Apple TV 无法下载 GeoIP 时的最佳替代)
+host-suffix, cn, direct
+# 其他所有流量走代理
+final, proxy
+
+
+[rewrite_local]
+https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.*&oad url reject-200
+^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(next|player|browse|search|get_watch|guide) url script-response-body https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js?captionLang=off&lyricLang=off&blockUpload=true&blockImmersive=true&blockShorts=false&debug=false
+
+[task_local]
+
+[http_backend]
+
+[mitm]
+# hostname = youtubei.googleapis.com, *.googlevideo.com, *.googlesyndication.com, *.doubleclick.net, s.youtube.com, video-stats.l.google.com
+hostname = youtubei.googleapis.com, *.googlevideo.com
