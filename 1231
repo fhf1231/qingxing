@@ -27,9 +27,9 @@ static=Global, proxy, img-url=https://raw.githubusercontent.com/fhf1231/filterur
 
 [filter_remote]
 FILTER_REGION, tag=CN, force-policy=direct, inserted-resource=true, enabled=true
-FILTER_LAN, tag=LAN, force-policy=direct, inserted-resource=true, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/mainland.list, tag=China, force-policy=China, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=Global, force-policy=Global, opt-parser=false, enabled=true
+FILTER_LAN, tag=LAN, force-policy=direct, inserted-resource=true, enabled=true
 
 [rewrite_remote]
 
@@ -115,6 +115,31 @@ host-suffix, doubleclick.net, reject
 HOST-SUFFIX, app-measurement.com, REJECT
 host-suffix, app-analytics-services.com, reject
 
+; 拦截 Sentry 错误日志上传 (节省流量)
+HOST-SUFFIX, sentry.io, reject
+
+; 或者如果您想放行，就写 direct
+; HOST-SUFFIX, sentry.io, direct
+
+; Apple Wi-Fi 定位服务 -> 直连
+HOST, wps.apple.com, direct
+
+; =========================
+; Apple 地图与位置服务 (修正 Gsp64 等流量偷跑)
+; =========================
+HOST-SUFFIX, ls.apple.com, direct
+HOST-SUFFIX, gs.apple.com, direct
+HOST-SUFFIX, apple-mapkit.com, direct
+
+; =========================
+; Apple 天气服务
+; =========================
+HOST-SUFFIX, weather-edge.apple.com, direct
+HOST-SUFFIX, weather-adge.apple.com, direct
+HOST-SUFFIX, weather-data.apple.com, direct
+HOST-SUFFIX, weather-map.apple.com, direct
+HOST-SUFFIX, weather-analytics-events.apple.com, direct
+
 # =========================================
 # [Direct] 直连区：CDN、系统服务
 # =========================================
@@ -171,11 +196,17 @@ USER-AGENT, AppleTV*, direct
 USER-AGENT, com.apple.tv*, direct
 
 # =========================================
-# [Final] 兜底策略
-# =========================================
-# 国内域名直连 (Apple TV 无法下载 GeoIP 时的最佳替代)
+; 1. 第一名：域名后缀匹配 (速度极快，无需 DNS)
+; 只要是 .cn 结尾的域名，马上放行，不要浪费时间去查 IP。
 host-suffix, cn, direct
-# 其他所有流量走代理
+
+; 2. 第二名：GeoIP IP 匹配 (速度较慢，是兜底)
+; 如果域名不是 .cn，也不是名单里的，QX 会解析它的 IP。
+; 如果 IP 是中国 (根据您下载的 Hackl0us 库)，则放行。
+geoip, cn, direct
+
+; 3. 第三名：最终大兜底 (必须在最后)
+; 如果上面所有规则(包括远程和本地)都没匹配上，就走这条路。
 final, proxy
 
 
