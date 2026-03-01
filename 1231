@@ -2,7 +2,8 @@
 # > 用于节点延迟测试
 #server_check_url=http://cp.cloudflare.com/generate_204
 #server_check_url= http://www.qualcomm.cn/generate_204
-server_check_url=http://captive.apple.com/generate_204
+#server_check_url=http://captive.apple.com/generate_204
+server_check_url=http://cp.cloudflare.com/generate_204
 #server_check_url =http://www.google.com/generate_204
 # > 服务器测试超时时间 (毫秒)
 server_check_timeout = 3000
@@ -26,10 +27,10 @@ static=Global, proxy, img-url=https://raw.githubusercontent.com/fhf1231/filterur
 [server_remote]
 
 [filter_remote]
-FILTER_REGION, tag=CN, force-policy=direct, inserted-resource=true, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/mainland.list, tag=China, force-policy=China, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=Global, force-policy=Global, opt-parser=false, enabled=true
-FILTER_LAN, tag=LAN, force-policy=direct, inserted-resource=true, enabled=true
+#FILTER_LAN, tag=LAN, force-policy=direct, inserted-resource=true, enabled=true
+#FILTER_REGION, tag=CN, force-policy=direct, inserted-resource=true, enabled=true
 
 [rewrite_remote]
 
