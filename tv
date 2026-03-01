@@ -1,10 +1,9 @@
 [general]
-# > 用于节点延迟测试
 #server_check_url=http://cp.cloudflare.com/generate_204
 #server_check_url= http://www.qualcomm.cn/generate_204
-server_check_url=http://captive.apple.com/generate_204
+#server_check_url=http://captive.apple.com/generate_204
 #server_check_url =http://www.google.com/generate_204
-# > 服务器测试超时时间 (毫秒)
+server_check_url=http://cp.cloudflare.com/generate_204
 server_check_timeout = 3000
 udp_drop_list = QUIC
 dns_exclusion_list = *.cmpassport.com, *.jegotrip.com.cn, *.icitymobile.mobi, id6.me, *.lan, *.local, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, network-test.debian.org, detectportal.firefox.com, *.srv.nintendo.net, *.stun.playstation.net, *.xboxlive.com, *.logon.battle.net, pool.ntp.org, captive.apple.com, *.miwifi.com, *.tplogin.cn, *.router.asus.com, *.tendawifi.com, router.ctc, router.asus.com, routerlogin.net, routerlogin.com, *.linksyssmartwifi.com, myrouter.local, www.routerlogin.net, setup.ui.com, unifi.local, amplifi.lan
@@ -35,77 +34,55 @@ vless=c.lifengchun.top:443, method=none, password=35fd9743-2bdd-4428-a310-11a337
 [server_remote]
 
 [filter_remote]
-FILTER_LAN, tag=LAN, force-policy=direct, inserted-resource=true, enabled=true
-FILTER_REGION, tag=China, force-policy=China, inserted-resource=true, enabled=true
+# FILTER_LAN, tag=LAN, force-policy=direct, inserted-resource=true, enabled=true
+# FILTER_REGION, tag=China, force-policy=China, inserted-resource=true, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/mainland.list, tag=China, force-policy=China, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/fhf1231/filterurl/main/overseas.list, tag=Global, force-policy=Global, opt-parser=false, enabled=true
 
 [filter_local]
+geoip, lan, direct
 host-suffix, local, direct
-
+HOST, appleid.apple.com, direct
+HOST, gs.apple.com, direct
+HOST, gsa.apple.com, direct
+HOST, gsas.apple.com, direct
+HOST, xp.apple.com, direct
+HOST, appldnld.apple.com, direct
+HOST-SUFFIX, ess.apple.com, direct
+HOST-SUFFIX, push.apple.com, direct
+HOST-SUFFIX, ls.apple.com, direct
+HOST-SUFFIX, tv.apple.com, direct
+HOST-SUFFIX, itunes.apple.com, direct
+HOST-SUFFIX, mzstatic.com, direct
+HOST-SUFFIX, cdn-apple.com, direct
+host-suffix, netflix.com, Global
+host-suffix, netflix.net, Global
+host-suffix, nflximg.net, Global
+host-suffix, nflxvideo.net, Global
+host-suffix, nflxext.com, Global
+host-suffix, nflxso.net, Global
+host-suffix, disneyplus.com, Global
+host-suffix, bamgrid.com, Global
+host-suffix, googlevideo.com, Global
+host-suffix, youtubei.googleapis.com, Global
+host-suffix, yt3.ggpht.com, Global
+host-suffix, app-analytics-services.com, reject-200
+host-suffix, app-measurement.com, reject-200
+host-suffix, firebase-settings.crashlytics.com, reject-200
+host-suffix, doubleclick.net, reject
+host-suffix, googleadservices.com, reject
 HOST, mlvbdc.live.tlivesource.com, direct
 HOST, pull-m1.wxlivecdn.com, direct
-
-# === Apple TV
-HOST, hls-amt.itunes.apple.com,direct
-HOST, hls.itunes.apple.com,direct
-HOST, np-edge.itunes.apple.com,direct
-HOST, play-edge.itunes.apple.com,direct
-HOST, tv.applemusic.com,direct
-HOST, uts-api.itunes.apple.com,direct
-HOST-SUFFIX, tv.apple.com,direct
-USER-AGENT, AppleTV*,direct
-USER-AGENT, com.apple.tv*,direct
-
-# === youtube
-host-suffix, admob.googleapis.com, reject
-host-suffix, ads.youtube.com, reject
-host-suffix, ad-access.youtube.com, reject
-host-suffix, youtube-nocookie.com, reject
-
-host-suffix, doubleclick.net, reject
-host-suffix, googleads.g.doubleclick.net, reject
-host-suffix, pubads.g.doubleclick.net, reject
-host-suffix, partnerad.l.doubleclick.net, reject
-host-suffix, stats.g.doubleclick.net, reject
-host-suffix, googlesyndication.com, reject
-host-suffix, googleadservices.com, reject
-host-suffix, adservice.google.com, reject
-host-suffix, pagead.l.doubleclick.net, reject
-host-suffix, pagead2.googlesyndication.com, reject
-host-suffix, s0.2mdn.net, reject
-host-suffix, 2mdn.net, reject
-host-suffix, app-analytics-services.com, reject
-host-suffix, app-measurement.com, reject
-host-suffix, firebase-settings.crashlytics.com, reject
-host-keyword, doubleclick, reject
-host-keyword, googlesyndication, reject
-host-keyword, pubads, reject
-host-keyword, adservice, reject
-host-keyword, pagead, reject
-host-keyword, partnerad, reject
-
-host-suffix, s.youtube.com, Global
-host-suffix, video-stats.l.google.com, Global
-host-suffix, fonts.gstatic.com, Global
-host-suffix, yt3.ggpht.com, Global
-host-suffix, ggpht.com, Global
-host-suffix, photos-ugc.l.googleusercontent.com, Global
-host-suffix, googleapis.com, Global
-HOST-SUFFIX, gstatic.com, Global
-
 host-suffix, cn, direct
-final, direct
+geoip, cn, direct
+final, Global
+#final, direct
+#final, Proxy
 
 [rewrite_remote]
 
 [rewrite_local]
-^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.*&oad url reject-200
-^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(next|player|browse|search|get_watch|guide) url script-response-body https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js?captionLang=off&lyricLang=off&blockUpload=true&blockImmersive=true&blockShorts=false&debug=false
 
 [task_local]
 
 [mitm]
-hostname = youtubei.googleapis.com, *.googlevideo.com
-passphrase = AF9E5F21
-p12 = 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
